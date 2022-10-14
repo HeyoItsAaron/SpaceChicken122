@@ -9,18 +9,22 @@ using Photon;
 using Photon.Pun;
 using Photon.Realtime;
 
-//Goal of this script is to connect to server automatically when game opens
+[System.Serializable]
+public class DefaultRoom
+{
+    public string Name;
+    public int sceneIndex;
+    public int maxPlayer;
+}
+
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        ConnectToServer();
-    }
+    public List<DefaultRoom> defaultRooms;
+    public GameObject roomUI;
 
     //update replaced by ConnectToServer
-    void ConnectToServer()
+    public void ConnectToServer()
     {
         PhotonNetwork.ConnectUsingSettings();
         Debug.Log("Try Connect To Server...");
@@ -30,12 +34,30 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Connected To Server.");
         base.OnConnectedToMaster();
+        PhotonNetwork.JoinLobby();
+    }
+
+    public override void OnJoinedLobby()
+    {
+        base.OnJoinedLobby();
+        Debug.Log("WE JOINED THE LOBBY");
+        roomUI.SetActive(true);
+    }
+
+    public void InitialiseRoom(int defaultRoomIndex)
+    {
+        DefaultRoom roomSettings = defaultRooms[defaultRoomIndex];
+
+        //LOAD A SCENE BASED OFF OF ROOM SETTINGS
+        PhotonNetwork.LoadLevel(roomSettings.sceneIndex);
+
+        //CREATE THE ROOM
         RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = 10;
+        roomOptions.MaxPlayers = (byte)roomSettings.maxPlayer; //byte because error is in integer
         roomOptions.IsVisible = true;
         roomOptions.IsOpen = true;
 
-        PhotonNetwork.JoinOrCreateRoom("Room 1", roomOptions, TypedLobby.Default); 
+        PhotonNetwork.JoinOrCreateRoom(roomSettings.Name, roomOptions, TypedLobby.Default);
     }
 
     public override void OnJoinedRoom()
