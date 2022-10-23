@@ -4093,8 +4093,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029998701}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: ecf40cedef8bce8499f86d5f2e03d50e, type: 3}
+  m_Controller: {fileID: 9100000, guid: 9489751e994075d4d87a474e16947569, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4109,6 +4109,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ecf40cedef8bce8499f86d5f2e03d50e, type: 3}
   m_PrefabInstance: {fileID: 1139304075}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2029998707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029998701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 081ef57aec888ef47a71ed43a1bc4333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footOffset: {x: 0, y: 0.15, z: 0}
+  rightFootPositionWeight: 1
+  leftFootPositionWeight: 1
+  rightFootRotationWeight: 1
+  leftFootRotationWeight: 1
+--- !u!114 &2029998708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029998701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6251f8cf26a119f4c9f68dcff8a0e79e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedThreshold: 0.1
+  smoothing: 1
 --- !u!1 &2059986024 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1117582899397640, guid: 689946d975a0e55449b1e7ae41933e73, type: 3}
