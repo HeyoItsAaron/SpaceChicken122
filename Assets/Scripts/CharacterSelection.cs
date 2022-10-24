@@ -1,0 +1,38 @@
+//Aaron Williams
+//10/24/2022
+//from tutorial at https://www.youtube.com/watch?v=3qlRgICRoeA
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class CharacterSelection : MonoBehaviour
+{
+    //class variables
+    public GameObject[] characters;
+    public int selectedCharacter = 0;
+
+    //methods
+    public void NextCharacter()
+    {
+        characters[selectedCharacter].SetActive(false);
+        selectedCharacter = (selectedCharacter + 1) % characters.Length;
+        characters[selectedCharacter].SetActive(true);
+    }
+    public void PreviousCharacter()
+    {
+        characters[selectedCharacter].SetActive(false);
+        selectedCharacter--;
+        if (selectedCharacter < 0)
+        {
+            selectedCharacter += characters.Length;
+        }
+        characters[selectedCharacter].SetActive(true);
+    }
+    public void StartGame()
+    {
+        PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
+    }
+}
