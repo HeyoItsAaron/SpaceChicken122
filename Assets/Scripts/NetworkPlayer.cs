@@ -29,10 +29,10 @@ public class NetworkPlayer : MonoBehaviour
     void Start()
     {
         photonView = GetComponent<PhotonView>();
-        XROrigin rig = FindObjectOfType<XROrigin>();                      //Getting an error, need to change from rig to something else
+        XRRig rig = FindObjectOfType<XRRig>();                      //Getting an error, need to change from rig to something else
         headRig = rig.transform.Find("Camera Offset/Main Camera");
         leftHandRig = rig.transform.Find("Camera Offset/LeftHand Controller");
-        rightHandRig = rig.transform.Find("Camera Offset/RightHand Interactable");
+        rightHandRig = rig.transform.Find("Camera Offset/RightHand Controller");
 
         if (photonView.IsMine)
         {
