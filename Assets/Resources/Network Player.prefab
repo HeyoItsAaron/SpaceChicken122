@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8517690579278211683}
   m_RootOrder: 0
@@ -46,6 +47,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+  m_UseLocal: 0
 --- !u!1 &2894586607013576811
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,6 +76,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8517690579278211683}
   m_RootOrder: 3
@@ -189,7 +192,11 @@ MonoBehaviour:
   logLevel: 3
   ignoreGlobalLogLevel: 0
   playbackOnlyWhenEnabled: 0
-  playDelayMs: 200
+  playDelayMs: -1
+  playbackDelaySettings:
+    MinDelaySoft: 200
+    MaxDelaySoft: 400
+    MaxDelayHard: 1000
 --- !u!1 &3198450750957458220
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +224,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8517690579278211683}
   m_RootOrder: 2
@@ -236,6 +244,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+  m_UseLocal: 0
 --- !u!1 &5908992816114297163
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +272,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8517690579278211683}
   m_RootOrder: 1
@@ -282,6 +292,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+  m_UseLocal: 0
 --- !u!1 &8517690579278211676
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,6 +322,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.2148857, y: 1.388607, z: -6.572431}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5961063572021939484}
   - {fileID: 7332308562648895091}
@@ -334,14 +346,14 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents:
   - {fileID: 476673273777107212}
   - {fileID: 5948517525795978604}
   - {fileID: 4354848238338781622}
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &9039477097873312434
@@ -357,9 +369,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   avatars:
-  - {fileID: 7453301371685333525, guid: 032539423b795e54388fd1da274ff29d, type: 3}
-  - {fileID: 7453301371685333525, guid: ea68b4ee893ecad42adc2404c135aaaf, type: 3}
-  - {fileID: 7453301371685333525, guid: 7878c67bbe971894ea8415c9043e551a, type: 3}
   - {fileID: 7453301371685333525, guid: 7cf8da3369b09df4292365c6c0fafc90, type: 3}
   head: {fileID: 5961063572021939484}
   leftHand: {fileID: 7332308562648895091}
