@@ -1,12 +1,14 @@
+// Written by Aidan Urbina
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ChickenStats : MonoBehaviour
 {
+    // Methods
     public int currHealth;
     public int maxHealth;
-
     public bool isDead = false;
 
     // Start is called before the first frame update
@@ -21,6 +23,9 @@ public class ChickenStats : MonoBehaviour
     {
         CheckHealth();
     }
+
+
+    // Methods
 
     public void CheckHealth()
     {

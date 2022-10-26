@@ -1,10 +1,12 @@
+// Written by Aidan Urbina
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-
+    // variables
     public GameObject[] spawners;
     public GameObject enemy;
 
@@ -19,12 +21,6 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    private void SpawnEnemy()
-    {
-        int spawnerId = Random.Range(0, spawners.Length);
-        Instantiate(enemy, spawners[spawnerId].transform.position, spawners[spawnerId].transform.rotation);
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -32,5 +28,12 @@ public class Spawner : MonoBehaviour
         {
             SpawnEnemy();
         }
+    }
+
+    // spawn method
+    private void SpawnEnemy()
+    {
+        int spawnerId = Random.Range(0, spawners.Length);
+        Instantiate(enemy, spawners[spawnerId].transform.position, spawners[spawnerId].transform.rotation);
     }
 }

@@ -1,3 +1,5 @@
+// Written by Aidan Urbina
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,15 +7,16 @@ using UnityEngine.AI;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
 
+// Inherit from Chicken Stats 
 public class Chicken : ChickenStats
 {
+    // variables
     private Rigidbody[] rbs;
     public Transform myTarget;
     public Transform currentTarget;
     public NavMeshAgent myAgent;
     public int range;
     public float distance;
-    //public Vector3 startPos;
     [SerializeField] float stoppingDistance;
     Animator anim;
 
@@ -21,7 +24,6 @@ public class Chicken : ChickenStats
     void Start()
     {
         InvokeRepeating("DistCheck", 0, 0.5f);
-        //startPos = this.transform.position;
         myAgent = GetComponent<NavMeshAgent>();
         rbs = GetComponentsInChildren<Rigidbody>();
         DisactivateRagdoll();
@@ -35,23 +37,13 @@ public class Chicken : ChickenStats
     {
         CheckHealth();
         transform.LookAt(myTarget);
-        /*
-        if (currentTarget != null)
-        {
-            myAgent.destination = currentTarget.transform.position;
-        }
-        else if (myAgent.destination != startPos)
-        {
-            myAgent.destination = startPos;
-            anim.SetBool("isWalking", true);
-        }
-        */
+
+        // If else statements to check distance from enemy and call certain method
 
         if ( distance < stoppingDistance)
         {
             Attack();
         }
-
 
         else
         {
@@ -65,21 +57,12 @@ public class Chicken : ChickenStats
                 FindTarget();
             }
         }
-
-        if (currHealth >= maxHealth)
-        {
-            currHealth = maxHealth;
-        }
-        if (currHealth <= 0)
-        {
-            currHealth = 0;
-            isDead = true;
-            Die();
-        }
     }
 
 
-    void ActivateRagdoll()
+    // methods 
+
+    public void ActivateRagdoll()
     {
         foreach (var item in rbs)
         {
@@ -87,7 +70,7 @@ public class Chicken : ChickenStats
         }
     }
 
-    void DisactivateRagdoll()
+    public void DisactivateRagdoll()
     {
         foreach (var item in rbs)
         {
@@ -95,6 +78,8 @@ public class Chicken : ChickenStats
         }
     }
     
+    // check distance from enenmy
+
     public void DistCheck()
     {
          float dist = Vector3.Distance(this.transform.position, myTarget.transform.position);
@@ -104,15 +89,9 @@ public class Chicken : ChickenStats
             currentTarget = myTarget;
             distance = dist;
         }
-        /*
-        else if (dist > range)
-        {
-            currentTarget = null;
-            StopEnemy();
-        }
-        */
     }
     
+    // Stop enemy
 
     private void StopEnemy()
     {
@@ -123,11 +102,15 @@ public class Chicken : ChickenStats
 
     }
 
+    // Attack player
+
     private void Attack()
     {
         anim.SetBool("isAttacking", true);
         myAgent.enabled = false;
     }
+    
+    // Find current target
 
     private void FindTarget()
     {
@@ -137,6 +120,8 @@ public class Chicken : ChickenStats
         myAgent.SetDestination(myTarget.transform.position);
         
     }
+
+    // Die method
 
     public override void Die()
     {
