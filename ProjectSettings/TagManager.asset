@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Chicken
+  - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - UI
   - Player
   - Interactable
-  - 
+  - Grass Blend Layer
   - 
   - 
   - 
