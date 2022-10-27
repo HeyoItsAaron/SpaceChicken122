@@ -2055,8 +2055,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1151754908}
-  - component: {fileID: 1151754909}
   - component: {fileID: 1151754910}
+  - component: {fileID: 1151754909}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -2088,7 +2088,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1151754906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70663236be01a27468f3ca1f55d44ac7, type: 3}
+  m_Script: {fileID: 11500000, guid: 68c4db57df3e49b489bf912cf8d4d63b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1151754910
@@ -2100,10 +2100,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1151754906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a6cf751debd11541b13e59b6330732e, type: 3}
+  m_Script: {fileID: 11500000, guid: 450b0aaf4bd21294f935ca0133471afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultRooms: []
+  defaultRooms:
+  - Name: Training Grounds
+    sceneIndex: 1
+    maxPlayer: 10
+  - Name: Game
+    sceneIndex: 2
+    maxPlayer: 10
   roomUI: {fileID: 0}
 --- !u!1001 &1215191939
 PrefabInstance:
