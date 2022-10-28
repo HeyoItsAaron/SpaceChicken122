@@ -10,43 +10,29 @@ using UnityEngine.SceneManagement;
 public class CharacterSelection : MonoBehaviour
 {
     //class variables
-
-    public GameObject[] avatars;    //make sure this is same order as in Network Player prefab
-    public int avatarIndex = 0;
-    public int currentScene;
+    public GameObject[] characters;
+    public int selectedCharacter = 0;
 
     //methods
-
-    void Start()
+    public void NextCharacter()
     {
-        currentScene = SceneManager.GetActiveScene().buildIndex;
+        characters[selectedCharacter].SetActive(false);
+        selectedCharacter = (selectedCharacter + 1) % characters.Length;
+        characters[selectedCharacter].SetActive(true);
     }
-
-    //Displays the next avatar in the array created above
-    public void NextAvatar()
+    public void PreviousCharacter()
     {
-        avatars[avatarIndex].SetActive(false);
-        avatarIndex = (avatarIndex + 1) % avatars.Length;
-        avatars[avatarIndex].SetActive(true);
-    }
-
-    //Displays the previous avatar in the array created above, if the index is below zero it starts back at the
-        // highest index that exists
-    public void PreviousAvatar()
-    {
-        avatars[avatarIndex].SetActive(false);
-        avatarIndex--;
-        if (avatarIndex < 0)
+        characters[selectedCharacter].SetActive(false);
+        selectedCharacter--;
+        if (selectedCharacter < 0)
         {
-            avatarIndex += avatars.Length;
+            selectedCharacter += characters.Length;
         }
-        avatars[avatarIndex].SetActive(true);
+        characters[selectedCharacter].SetActive(true);
     }
-
-    //Selects this avatar to load into the game
-    public void SetAvatarID() // aka Select
+    public void StartGame()
     {
-        PlayerPrefs.SetInt("AvatarID", avatarIndex);
-        
+        PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 }

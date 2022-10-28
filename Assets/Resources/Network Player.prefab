@@ -370,9 +370,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avatars:
   - {fileID: 7453301371685333525, guid: 7cf8da3369b09df4292365c6c0fafc90, type: 3}
-  - {fileID: 7453301371685333525, guid: 7cf8da3369b09df4292365c6c0fafc90, type: 3}
-  - {fileID: 7453301371685333525, guid: 7cf8da3369b09df4292365c6c0fafc90, type: 3}
-  - {fileID: 7453301371685333525, guid: 7cf8da3369b09df4292365c6c0fafc90, type: 3}
   head: {fileID: 5961063572021939484}
   leftHand: {fileID: 7332308562648895091}
   rightHand: {fileID: 6688542128382940630}
