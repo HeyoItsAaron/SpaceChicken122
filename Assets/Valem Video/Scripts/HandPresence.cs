@@ -23,18 +23,19 @@ public class HandPresence : MonoBehaviour
 
     void TryInitialize()
     {
-        List<InputDevice> devices = new List<InputDevice>();
+        List<InputDevice> inputDevices = new List<InputDevice>();
 
-        InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, devices);
+        InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, inputDevices);
 
-        foreach (var item in devices)
+        foreach (var device in inputDevices)
         {
-            Debug.Log(item.name + item.characteristics);
+            Debug.Log(device.name + device.characteristics);
         }
 
-        if (devices.Count > 0)
+        //Check if we have any controlers at all
+        if (inputDevices.Count > 0)
         {
-            targetDevice = devices[0];
+            targetDevice = inputDevices[0];
             GameObject prefab = controllerPrefabs.Find(controller => controller.name == targetDevice.name);
             if (prefab)
             {
