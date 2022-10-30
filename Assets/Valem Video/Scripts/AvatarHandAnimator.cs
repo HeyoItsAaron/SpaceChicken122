@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using static Zinnia.Rule.DominantControllerRule;
 
 //THIS SCRIPT ATTACHES TO THE AVATAR TO CONTROL HAND ANIMATIONS
 
@@ -15,9 +16,9 @@ public class AvatarHandAnimator : MonoBehaviour
 
     //this says the characteristics I'm looking for are tracked in 3d space AND handheld, eliminating the possibility for the headset to be picked up
     private InputDeviceCharacteristics desiredCharacteristics = InputDeviceCharacteristics.TrackedDevice | InputDeviceCharacteristics.HeldInHand;
-
     private InputDevice targetDevice;
     private Animator avatarAnimator;
+    public AvatarHand hand;
     List<InputDevice> vrHandControllers = new List<InputDevice>();
 
     //methods
@@ -39,106 +40,52 @@ public class AvatarHandAnimator : MonoBehaviour
     // Update is called once per frame
     void UpdateHandAnimation()
     {
-        if(targetDevice.characteristics == InputDeviceCharacteristics.Left)
+        //checks controller inputs
+
+        //Trigger Pull
+            //checks trigger input to set animator
+        if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerPullValue))
         {
-            //checks left controller inputs
-
-            //Trigger Pull
-                //checks left trigger input to set animator
-            if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerPullValue))
-            {
-                avatarAnimator.SetFloat("Left Trigger", triggerPullValue);
-            }
-            else
-            {
-                avatarAnimator.SetFloat("Left Trigger", 0);
-            }
-
-            //Grip
-                //checks left grab input to set animator
-            if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float GripPressValue))
-            {
-                avatarAnimator.SetFloat("Left Grab", GripPressValue);
-            }
-            else
-            {
-                avatarAnimator.SetFloat("Left Grab", 0);
-            }
-
-            //pointer finger
-                //checks whether or not the trigger button is touched, if not then it points
-            if (!targetDevice.TryGetFeatureValue(CommonUsages.triggerButton, out bool isTriggerTouched))
-            {
-                avatarAnimator.SetLayerWeight(avatarAnimator.GetLayerIndex("Left Point Layer"), 1);
-            }
-            else
-            {
-                avatarAnimator.SetLayerWeight(avatarAnimator.GetLayerIndex("Left Point Layer"), 0);
-            }
-
-            //thumb
-                //checks whether or not the joystick button is touched, if not then it puts a thumbs up
-            if (!targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxisTouch, out bool isJoystickTouched))
-            {
-                avatarAnimator.SetLayerWeight(avatarAnimator.GetLayerIndex("Left Thumb Layer"), 1);
-            }
-            else
-            {
-                avatarAnimator.SetLayerWeight(avatarAnimator.GetLayerIndex("Left Thumb Layer"), 0);
-            }
+            avatarAnimator.SetFloat(hand.triggerPullParameter, triggerPullValue);
+            Debug.Log(targetDevice.name + targetDevice.characteristics + "Has pulled the left trigger");
+        }
+        else
+        {
+            avatarAnimator.SetFloat(hand.triggerPullParameter, 0);
         }
 
-        //checks right controller inputs
-
-        if (targetDevice.characteristics == InputDeviceCharacteristics.Right)
+        //Grip
+            //checks left grab input to set animator
+        if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float GripPressValue))
         {
-            //checks left controller inputs
-
-            //Trigger Pull
-                //checks left trigger input to set animator
-            if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerPullValue))
-            {
-                avatarAnimator.SetFloat("Right Trigger", triggerPullValue);
-            }
-            else
-            {
-                avatarAnimator.SetFloat("Right Trigger", 0);
-            }
-
-            //Grip
-                //checks left grab input to set animator
-            if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float GripPressValue))
-            {
-                avatarAnimator.SetFloat("Right Grab", GripPressValue);
-            }
-            else
-            {
-                avatarAnimator.SetFloat("Right Grab", 0);
-            }
-
-            //pointer finger
-                //checks whether or not the trigger button is touched, if not then it points
-            if (!targetDevice.TryGetFeatureValue(CommonUsages.triggerButton, out bool isTriggerTouched))
-            {
-                avatarAnimator.SetLayerWeight(avatarAnimator.GetLayerIndex("Right Point Layer"), 1);
-            }
-            else
-            {
-                avatarAnimator.SetLayerWeight(avatarAnimator.GetLayerIndex("Right Point Layer"), 0);
-            }
-
-            //thumb
-                //checks whether or not the joystick button is touched, if not then it puts a thumbs up
-            if (!targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxisTouch, out bool isJoystickTouched))
-            {
-                avatarAnimator.SetLayerWeight(avatarAnimator.GetLayerIndex("Right Thumb Layer"), 1);
-            }
-            else
-            {
-                avatarAnimator.SetLayerWeight(avatarAnimator.GetLayerIndex("Right Thumb Layer"), 0);
-            }
+            avatarAnimator.SetFloat(hand.grabPressParameter, GripPressValue);
         }
-        
+        else
+        {
+            avatarAnimator.SetFloat(hand.grabPressParameter, 0);
+        }
+
+        //pointer finger
+            //checks whether or not the trigger button is touched, if not then it points
+        if (!targetDevice.TryGetFeatureValue(CommonUsages.triggerButton, out bool isTriggerTouched))
+        {
+            avatarAnimator.SetLayerWeight(avatarAnimator.GetLayerIndex(hand.triggerTouchLayer), 1);
+        }
+        else
+        {
+            avatarAnimator.SetLayerWeight(avatarAnimator.GetLayerIndex(hand.triggerTouchLayer), 0);
+        }
+
+        //thumb
+            //checks whether or not the joystick button is touched, if not then it puts a thumbs up
+        if (!targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxisTouch, out bool isJoystickTouched))
+        {
+            avatarAnimator.SetLayerWeight(avatarAnimator.GetLayerIndex(hand.ThumbTouchLayer), 1);
+        }
+        else
+        {
+            avatarAnimator.SetLayerWeight(avatarAnimator.GetLayerIndex(hand.ThumbTouchLayer), 0);
+        }
     }
     void Start()
     {
