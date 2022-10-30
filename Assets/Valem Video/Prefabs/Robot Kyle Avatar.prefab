@@ -1269,7 +1269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerPullParameter: Left Trigger
-  grabPullParameter: Left Grab
+  grabPressParameter: Left Grab
   triggerTouchLayer: Left Point Layer
   ThumbTouchLayer: Left Thumb Layer
   Controller: LeftHand Controller
@@ -1815,6 +1815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ac3c18ca6d95e4e9f6518cecf8fd63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hand: {fileID: 7457186253688355734}
 --- !u!1 &6415466530468603287
 GameObject:
   m_ObjectHideFlags: 0
@@ -2241,7 +2242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerPullParameter: Right Trigger
-  grabPullParameter: Right Grab
+  grabPressParameter: Right Grab
   triggerTouchLayer: Right Point Layer
   ThumbTouchLayer: Right Thumb Layer
   Controller: RightHand Controller

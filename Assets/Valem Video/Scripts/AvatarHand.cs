@@ -17,39 +17,6 @@ public class AvatarHand : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
-    {
-        avatarAnimator = GetComponent<Animator>();
-    }
+    
 
-    // Update is called once per frame
-    void Update()
-    {
-        AnimateHand();
-    }
-
-    internal void SetGrip()
-    {
-
-    }
-
-    internal void SetTrigger()
-    {
-
-    }
-
-    internal void SetGripTouch()
-    {
-
-    }
-
-    internal void SetTriggerTouch()
-    {
-
-    }
-
-    void animateHand()
-    {
-        if()
-    }
 }

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
-using static Zinnia.Rule.DominantControllerRule;
 
 //THIS SCRIPT ATTACHES TO THE AVATAR TO CONTROL HAND ANIMATIONS
 
@@ -19,7 +18,6 @@ public class AvatarHandAnimator : MonoBehaviour
     private InputDevice targetDevice;
     private Animator avatarAnimator;
     public AvatarHand hand;
-    List<InputDevice> vrHandControllers = new List<InputDevice>();
 
     //methods
 
@@ -27,13 +25,21 @@ public class AvatarHandAnimator : MonoBehaviour
     void GetControllers()
     {
         //makes an empty list of an input device with the same characteristics that aren't mentioned yet
-        //List<InputDevice> vrHandControllers = new List<InputDevice>();
+        List<InputDevice> vrHandControllers = new List<InputDevice>();
 
         //fills the above list with devices having a couple similar characteristics as defined in desiredCharacteristics
         InputDevices.GetDevicesWithCharacteristics(desiredCharacteristics, vrHandControllers);
         foreach (var controller in vrHandControllers)
         {
             Debug.Log(controller.name + controller.characteristics);
+        }
+
+        if (vrHandControllers.Count > 0)
+        {
+            targetDevice = vrHandControllers[0];
+
+            //grabs the animator of the avatar
+            avatarAnimator = GetComponent<Animator>();
         }
     }
 
@@ -89,13 +95,17 @@ public class AvatarHandAnimator : MonoBehaviour
     }
     void Start()
     {
-        //grabs the animator of the avatar
-        avatarAnimator = GetComponent<Animator>();
         GetControllers();
     }
     void update()
     {
-                UpdateHandAnimation();
-
+        if (!targetDevice.isValid)
+        {
+            GetControllers();
+        }
+        else
+        {
+            UpdateHandAnimation();
+        }
     }
 }
