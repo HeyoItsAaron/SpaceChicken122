@@ -1224,55 +1224,6 @@ Transform:
   m_Father: {fileID: 5363954201229624379}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4637459914839543053
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2839040099649844988}
-  - component: {fileID: 3560820797036769667}
-  m_Layer: 0
-  m_Name: LeftHand
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2839040099649844988
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4637459914839543053}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7132242275639809971}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3560820797036769667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4637459914839543053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12dd4dd108c8b1a4e8ca3e862312d49c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerPullParameter: Left Trigger
-  grabPressParameter: Left Grab
-  triggerTouchLayer: Left Point Layer
-  ThumbTouchLayer: Left Thumb Layer
-  Controller: LeftHand Controller
 --- !u!1 &4874636978868792210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1611,7 +1562,7 @@ GameObject:
   - component: {fileID: 2846385195808029936}
   - component: {fileID: 2846385195808029937}
   - component: {fileID: 2846385195808029934}
-  - component: {fileID: 8840791931541163544}
+  - component: {fileID: 514340723062742603}
   m_Layer: 0
   m_Name: Robot Kyle Avatar
   m_TagString: Untagged
@@ -1634,8 +1585,6 @@ Transform:
   - {fileID: 6649275742075058038}
   - {fileID: 5419697144716415699}
   - {fileID: 2846385195627710542}
-  - {fileID: 2839040099649844988}
-  - {fileID: 6708718113059461504}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1784,7 +1733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c68e0954e2cc7428d4eae4973ceca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footOffset: {x: 0, y: 0.1, z: 0}
+  footOffset: {x: 0, y: 0, z: 0}
   rightFootPosWeight: 1
   rightFootRotWeight: 1
   leftFootPosWeight: 1
@@ -1803,7 +1752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedTreshold: 0.2
   smoothing: 0.1
---- !u!114 &8840791931541163544
+--- !u!114 &514340723062742603
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1812,10 +1761,106 @@ MonoBehaviour:
   m_GameObject: {fileID: 6098306378602784160}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38ac3c18ca6d95e4e9f6518cecf8fd63, type: 3}
+  m_Script: {fileID: 11500000, guid: 99cd8a8c413c6854ebe8524817ab8bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 7457186253688355734}
+  leftTriggerPull:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Left Trigger Pull
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: b883e52b-8aab-4b80-a303-d6ea82351bfa
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  leftGrabPull:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Left Grab Pull
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: e1ebed79-c147-4500-97ed-9077ddd55f42
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  leftPointTouch:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Left Point Touch
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 22785db7-1a57-4777-9b2a-af9c301c36ed
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 7153035638531172109, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  leftThumbTouch:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Left Thumb Touch
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: e96f85ce-4480-4314-8ee2-b20a4a86eda9
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 6781557114547909812, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rightTriggerPull:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Trigger Pull
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 544336af-01b6-4296-b6ad-1bb4520023da
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rightGrabPull:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Grab Pull
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: df81590b-becd-46d0-9069-7eb8bfdbcf6f
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rightPointTouch:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Point Touch
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: e922e744-fb4c-4cbc-bbf1-0d5505595df8
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 7717994775708171398, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rightThumbTouch:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Thumb Touch
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: d070ec8f-4666-4913-86c4-cc31647e0e7c
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 2935519080852210747, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  avatarAnimator: {fileID: 2846385195808029938}
 --- !u!1 &6415466530468603287
 GameObject:
   m_ObjectHideFlags: 0
@@ -2197,55 +2242,6 @@ Transform:
   m_Father: {fileID: 4234476445375985757}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8437069427324049505
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6708718113059461504}
-  - component: {fileID: 7457186253688355734}
-  m_Layer: 0
-  m_Name: RightHand
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6708718113059461504
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8437069427324049505}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7132242275639809971}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7457186253688355734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8437069427324049505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12dd4dd108c8b1a4e8ca3e862312d49c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerPullParameter: Right Trigger
-  grabPressParameter: Right Grab
-  triggerTouchLayer: Right Point Layer
-  ThumbTouchLayer: Right Thumb Layer
-  Controller: RightHand Controller
 --- !u!1 &8573356327307317952
 GameObject:
   m_ObjectHideFlags: 0
