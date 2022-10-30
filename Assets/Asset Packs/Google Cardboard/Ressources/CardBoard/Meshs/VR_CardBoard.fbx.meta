@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 081dd9220c2d5ea4684ac8d4172c523d
+timeCreated: 1449529700
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: A
+    100002: B
+    100004: Button 1
+    100006: Button 2
+    100008: C
+    100010: D
+    100012: E
+    100014: F
+    100016: //RootNode
+    100018: H
+    100020: J
+    100022: K
+    100024: L
+    100026: Lens L
+    100028: Lens R
+    100030: M
+    100032: N
+    100034: RFID tag
+    100036: Velcro A1
+    100038: Velcro A2
+    100040: Velcro B1
+    100042: Velcro B2
+    400000: A
+    400002: B
+    400004: Button 1
+    400006: Button 2
+    400008: C
+    400010: D
+    400012: E
+    400014: F
+    400016: //RootNode
+    400018: H
+    400020: J
+    400022: K
+    400024: L
+    400026: Lens L
+    400028: Lens R
+    400030: M
+    400032: N
+    400034: RFID tag
+    400036: Velcro A1
+    400038: Velcro A2
+    400040: Velcro B1
+    400042: Velcro B2
+    2300000: A
+    2300002: B
+    2300004: Button 1
+    2300006: Button 2
+    2300008: C
+    2300010: D
+    2300012: E
+    2300014: F
+    2300016: H
+    2300018: J
+    2300020: K
+    2300022: L
+    2300024: Lens L
+    2300026: Lens R
+    2300028: M
+    2300030: N
+    2300032: RFID tag
+    2300034: Velcro A1
+    2300036: Velcro A2
+    2300038: Velcro B1
+    2300040: Velcro B2
+    3300000: A
+    3300002: B
+    3300004: Button 1
+    3300006: Button 2
+    3300008: C
+    3300010: D
+    3300012: E
+    3300014: F
+    3300016: H
+    3300018: J
+    3300020: K
+    3300022: L
+    3300024: Lens L
+    3300026: Lens R
+    3300028: M
+    3300030: N
+    3300032: RFID tag
+    3300034: Velcro A1
+    3300036: Velcro A2
+    3300038: Velcro B1
+    3300040: Velcro B2
+    4300000: Velcro B2
+    4300002: Velcro A2
+    4300004: Velcro B1
+    4300006: Velcro A1
+    4300008: RFID tag
+    4300010: Button 2
+    4300012: Lens R
+    4300014: Lens L
+    4300016: Button 1
+    4300018: D
+    4300020: E
+    4300022: F
+    4300024: H
+    4300026: J
+    4300028: K
+    4300030: L
+    4300032: M
+    4300034: N
+    4300036: C
+    4300038: B
+    4300040: A
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
