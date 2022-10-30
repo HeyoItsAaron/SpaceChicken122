@@ -9,7 +9,7 @@ public class DefaultRoom
 {
     public string Name;
     public int sceneIndex;
-    public int maxPLayer;
+    public int maxPlayer;
 }
 
 public class NetworkManager : MonoBehaviourPunCallbacks
@@ -20,12 +20,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public void ConnectToServer()
     {
         PhotonNetwork.ConnectUsingSettings();
-        Debug.Log("Try Connect To Server...");
+        Debug.Log("Trying to connect to server...");
     }
 
     public override void OnConnectedToMaster()
     {
-        Debug.Log("Connected To Server.");
+        Debug.Log("Connected to server");
         base.OnConnectedToMaster();
         PhotonNetwork.JoinLobby();
     }
@@ -33,7 +33,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         base.OnJoinedLobby();
-        Debug.Log("WE JOINED THE LOBBY");
+        Debug.Log("Lobby joined successfully.");
         roomUI.SetActive(true);
     }
 
@@ -46,16 +46,21 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         //CREATE THE ROOM
         RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = (byte)roomSettings.maxPLayer;
+        roomOptions.MaxPlayers = (byte)roomSettings.maxPlayer;
         roomOptions.IsVisible = true;
         roomOptions.IsOpen = true;
 
         PhotonNetwork.JoinOrCreateRoom(roomSettings.Name, roomOptions, TypedLobby.Default);
     }
+    public void JoinNextRoom()
+    {
+        PhotonNetwork.ConnectUsingSettings();
+        Debug.Log("Game joined successfully.");
+    }
 
     public override void OnJoinedRoom()
     {
-        Debug.Log("Joined a Room");
+        Debug.Log("Room joined successfully.");
         base.OnJoinedRoom();
     }
 
