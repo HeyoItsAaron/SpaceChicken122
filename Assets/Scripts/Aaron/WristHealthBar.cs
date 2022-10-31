@@ -12,9 +12,18 @@ public class WristHealthBar : MonoBehaviour
 
     //variables
     public Image healthBar;
+    public Image powerUpUsageBar;
+    public Image ammoCountBar;
 
     [Range(0, 100)]
     public float playerHealth = 0;
+
+    [Range(0, 100)]
+    public float playerPowerUpUsage = 0;
+
+    [Range(0, 100)]
+    public float playerAmmoCount = 0;
+
 
 
 
@@ -34,6 +43,15 @@ public class WristHealthBar : MonoBehaviour
     {
         float amount = (healthValue / 100.0f) * 360.0f / 360;
         healthBar.fillAmount = amount;
-
+    }
+    void PowerUpUsageChange(float PowerUpUsage)
+    {
+        float amount = (PowerUpUsage / 100.0f) * 180.0f / 360;
+        powerUpUsageBar.fillAmount = amount;
+    }
+        void AmmoCountChange(float AmmoCount)
+    {
+        float amount = (AmmoCount / 100.0f) * 180.0f / 360;
+        ammoCountBar.fillAmount = amount;
     }
 }
