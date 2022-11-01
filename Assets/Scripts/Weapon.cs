@@ -9,6 +9,9 @@ public class Weapon : MonoBehaviour
     public Transform spawnPoint;
     public float fireSpeed = 20;
 
+    public ParticleSystem muzzleFlash;
+
+
 
     void Start()
     {
@@ -24,6 +27,7 @@ public class Weapon : MonoBehaviour
     public void FireBullet(ActivateEventArgs arg)
     {
         GameObject spawnedBullet = Instantiate(bullet);
+        muzzleFlash.Play();
         spawnedBullet.transform.position = spawnPoint.position;
         spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireSpeed;
         Destroy(spawnedBullet, 5);
