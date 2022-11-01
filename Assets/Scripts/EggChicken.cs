@@ -2,13 +2,16 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using Photon.Pun.Demo.Asteroids;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
+using UnityEngine.XR.Interaction.Toolkit;
 using static UnityEngine.GraphicsBuffer;
 
 // Inherit from Chicken Stats 
-public class Chicken : ChickenStats
+public class EggChicken : ChickenStats
 {
     // variables
     private Rigidbody[] rbs;
@@ -19,9 +22,14 @@ public class Chicken : ChickenStats
     public float distance;
     [SerializeField] float stoppingDistance;
     Animator anim;
-    float lastAttackTime = 0;
-    float attackCooldown = 2;
-    private int damage = 10;
+    [SerializeField] int damage;
+
+    //test variables
+    public Transform spawnPoint;
+    float speed = 5;
+    float fireRate = 3f;
+    float waitTime = 1.8f;
+    public GameObject egg;
 
     // Start is called before the first frame update
     void Start()
@@ -33,19 +41,35 @@ public class Chicken : ChickenStats
         anim = GetComponent<Animator>();
         maxHealth = 100;
         currHealth = maxHealth;
+        distance = 100000000;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        //stoppingDistance = range;
         CheckHealth();
-        transform.LookAt(myTarget);
+        transform.LookAt(currentTarget);
+        fireRate -= Time.deltaTime;
+
 
         // If else statements to check distance from enemy and call certain method
 
-        if ( distance < stoppingDistance)
+        if (distance < stoppingDistance)
         {
-            Attack();
+            if (fireRate <= 0)
+            {
+                waitTime -= Time.deltaTime;
+                Attack();
+                if(waitTime <= 0)
+                {
+                    FireEgg(currentTarget);
+                    fireRate = 3f;
+                    waitTime = 1.3f;
+                }
+                
+            }
         }
 
         else
@@ -53,6 +77,7 @@ public class Chicken : ChickenStats
             if (distance > range)
             {
                 StopEnemy();
+                waitTime = 1.8f;
             }
 
             if (distance < range)
@@ -60,6 +85,7 @@ public class Chicken : ChickenStats
                 FindTarget();
             }
         }
+
     }
 
 
@@ -80,12 +106,12 @@ public class Chicken : ChickenStats
             item.isKinematic = true;
         }
     }
-    
+
     // check distance from enenmy
 
     public void DistCheck()
     {
-         float dist = Vector3.Distance(this.transform.position, myTarget.transform.position);
+        float dist = Vector3.Distance(this.transform.position, myTarget.transform.position);
 
         if (dist < range)
         {
@@ -93,7 +119,7 @@ public class Chicken : ChickenStats
             distance = dist;
         }
     }
-    
+
     // Stop enemy
 
     private void StopEnemy()
@@ -101,7 +127,7 @@ public class Chicken : ChickenStats
         anim.SetBool("isWalking", false);
         anim.SetBool("isAttacking", false);
         myAgent.enabled = false;
-        
+
 
     }
 
@@ -111,24 +137,30 @@ public class Chicken : ChickenStats
     {
         anim.SetBool("isAttacking", true);
         myAgent.enabled = false;
-        if(Time.time - lastAttackTime >= attackCooldown)
-        {
-            lastAttackTime = Time.time;
-            currentTarget.GetComponent<TestPlayer>().TakeDamage(damage);
-            currentTarget.GetComponent<TestPlayer>().CheckHealth();
-        }
         
     }
+
+    // spawn egg
+
     
+    public void FireEgg(Transform target)
+    {
+        GameObject spawnedEgg = Instantiate(egg);
+        spawnedEgg.transform.position = Vector3.Lerp(spawnPoint.position, target.transform.position, speed * Time.deltaTime);
+        spawnedEgg.GetComponent<Rigidbody>().velocity = transform.forward * speed;
+        Destroy(spawnedEgg, 5);
+    }
+    
+
     // Find current target
 
     private void FindTarget()
     {
         myAgent.enabled = true;
         anim.SetBool("isWalking", true);
-        anim.SetBool("isAttacking", false);
+        //anim.SetBool("isAttacking", false);
         myAgent.SetDestination(myTarget.transform.position);
-        
+
     }
 
     // Die method

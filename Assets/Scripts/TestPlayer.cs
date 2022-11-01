@@ -1,10 +1,8 @@
-// Written by Aidan Urbina
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChickenStats : MonoBehaviour
+public class TestPlayer : MonoBehaviour
 {
     public int currHealth;
     public int maxHealth;
@@ -22,13 +20,9 @@ public class ChickenStats : MonoBehaviour
     {
         CheckHealth();
     }
-
-
-    // Methods
-
     public void CheckHealth()
     {
-        if(currHealth >= maxHealth)
+        if (currHealth >= maxHealth)
         {
             currHealth = maxHealth;
         }
@@ -43,5 +37,10 @@ public class ChickenStats : MonoBehaviour
     public virtual void Die()
     {
         Destroy(gameObject);
+    }
+
+    public void TakeDamage(int damage)
+    { 
+        currHealth -= damage;
     }
 }
