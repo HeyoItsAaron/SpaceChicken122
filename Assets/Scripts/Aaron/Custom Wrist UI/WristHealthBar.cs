@@ -37,21 +37,23 @@ public class WristHealthBar : MonoBehaviour
     void Update()
     {
         HealthChange(playerHealth);
+        PowerUpUsageChange(playerPowerUpUsage);
+        AmmoCountChange(playerAmmoCount);
     }
 
     void HealthChange(float healthValue)
     {
-        float amount = (healthValue / 100.0f) * 360.0f / 360;
+        float amount = (healthValue / 100.0f);
         healthBar.fillAmount = amount;
     }
     void PowerUpUsageChange(float PowerUpUsage)
     {
-        float amount = (PowerUpUsage / 100.0f) * 180.0f / 360;
+        float amount = (PowerUpUsage / 100.0f);
         powerUpUsageBar.fillAmount = amount;
     }
         void AmmoCountChange(float AmmoCount)
     {
-        float amount = (AmmoCount / 100.0f) * 180.0f / 360;
+        float amount = (AmmoCount / 100.0f);
         ammoCountBar.fillAmount = amount;
     }
 }
