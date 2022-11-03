@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: fd18fa01d686e5c458e5420be40a7bb5
+timeCreated: 1485525406
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: crystal_two_1
+    100004: crystal_two_10
+    100006: crystal_two_11
+    100008: crystal_two_12
+    100010: crystal_two_13
+    100012: crystal_two_14
+    100014: crystal_two_15
+    100016: crystal_two_16
+    100018: crystal_two_17
+    100020: crystal_two_18
+    100022: crystal_two_19
+    100024: crystal_two_2
+    100026: crystal_two_20
+    100028: crystal_two_21
+    100030: crystal_two_3
+    100032: crystal_two_4
+    100034: crystal_two_5
+    100036: crystal_two_6
+    100038: crystal_two_7
+    100040: crystal_two_8
+    100042: crystal_two_9
+    400000: //RootNode
+    400002: crystal_two_1
+    400004: crystal_two_10
+    400006: crystal_two_11
+    400008: crystal_two_12
+    400010: crystal_two_13
+    400012: crystal_two_14
+    400014: crystal_two_15
+    400016: crystal_two_16
+    400018: crystal_two_17
+    400020: crystal_two_18
+    400022: crystal_two_19
+    400024: crystal_two_2
+    400026: crystal_two_20
+    400028: crystal_two_21
+    400030: crystal_two_3
+    400032: crystal_two_4
+    400034: crystal_two_5
+    400036: crystal_two_6
+    400038: crystal_two_7
+    400040: crystal_two_8
+    400042: crystal_two_9
+    2300000: crystal_two_1
+    2300002: crystal_two_10
+    2300004: crystal_two_11
+    2300006: crystal_two_12
+    2300008: crystal_two_13
+    2300010: crystal_two_14
+    2300012: crystal_two_15
+    2300014: crystal_two_16
+    2300016: crystal_two_17
+    2300018: crystal_two_18
+    2300020: crystal_two_19
+    2300022: crystal_two_2
+    2300024: crystal_two_20
+    2300026: crystal_two_21
+    2300028: crystal_two_3
+    2300030: crystal_two_4
+    2300032: crystal_two_5
+    2300034: crystal_two_6
+    2300036: crystal_two_7
+    2300038: crystal_two_8
+    2300040: crystal_two_9
+    3300000: crystal_two_1
+    3300002: crystal_two_10
+    3300004: crystal_two_11
+    3300006: crystal_two_12
+    3300008: crystal_two_13
+    3300010: crystal_two_14
+    3300012: crystal_two_15
+    3300014: crystal_two_16
+    3300016: crystal_two_17
+    3300018: crystal_two_18
+    3300020: crystal_two_19
+    3300022: crystal_two_2
+    3300024: crystal_two_20
+    3300026: crystal_two_21
+    3300028: crystal_two_3
+    3300030: crystal_two_4
+    3300032: crystal_two_5
+    3300034: crystal_two_6
+    3300036: crystal_two_7
+    3300038: crystal_two_8
+    3300040: crystal_two_9
+    4300000: crystal_two_1
+    4300002: crystal_two_2
+    4300004: crystal_two_3
+    4300006: crystal_two_4
+    4300008: crystal_two_5
+    4300010: crystal_two_6
+    4300012: crystal_two_7
+    4300014: crystal_two_8
+    4300016: crystal_two_9
+    4300018: crystal_two_10
+    4300020: crystal_two_11
+    4300022: crystal_two_12
+    4300024: crystal_two_13
+    4300026: crystal_two_14
+    4300028: crystal_two_15
+    4300030: crystal_two_16
+    4300032: crystal_two_17
+    4300034: crystal_two_18
+    4300036: crystal_two_19
+    4300038: crystal_two_20
+    4300040: crystal_two_21
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
