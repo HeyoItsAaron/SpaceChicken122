@@ -1,0 +1,195 @@
+fileFormatVersion: 2
+guid: 78cfc2537f602ac47939724dedbdba31
+timeCreated: 1484663743
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Joint_1
+    100004: Joint_1_2
+    100006: Joint_1_3
+    100008: Joint_2
+    100010: Joint_2_2
+    100012: Joint_2_3
+    100014: Joint_3
+    100016: Joint_3_2
+    100018: Joint_3_3
+    100020: portal_one
+    100022: portal_one_part1
+    100024: portal_one_part1_2
+    100026: portal_one_part1_3
+    100028: portal_one_part2
+    100030: portal_one_part2_2
+    100032: portal_one_part2_3
+    100034: portal_one_part3
+    100036: portal_one_part3_2
+    100038: portal_one_part3_3
+    400000: //RootNode
+    400002: Joint_1
+    400004: Joint_1_2
+    400006: Joint_1_3
+    400008: Joint_2
+    400010: Joint_2_2
+    400012: Joint_2_3
+    400014: Joint_3
+    400016: Joint_3_2
+    400018: Joint_3_3
+    400020: portal_one
+    400022: portal_one_part1
+    400024: portal_one_part1_2
+    400026: portal_one_part1_3
+    400028: portal_one_part2
+    400030: portal_one_part2_2
+    400032: portal_one_part2_3
+    400034: portal_one_part3
+    400036: portal_one_part3_2
+    400038: portal_one_part3_3
+    2300000: portal_one
+    3300000: portal_one
+    4300000: portal_one
+    4300002: portal_one_part1_3
+    4300004: portal_one_part2_3
+    4300006: portal_one_part3_3
+    7400000: Main
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: portal_one_part1_3
+    13700002: portal_one_part2_3
+    13700004: portal_one_part3_3
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Main
+      takeName: Main
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: portal_one
+        weight: 1
+      - path: portal_one/portal_one_part1_3
+        weight: 1
+      - path: portal_one/portal_one_part2_3
+        weight: 1
+      - path: portal_one/portal_one_part3_3
+        weight: 1
+      - path: portal_one_part1
+        weight: 1
+      - path: portal_one_part1_2
+        weight: 1
+      - path: portal_one_part1_2/Joint_1
+        weight: 1
+      - path: portal_one_part1_2/Joint_1/Joint_2
+        weight: 1
+      - path: portal_one_part1_2/Joint_1/Joint_2/Joint_3
+        weight: 1
+      - path: portal_one_part2
+        weight: 1
+      - path: portal_one_part2_2
+        weight: 1
+      - path: portal_one_part2_2/Joint_1_2
+        weight: 1
+      - path: portal_one_part2_2/Joint_1_2/Joint_2_2
+        weight: 1
+      - path: portal_one_part2_2/Joint_1_2/Joint_2_2/Joint_3_2
+        weight: 1
+      - path: portal_one_part3
+        weight: 1
+      - path: portal_one_part3_2
+        weight: 1
+      - path: portal_one_part3_2/Joint_1_3
+        weight: 1
+      - path: portal_one_part3_2/Joint_1_3/Joint_2_3
+        weight: 1
+      - path: portal_one_part3_2/Joint_1_3/Joint_2_3/Joint_3_3
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

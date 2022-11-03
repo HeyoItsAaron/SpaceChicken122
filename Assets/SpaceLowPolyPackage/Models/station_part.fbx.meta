@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: b0d2eaf2d737a2943a902c9328ed0abc
+timeCreated: 1484663744
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: plank1
+    100002: plank10
+    100004: plank11
+    100006: plank12
+    100008: plank2
+    100010: plank3
+    100012: plank4
+    100014: plank5
+    100016: plank6
+    100018: plank7
+    100020: plank8
+    100022: plank9
+    100024: //RootNode
+    100026: station_part_four
+    100028: station_part_four1
+    100030: station_part_one
+    100032: station_part_three
+    100034: station_part_three1
+    100036: station_part_three2
+    100038: station_part_two
+    100040: station_part_two1
+    100042: station_part_two2
+    400000: plank1
+    400002: plank10
+    400004: plank11
+    400006: plank12
+    400008: plank2
+    400010: plank3
+    400012: plank4
+    400014: plank5
+    400016: plank6
+    400018: plank7
+    400020: plank8
+    400022: plank9
+    400024: //RootNode
+    400026: station_part_four
+    400028: station_part_four1
+    400030: station_part_one
+    400032: station_part_three
+    400034: station_part_three1
+    400036: station_part_three2
+    400038: station_part_two
+    400040: station_part_two1
+    400042: station_part_two2
+    2300000: plank1
+    2300002: plank10
+    2300004: plank11
+    2300006: plank12
+    2300008: plank2
+    2300010: plank3
+    2300012: plank4
+    2300014: plank5
+    2300016: plank6
+    2300018: plank7
+    2300020: plank8
+    2300022: plank9
+    2300024: station_part_four
+    2300026: station_part_four1
+    2300028: station_part_one
+    2300030: station_part_three
+    2300032: station_part_three1
+    2300034: station_part_three2
+    2300036: station_part_two
+    2300038: station_part_two1
+    2300040: station_part_two2
+    3300000: plank1
+    3300002: plank10
+    3300004: plank11
+    3300006: plank12
+    3300008: plank2
+    3300010: plank3
+    3300012: plank4
+    3300014: plank5
+    3300016: plank6
+    3300018: plank7
+    3300020: plank8
+    3300022: plank9
+    3300024: station_part_four
+    3300026: station_part_four1
+    3300028: station_part_one
+    3300030: station_part_three
+    3300032: station_part_three1
+    3300034: station_part_three2
+    3300036: station_part_two
+    3300038: station_part_two1
+    3300040: station_part_two2
+    4300000: station_part_three
+    4300002: station_part_three1
+    4300004: station_part_three2
+    4300006: station_part_two
+    4300008: station_part_two1
+    4300010: station_part_two2
+    4300012: station_part_four
+    4300014: station_part_four1
+    4300016: plank1
+    4300018: plank2
+    4300020: plank3
+    4300022: plank4
+    4300024: plank5
+    4300026: plank6
+    4300028: plank7
+    4300030: plank8
+    4300032: plank9
+    4300034: plank10
+    4300036: plank11
+    4300038: plank12
+    4300040: station_part_one
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
