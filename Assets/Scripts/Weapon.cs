@@ -29,7 +29,8 @@ public class Weapon : MonoBehaviour
         GameObject spawnedBullet = Instantiate(bullet);
         muzzleFlash.Play();
         spawnedBullet.transform.position = spawnPoint.position;
-        spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireSpeed;
+        spawnedBullet.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * fireSpeed, ForceMode.Impulse);
+        //spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireSpeed;
         Destroy(spawnedBullet, 5);
     }
 
