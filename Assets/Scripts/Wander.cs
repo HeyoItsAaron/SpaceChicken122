@@ -2,7 +2,7 @@ using UnityEngine.AI;
 using UnityEngine;
 using System.Collections;
  
-public class Wander : MonoBehaviour
+public class Wander : ChickenStats
 {
 
     public float wanderRadius;
@@ -58,5 +58,26 @@ public class Wander : MonoBehaviour
         NavMesh.SamplePosition(randDirection, out navHit, dist, layermask);
 
         return navHit.position;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currHealth -= damage;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.gameObject.CompareTag("Light Bullet"))
+        {
+            TakeDamage(15);
+        }
+        if (collision.collider.gameObject.CompareTag("Medium Bullet"))
+        {
+            TakeDamage(25);
+        }
+        if (collision.collider.gameObject.CompareTag("Heavy Bullet"))
+        {
+            TakeDamage(35);
+        }
     }
 }

@@ -144,4 +144,25 @@ public class Chicken : ChickenStats
         spawn.enemiesKilled++;
     }
 
+    public void TakeDamage(int damage)
+    {
+        currHealth -= damage;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.gameObject.CompareTag("Light Bullet"))
+        {
+            TakeDamage(15);
+        }
+        if (collision.collider.gameObject.CompareTag("Medium Bullet"))
+        {
+            TakeDamage(25);
+        }
+        if (collision.collider.gameObject.CompareTag("Heavy Bullet"))
+        {
+            TakeDamage(35);
+        }
+    }
+
 }
