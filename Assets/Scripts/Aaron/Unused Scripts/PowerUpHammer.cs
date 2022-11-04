@@ -14,6 +14,7 @@ public class PowerUpHammer : MonoBehaviour
     public GameObject targetRay;
     private Rigidbody hammerRigidBody;
     public InputActionProperty rightGrabPull;
+    public WristHealthBar wristUI;
 
     //public RaycastHit SelectedTargetLocation;
 
@@ -47,6 +48,7 @@ public class PowerUpHammer : MonoBehaviour
     {
         //targetLocation = targetRay.transform.position;
         //targetRay.SetActive(false);
+        wristUI.AddPowerUp();
         playerHammer = Instantiate(hammerPrefab, new Vector3(targetLocation.x, targetLocation.y + 300, targetLocation.x) , Quaternion.Euler( new Vector3(0, 0, 180) ) );
         hammerRigidBody = playerHammer.GetComponent<Rigidbody>();
         hammerRigidBody.velocity = Vector3.down * 100;

@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface PowerUp
+public class PowerUp : MonoBehaviour
 {
-    void ApplyPowerUp()
+    // Start is called before the first frame update
+    public PowerUpEffect powerUpEffect;
+
+    private void OnTriggerEnter(Collider other)
     {
-        //this is where the power up would do something
+        Destroy(gameObject);
+        powerUpEffect.Apply(other.gameObject);
     }
 }
