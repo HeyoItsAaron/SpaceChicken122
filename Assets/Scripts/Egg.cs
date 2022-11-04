@@ -15,14 +15,27 @@ public class Egg : MonoBehaviour
 
     [SerializeField]
     public Transform spawnPoint;
-    float speed = 500f;
     public GameObject egg;
-    public float gravityScale = 1f;
+    public EggChicken EggChicken;
+    [SerializeField] int damage;
+    public Transform currrentTarget;
+
+
+    private void Start()
+    {
+        GetComponent<Collider>().enabled = false;
+        GetComponent<Collider>().enabled = true;
+        rb = GetComponent<Rigidbody>();
+    }
+
+    private void update()
+    {
+        currrentTarget = EggChicken.currentTarget;
+    }
 
 
 
-
-
+    /*
     public void ShootEgg(Transform target)
     {
         //GameObject spawnedEgg = Instantiate(egg);
@@ -33,17 +46,21 @@ public class Egg : MonoBehaviour
         Physics.gravity = Vector3.up * this.gravityScale;
         rb.useGravity = true;
 
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         Vector3 dir = target.position - transform.position;
         rb.AddForce(dir * speed);
     }
+    */
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            Destroy(egg);
+            Destroy(this.gameObject);
+            currrentTarget.GetComponent<TestPlayer>().TakeDamage(damage);
+            currrentTarget.GetComponent<TestPlayer>().CheckHealth();
         }
         
     }
+
 }

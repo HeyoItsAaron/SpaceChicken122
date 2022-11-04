@@ -12,5 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Training Grounds.unity
     guid: ede0f910476ab0d499acd7619dc1ca0c
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 10d9e91082d637147986812cfcfb898b, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c21e6939db7e7634097ed218c3f53a08, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: c5728191ff14e6e43a0683c58c0ff7e8, type: 2}

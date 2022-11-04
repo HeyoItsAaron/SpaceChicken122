@@ -8,7 +8,12 @@ public class Spawner : MonoBehaviour
 {
     // variables
     public GameObject[] spawners;
-    public GameObject enemy;
+    public GameObject[] Enemies;
+    public GameObject enemy3;
+    private int waveNumber = 0;
+    public int enemyAmount = 0;
+    public int enemiesKilled = 0;
+  
 
     // Start is called before the first frame update
     private void Start()
@@ -19,6 +24,8 @@ public class Spawner : MonoBehaviour
         {
             spawners[i] = transform.GetChild(i).gameObject;
         }
+
+        StartWave();
     }
 
     // Update is called once per frame
@@ -28,12 +35,50 @@ public class Spawner : MonoBehaviour
         {
             SpawnEnemy();
         }
+        if (enemiesKilled >= enemyAmount)
+        {
+            NextWave();
+        }
     }
 
     // spawn method
     private void SpawnEnemy()
     {
+        int randomEnemy = Random.Range(0, Enemies.Length);
         int spawnerId = Random.Range(0, spawners.Length);
-        Instantiate(enemy, spawners[spawnerId].transform.position, spawners[spawnerId].transform.rotation);
+        if(waveNumber % 5 != 0)
+        {
+            Instantiate(Enemies[randomEnemy], spawners[spawnerId].transform.position, spawners[spawnerId].transform.rotation);
+        }
+        if(waveNumber % 5 ==0)
+        {
+            Instantiate(Enemies[randomEnemy], spawners[spawnerId].transform.position, spawners[spawnerId].transform.rotation);
+            spawnerId = Random.Range(0, spawners.Length);
+            Instantiate(enemy3, spawners[spawnerId].transform.position, spawners[spawnerId].transform.rotation);
+        }
+    }
+
+    private void StartWave()
+    {
+        waveNumber = 1;
+        enemyAmount = 2;
+        enemiesKilled = 0;
+
+        for(int i = 0; i < enemyAmount; i++)
+        {
+            SpawnEnemy();
+        }
+    }
+
+    public void NextWave()
+    {
+        waveNumber++;
+        enemyAmount += 2;
+        enemiesKilled = 0;
+
+        for (int i = 0; i < enemyAmount; i++)
+        {
+            SpawnEnemy();
+        }
     }
 }
