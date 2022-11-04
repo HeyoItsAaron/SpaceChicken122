@@ -9,12 +9,14 @@ public class ChickenStats : MonoBehaviour
     public int currHealth;
     public int maxHealth;
     public bool isDead = false;
+    Spawner spawn;
 
     // Start is called before the first frame update
     void Start()
     {
         maxHealth = 100;
         currHealth = maxHealth;
+        spawn = GetComponent<Spawner>();
     }
 
     // Update is called once per frame
@@ -32,7 +34,7 @@ public class ChickenStats : MonoBehaviour
         {
             currHealth = maxHealth;
         }
-        if (currHealth <= 0)
+        if (currHealth <= 0 && isDead == false)
         {
             currHealth = 0;
             isDead = true;
@@ -43,5 +45,13 @@ public class ChickenStats : MonoBehaviour
     public virtual void Die()
     {
         Destroy(gameObject);
+        if(spawn.enemiesKilled >= spawn.enemyAmount)
+        {
+            spawn.NextWave();
+        }
+        else
+        {
+            spawn.enemiesKilled++;
+        }
     }
 }

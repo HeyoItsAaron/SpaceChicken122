@@ -7,12 +7,14 @@ public class TestPlayer : MonoBehaviour
     public int currHealth;
     public int maxHealth;
     public bool isDead = false;
+    Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
         maxHealth = 100;
         currHealth = maxHealth;
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -42,5 +44,13 @@ public class TestPlayer : MonoBehaviour
     public void TakeDamage(int damage)
     { 
         currHealth -= damage;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.gameObject.CompareTag("egg"))
+        {
+            TakeDamage(10);
+        }
     }
 }

@@ -22,6 +22,7 @@ public class Chicken : ChickenStats
     float lastAttackTime = 0;
     float attackCooldown = 2;
     private int damage = 10;
+    Spawner spawn;
 
     // Start is called before the first frame update
     void Start()
@@ -33,13 +34,15 @@ public class Chicken : ChickenStats
         anim = GetComponent<Animator>();
         maxHealth = 100;
         currHealth = maxHealth;
+        myTarget = GameObject.FindWithTag("Player").transform;
+        spawn = FindObjectOfType<Spawner>();
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckHealth();
-        transform.LookAt(myTarget);
+        //atransform.LookAt(myTarget);
 
         // If else statements to check distance from enemy and call certain method
 
@@ -138,6 +141,7 @@ public class Chicken : ChickenStats
         myAgent.enabled = false;
         anim.SetBool("isDead", true);
         Destroy(gameObject, 5);
+        spawn.enemiesKilled++;
     }
 
 }
