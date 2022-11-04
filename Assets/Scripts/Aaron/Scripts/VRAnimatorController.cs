@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class VRAnimatorController : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class VRAnimatorController : MonoBehaviour
         previousPos = vrRig.head.vrTarget.position;
     }
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
         //Compute the speed
