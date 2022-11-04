@@ -59,13 +59,13 @@ public class Hammer : MonoBehaviour
     
     public void OnSpawn()
     {
-        void OnCollisionEnter(Collision collision)
+        /*void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.tag == "Ground")
             {
                 GetComponent<Rigidbody>().isKinematic = true;
             }
-        }
+        }*/
     }
     public void ThrowHammer()
     {
@@ -81,6 +81,10 @@ public class Hammer : MonoBehaviour
     {
         state = State.Idle;
         Debug.Log("Mjolnir is idle");
+    }
+    public void ByeByeHammer()
+    {
+        Destroy(gameObject);
     }
 
 }

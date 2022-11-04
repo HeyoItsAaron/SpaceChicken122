@@ -11,21 +11,23 @@ public class WristHealthBar : MonoBehaviour
     //only show when wrist is raised
 
     //variables
-    public Image healthBar;
-    public Image powerUpUsageBar;
-    public Image ammoCountBar;
+    public Player player;
 
-    private float smoothRefill = 30f;
-
-    [Range(0, 100)]
-    public float playerHealth = 0;
+    public Image healthBar; //count-ish
+    public Image powerUpBar; //duration
+    public Image ammoCountBar; //count
 
     [Range(0, 100)]
-    public float playerPowerUpUsage = 0;
-    public float powerUpFillMax = 100.0f;
+    public float healthFill = 0;
+    public float healthMax = 100.0f;
 
     [Range(0, 100)]
-    public float playerAmmoCount = 0;
+    public float powerUpFill = 0;
+    public float powerUpMax = 100.0f;
+
+    [Range(0, 100)]
+    public float ammoCountFill = 0;
+    public float ammoCountMax = 100.0f;
 
 
 
@@ -33,27 +35,48 @@ public class WristHealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //player = GameObject.Find("XR Origin").GetComponent<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        linkPlayerStats();
+        fillBars();
         //HealthChange(playerHealth);
-
-        powerUpUsageBar.fillAmount = GetPowerUpUsageNormalized() * Time.deltaTime;
+        //healthBar.fillAmount = 0;
+        //powerUpBar.fillAmount = GetPowerUp();
         //AmmoCountChange(playerAmmoCount);
     }
 
+    //link UI to playerStats
+    public void linkPlayerStats()
+    {
+        healthFill = player.currHealth;
+        powerUpFill = player.currentPowerUpDuration;
+        ammoCountFill = player.currentAmmoCount;
+    }
+
+    //fill bars according to stats
+    public void fillBars()
+    {
+        healthBar.fillAmount = (healthFill / 100.0f);
+        powerUpBar.fillAmount = (powerUpFill / 100.0f);
+        ammoCountBar.fillAmount = (ammoCountFill / 100.0f);
+    }
+
+    /*
+    //usage chanegs for use in player and stuff
     public void HealthChange(float healthValue)
     {
         float amount = (healthValue / 100.0f);
         healthBar.fillAmount = amount;
     }
-    public void PowerUpUsageChange(float PowerUpUsage)
+
+    public void PowerUpUsageChange(float PowerUpDuration)
     {
-        float amount = (PowerUpUsage / 100.0f);
-        powerUpUsageBar.fillAmount = amount;
+        float amount = (PowerUpDuration / 100.0f);
+        powerUpBar.fillAmount = amount;
     }
 
     public void AmmoCountChange(float AmmoCount)
@@ -62,19 +85,29 @@ public class WristHealthBar : MonoBehaviour
         ammoCountBar.fillAmount = amount;
     }
 
-    public float GetPowerUpUsage()
+    //Health
+    public float GetHealth()
     {
-        return playerPowerUpUsage;
+        return healthFill;
     }
-    public float GetPowerUpUsageNormalized()
+
+    //PowerUps
+    public float GetPowerUp()
     {
-        return playerPowerUpUsage / powerUpFillMax;
+        return powerUpFill;
     }
 
     public void AddPowerUp()
     {
-        playerPowerUpUsage += 100;
-        playerPowerUpUsage -= 100 * Time.deltaTime;
+        powerUpFill += player.powerUpDuration;
+        powerUpFill -= player.powerUpDuration * Time.deltaTime;
         
     }
+
+    //Ammo
+    public float GetAmmoCount()
+    {
+        return ammoCountFill;
+    }
+    */
 }
