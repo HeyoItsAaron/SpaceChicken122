@@ -45,4 +45,12 @@ public class TestPlayer : MonoBehaviour
     { 
         currHealth -= damage;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.gameObject.CompareTag("egg"))
+        {
+            TakeDamage(10);
+        }
+    }
 }

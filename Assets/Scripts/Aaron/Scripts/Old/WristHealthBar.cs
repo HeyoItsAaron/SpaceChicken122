@@ -1,7 +1,14 @@
+//Aaron Williams
+//DEPRECATED
+/*
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+
 
 public class WristHealthBar : MonoBehaviour
 {
@@ -57,3 +64,4 @@ public class WristHealthBar : MonoBehaviour
         ammoCountBar.fillAmount = amount;
     }
 }
+*/
