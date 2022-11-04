@@ -18,6 +18,7 @@ public class Hammer : MonoBehaviour
     //built-in methods
     void Start()
     {
+        OnSpawn();
         state = State.Idle;
         hammerRigidBody = GetComponent<Rigidbody>();
     }
@@ -55,7 +56,17 @@ public class Hammer : MonoBehaviour
         }
     }
     //my methods
-
+    
+    public void OnSpawn()
+    {
+        void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.tag == "Ground")
+            {
+                GetComponent<Rigidbody>().isKinematic = true;
+            }
+        }
+    }
     public void ThrowHammer()
     {
         state = State.Throw;

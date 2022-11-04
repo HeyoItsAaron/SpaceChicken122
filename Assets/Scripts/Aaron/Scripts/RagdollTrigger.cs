@@ -21,10 +21,7 @@ public class RagdollTrigger : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
-    {
-        
-    }
+    
 
     private void OnCollisionEnter(Collision collision)
     {
