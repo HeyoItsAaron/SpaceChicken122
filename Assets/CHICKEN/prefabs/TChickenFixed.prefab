@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 1925218690683266099}
   - component: {fileID: 1925218690683266096}
   m_Layer: 0
-  m_Name: ThrowingChickenIP
+  m_Name: TChickenFixed
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

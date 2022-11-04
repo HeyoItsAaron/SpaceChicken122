@@ -6,6 +6,7 @@ using System.Threading;
 using Photon.Pun.Demo.Asteroids;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations;
 using UnityEngine.UIElements;
 using UnityEngine.XR.Interaction.Toolkit;
 using static UnityEngine.GraphicsBuffer;
@@ -140,7 +141,6 @@ public class EggChicken : ChickenStats
     {
         anim.SetBool("isAttacking", true);
         myAgent.enabled = false;
-        
     }
 
     // spawn egg
@@ -161,6 +161,7 @@ public class EggChicken : ChickenStats
     {
         myAgent.enabled = true;
         anim.SetBool("isWalking", true);
+        anim.SetBool("isAttacking", false);
         //anim.SetBool("isAttacking", false);
         myAgent.SetDestination(myTarget.transform.position);
 
@@ -182,5 +183,6 @@ public class EggChicken : ChickenStats
             spawn.enemiesKilled++;
         }
     }
+
 
 }

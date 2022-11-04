@@ -16,22 +16,13 @@ public class Egg : MonoBehaviour
     [SerializeField]
     public Transform spawnPoint;
     public GameObject egg;
-    public EggChicken EggChicken;
-    [SerializeField] int damage;
-    public Transform currrentTarget;
 
 
     private void Start()
     {
-        GetComponent<Collider>().enabled = false;
-        GetComponent<Collider>().enabled = true;
         rb = GetComponent<Rigidbody>();
     }
 
-    private void update()
-    {
-        currrentTarget = EggChicken.currentTarget;
-    }
 
 
 
@@ -57,8 +48,6 @@ public class Egg : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
-            currrentTarget.GetComponent<TestPlayer>().TakeDamage(damage);
-            currrentTarget.GetComponent<TestPlayer>().CheckHealth();
         }
         
     }
