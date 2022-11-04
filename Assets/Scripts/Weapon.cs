@@ -17,6 +17,7 @@ public class Weapon : MonoBehaviour
     {
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
         grabbable.activated.AddListener(FireBullet);
+        muzzleFlash.Stop();
     }
 
     void Update()
@@ -26,14 +27,14 @@ public class Weapon : MonoBehaviour
 
     public void FireBullet(ActivateEventArgs arg)
     {
-        // Spawns a clone of the gameobject bullet
+
+        muzzleFlash.Play();
+        Debug.Log("Muzzle Flash fire!");
+        Debug.Log("Bullet Spawn!");
         GameObject spawnedBullet = Instantiate(bullet, spawnPoint.transform.position, spawnPoint.transform.rotation);
-        // Sets the cloned bullet's position to the spawnPoint (in front of muzzle)
         spawnedBullet.transform.position = spawnPoint.position;
-        // Adds the a velocity in the forward direction of the bullet
         spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireSpeed;
         Destroy(spawnedBullet, 5);
-        muzzleFlash.Play();
-    }
+    }  
 
 }
