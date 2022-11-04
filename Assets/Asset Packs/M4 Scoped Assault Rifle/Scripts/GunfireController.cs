@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
-namespace BigRookGames.Weapons
-{
-    public class GunfireController : MonoBehaviour
-    {
+public class GunfireController : MonoBehaviour
+   {
         // --- Audio ---
         public AudioClip GunShotClip;
         public AudioSource source;
@@ -40,6 +39,8 @@ namespace BigRookGames.Weapons
             if(source != null) source.clip = GunShotClip;
             timeLastFired = 0;
             lastScopeState = scopeActive;
+            XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
+            grabbable.activated.AddListener(FireWeapon);
         }
 
         private void Update()
@@ -49,12 +50,6 @@ namespace BigRookGames.Weapons
             {
                 transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y 
                                                                         + rotationSpeed, transform.localEulerAngles.z);
-            }
-
-            // --- Fires the weapon if the delay time period has passed since the last shot ---
-            if (autoFire && ((timeLastFired + shotDelay) <= Time.time))
-            {
-                FireWeapon();
             }
 
             // --- Toggle scope based on public variable value ---
@@ -70,7 +65,7 @@ namespace BigRookGames.Weapons
         /// Also creates an instance of the audioSource so that multiple shots are not overlapped on the same audio source.
         /// Insert projectile code in this function.
         /// </summary>
-        public void FireWeapon()
+        public void FireWeapon(ActivateEventArgs arg)
         {
             // --- Keep track of when the weapon is being fired ---
             timeLastFired = Time.time;
@@ -129,4 +124,3 @@ namespace BigRookGames.Weapons
             projectileToDisableOnFire.SetActive(true);
         }
     }
-}
