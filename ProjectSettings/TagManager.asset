@@ -6,7 +6,11 @@ TagManager:
   tags:
   - Chicken
   - Enemy
+  - Medium Bullet
+  - Heavy Bullet
+  - Light Bullet
   - Bullet
+  - Lazer
   layers:
   - Default
   - TransparentFX

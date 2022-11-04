@@ -26,12 +26,14 @@ public class Weapon : MonoBehaviour
 
     public void FireBullet(ActivateEventArgs arg)
     {
-        GameObject spawnedBullet = Instantiate(bullet);
-        muzzleFlash.Play();
+        // Spawns a clone of the gameobject bullet
+        GameObject spawnedBullet = Instantiate(bullet, spawnPoint.transform.position, spawnPoint.transform.rotation);
+        // Sets the cloned bullet's position to the spawnPoint (in front of muzzle)
         spawnedBullet.transform.position = spawnPoint.position;
-        spawnedBullet.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * fireSpeed, ForceMode.Impulse);
-        //spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireSpeed;
+        // Adds the a velocity in the forward direction of the bullet
+        spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireSpeed;
         Destroy(spawnedBullet, 5);
+        muzzleFlash.Play();
     }
 
 }
