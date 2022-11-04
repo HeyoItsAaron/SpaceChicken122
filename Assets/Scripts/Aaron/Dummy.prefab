@@ -1922,6 +1922,7 @@ GameObject:
   - component: {fileID: 4927068720413351559}
   - component: {fileID: 4927068720413351608}
   - component: {fileID: 1516274140776508116}
+  - component: {fileID: 7151183732274222775}
   m_Layer: 0
   m_Name: Dummy
   m_TagString: Dummy
@@ -2011,6 +2012,19 @@ MonoBehaviour:
   hitBoxCollider: {fileID: 4927068720413351559}
   thisDude: {fileID: 5233498551133514261}
   thisDudesRig: {fileID: 2721810905057290875}
+--- !u!114 &7151183732274222775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5233498551133514261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a6c16b65c142a43801c81c1177dd45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
 --- !u!1 &5526371800907510572
 GameObject:
   m_ObjectHideFlags: 0

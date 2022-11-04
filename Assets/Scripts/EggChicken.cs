@@ -203,6 +203,10 @@ public class EggChicken : ChickenStats
         {
             TakeDamage(35);
         }
+        if (collision.collider.gameObject.CompareTag("HAMMER"))
+        {
+            TakeDamage(50);
+        }
     }
 
 

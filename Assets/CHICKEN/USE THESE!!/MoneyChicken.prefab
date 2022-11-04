@@ -543,8 +543,8 @@ Transform:
   m_GameObject: {fileID: 6831677063621224829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.790136, y: -0.04, z: 1.5258825}
-  m_LocalScale: {x: 1.0806956, y: 1.0806956, z: 1.0806956}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1947606810534744313}
   - {fileID: 1861530875090277203}
@@ -598,6 +598,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f19cbb8af774184dadbf0ba6e63d4ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currHealth: 0
+  maxHealth: 0
+  isDead: 0
   wanderRadius: 20
   wanderTimer: 1.5
 --- !u!195 &1261875631803409454
@@ -619,7 +622,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.75
-  m_BaseOffset: 0
+  m_BaseOffset: -0.12
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &6980280984269583547

@@ -191,8 +191,8 @@ Transform:
   m_GameObject: {fileID: 1925218690683266100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.1498, y: -0.04, z: -1.7418}
-  m_LocalScale: {x: 1.0806956, y: 1.0806956, z: 1.0806956}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6881065057292377520}
   - {fileID: 6749842864905149978}
@@ -252,7 +252,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.75
-  m_BaseOffset: 0
+  m_BaseOffset: -0.12
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1925218690683266096
@@ -273,7 +273,7 @@ MonoBehaviour:
   myTarget: {fileID: 0}
   currentTarget: {fileID: 0}
   myAgent: {fileID: 1925218690683266099}
-  range: 20
+  range: 200
   distance: 0
   stoppingDistance: 4
   damage: 0

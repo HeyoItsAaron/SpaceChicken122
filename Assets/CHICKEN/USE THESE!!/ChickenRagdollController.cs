@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RagdollTrigger : MonoBehaviour
+public class ChickenRagdollController : MonoBehaviour
 {
     public BoxCollider hitBoxCollider;
     public GameObject thisDude;
     public GameObject thisDudesRig;
-    //public Animator thisDudesAnimator;
+    public Animator thisDudesAnimator;
 
     //these are for the colliders and rigidbodies of the ragdoll
     Collider[] ragdollColliders;
@@ -23,12 +23,12 @@ public class RagdollTrigger : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "HAMMER" ||
+        if (collision.gameObject.tag == "HAMMER" || 
             collision.gameObject.tag == "Dummy" ||
             collision.gameObject.tag == "Light Bullet" ||
             collision.gameObject.tag == "Medium Bullet" ||
@@ -49,7 +49,7 @@ public class RagdollTrigger : MonoBehaviour
     void RagdollModeOn()
     {
         //enables animator
-        //thisDudesAnimator.enabled = false;
+        thisDudesAnimator.enabled = false;
 
         //enables colliders
         foreach (Collider collider in ragdollColliders)
@@ -87,7 +87,7 @@ public class RagdollTrigger : MonoBehaviour
         }
 
         //enables animator
-        //thisDudesAnimator.enabled = true;
+        thisDudesAnimator.enabled = true;
         //emables hit box collider
         hitBoxCollider.enabled = true;
         //enables main rigidbody
