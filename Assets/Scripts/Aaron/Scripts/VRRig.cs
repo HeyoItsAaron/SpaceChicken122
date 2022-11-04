@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 [System.Serializable]
 public class VRMap
@@ -38,8 +39,36 @@ public class VRRig : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    private void OnEnable()
     {
+        if (RenderPipelineManager.currentPipeline != null)
+        {
+            RenderPipelineManager.beginCameraRendering += RenderPipelineBeforeRenderCallback;
+        }
+        else
+        {
+            Camera.onPreRender += BuiltinPipelineBeforeRenderCallback;
+        }
+    }
+
+    private void OnDisable()
+    {
+        RenderPipelineManager.beginCameraRendering -= RenderPipelineBeforeRenderCallback;
+        Camera.onPreRender -= BuiltinPipelineBeforeRenderCallback;
+    }
+
+    private void RenderPipelineBeforeRenderCallback(ScriptableRenderContext argA, Camera argB)
+      => BeforeRenderUpdate();
+
+    private void BuiltinPipelineBeforeRenderCallback(Camera argA)
+      => BeforeRenderUpdate();
+
+    private void BeforeRenderUpdate()
+    {
+        // Put your update code here
+    //}
+    //void FixedUpdate()
+    ///{
         root.position = head.rigTarget.position + headBodyOffset;
         root.forward = Vector3.Lerp(root.forward,
         Vector3.ProjectOnPlane(head.vrTarget.forward,Vector3.up).normalized, turnSmoothness);
