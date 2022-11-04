@@ -1563,6 +1563,7 @@ GameObject:
   - component: {fileID: 2846385195808029937}
   - component: {fileID: 2846385195808029934}
   - component: {fileID: 514340723062742603}
+  - component: {fileID: 1445029686933418840}
   m_Layer: 0
   m_Name: Robot Kyle Avatar
   m_TagString: Untagged
@@ -1861,6 +1862,23 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 2935519080852210747, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   avatarAnimator: {fileID: 2846385195808029938}
+--- !u!114 &1445029686933418840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6098306378602784160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f2ce33042e7e8438801130d7e4846c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currHealth: 0
+  maxHealth: 0
+  isDead: 0
+  currentPowerUpDuration: 0
+  currentAmmoCount: 0
 --- !u!1 &6415466530468603287
 GameObject:
   m_ObjectHideFlags: 0

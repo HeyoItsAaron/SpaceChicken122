@@ -14,9 +14,9 @@ public class HammerPowerUp : MonoBehaviour, PowerUp
     private Rigidbody hammerRigidBody;
     private Vector3 targetLocation;
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
-        if(other.CompareTag("Player"))
+        if(other.collider.CompareTag("Player"))
         {
             Debug.Log("OnTriggerEntered worked");
             targetLocation = gameObject.transform.position;
