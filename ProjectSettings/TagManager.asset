@@ -7,6 +7,8 @@ TagManager:
   - Chicken
   - Enemy
   - Bullet
+  - HAMMER
+  - Dummy
   layers:
   - Default
   - TransparentFX
