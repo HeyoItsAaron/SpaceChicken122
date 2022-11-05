@@ -417,7 +417,7 @@ MonoBehaviour:
   - {fileID: 292780120}
   - {fileID: 292780121}
   - {fileID: 6695612794503390208}
-  sceneViewId: 53
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &292780119
@@ -599,7 +599,7 @@ MonoBehaviour:
   - {fileID: 292780120}
   - {fileID: 292780121}
   - {fileID: 6695612794503390208}
-  sceneViewId: 30
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &6695612794503390208
@@ -999,7 +999,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 931498465}
   - {fileID: 931498462}
-  sceneViewId: 52
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &931498462
@@ -1039,7 +1039,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 931498465}
   - {fileID: 931498462}
-  sceneViewId: 51
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &931498465
@@ -1077,7 +1077,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 32
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!4 &2815492677953798573 stripped

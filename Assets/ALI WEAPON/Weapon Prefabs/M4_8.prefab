@@ -10062,7 +10062,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 684461099}
   - {fileID: 684461098}
-  sceneViewId: 54
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &684461098
@@ -10116,7 +10116,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 29
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &8246711004629155568
@@ -39763,7 +39763,7 @@ MonoBehaviour:
   - {fileID: 1515438702}
   - {fileID: 1515438703}
   - {fileID: 5055507389555232180}
-  sceneViewId: 55
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &1515438701
@@ -39945,7 +39945,7 @@ MonoBehaviour:
   - {fileID: 1515438702}
   - {fileID: 1515438703}
   - {fileID: 5055507389555232180}
-  sceneViewId: 22
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &5055507389555232180
