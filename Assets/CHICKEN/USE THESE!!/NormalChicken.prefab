@@ -824,6 +824,8 @@ GameObject:
   - component: {fileID: 3834422658676958535}
   - component: {fileID: 3834422658676958552}
   - component: {fileID: 3834422658676958553}
+  - component: {fileID: 7152945168335684085}
+  - component: {fileID: 7766667519427249386}
   m_Layer: 0
   m_Name: NormalChicken
   m_TagString: Chicken
@@ -925,6 +927,44 @@ CapsuleCollider:
   m_Height: 0.48073292
   m_Direction: 1
   m_Center: {x: 0, y: 0.47900906, z: 0.023979183}
+--- !u!114 &7152945168335684085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7538295080796005786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 0
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &7766667519427249386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7538295080796005786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters: []
+  m_SynchronizeLayers: []
 --- !u!1 &7735229378112145089
 GameObject:
   m_ObjectHideFlags: 0

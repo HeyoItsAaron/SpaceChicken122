@@ -75,11 +75,12 @@ GameObject:
   - component: {fileID: 1896876757765533946}
   - component: {fileID: 5142636991372425690}
   - component: {fileID: 3523188705517343947}
-  - component: {fileID: 3523173779283852173}
   - component: {fileID: 9000608897474835241}
   - component: {fileID: -8495810229069578124}
   - component: {fileID: -4706258253014825730}
   - component: {fileID: 9087003613652145498}
+  - component: {fileID: 6333896777747265695}
+  - component: {fileID: -6624731146311488540}
   m_Layer: 0
   m_Name: RagDollChicken
   m_TagString: Untagged
@@ -133,21 +134,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3523173779283852173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1231980723930360384}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68e709abc107ccf448a3759db0462a08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitBoxCollider: {fileID: 5142636991372425690}
-  thisDude: {fileID: 1231980723930360384}
-  thisDudesRig: {fileID: 1359162113504741659}
 --- !u!95 &9000608897474835241
 Animator:
   serializedVersion: 4
@@ -194,7 +180,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.2
-  m_Speed: 0.6
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -227,6 +213,55 @@ MonoBehaviour:
   range: 200
   distance: 0
   stoppingDistance: 1.2
+--- !u!114 &6333896777747265695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231980723930360384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 0
+    Name: isDead
+  - Type: 4
+    SynchronizeType: 0
+    Name: isWalking
+  - Type: 4
+    SynchronizeType: 0
+    Name: isAttacking
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
+--- !u!114 &-6624731146311488540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231980723930360384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 0
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1359162113504741659
 GameObject:
   m_ObjectHideFlags: 0
