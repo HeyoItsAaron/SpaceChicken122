@@ -4,6 +4,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 using UnityEngine.InputSystem;
 
 public class HandHammerConnection : MonoBehaviour
@@ -17,6 +18,7 @@ public class HandHammerConnection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hammer = GameObject.FindObjectOfType<Hammer>();
         rightTriggerPull.action.performed += RightTriggerPulled;
         //leftTriggerPull.action.performed += LeftTriggerPulled;
     }
@@ -24,7 +26,10 @@ public class HandHammerConnection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(hammer == null)
+        {
+            hammer = GameObject.FindObjectOfType<Hammer>();
+        }
     }
     /*
     void TriggerPulledWhileHammerTime()

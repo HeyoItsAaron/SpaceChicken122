@@ -3,7 +3,9 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 public enum State { Throw, Return, Idle}
 public class Hammer : MonoBehaviour
@@ -20,6 +22,8 @@ public class Hammer : MonoBehaviour
     {
         state = State.Idle;
         hammerRigidBody = GetComponent<Rigidbody>();
+        XROrigin rig = FindObjectOfType<XROrigin>();
+        playerHand = rig.transform.Find("Camera Offset/RightHand Controller");
     }
 
     void Update()
