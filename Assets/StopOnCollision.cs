@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class StopOnCollision : MonoBehaviour
 {
-    Rigidbody rigidbody;
+    Rigidbody rigidBody;
     public Hammer hammerPrefab;
     Hammer hammer;
     Vector3 targetLocation;
     Quaternion targetRotation;
     void Start()
     {
-        rigidbody = gameObject.GetComponent<Rigidbody>();
+        rigidBody = gameObject.GetComponent<Rigidbody>();
     }
     private void OnCollisionEnter(Collision collision)
     {
-        rigidbody.isKinematic = true;
+        rigidBody.isKinematic = true;
         targetLocation = gameObject.transform.position;
         targetRotation = gameObject.transform.rotation;
 
