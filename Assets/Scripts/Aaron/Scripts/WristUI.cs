@@ -47,7 +47,7 @@ public class WristUI : MonoBehaviour
     {
         healthFill = player.currHealth;
         powerUpFill = player.currentPowerUpDuration;
-        ammoCountFill = player.currentAmmoCount;
+        ammoCountFill = player.currEnergy;
     }
 
     //fill bars according to stats

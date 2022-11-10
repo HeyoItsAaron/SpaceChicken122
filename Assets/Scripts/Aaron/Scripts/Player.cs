@@ -10,7 +10,8 @@ public class Player : MonoBehaviour
 
     public float currentPowerUpDuration = 0;
 
-    public int currentAmmoCount;
+    public int currEnergy; //this is "ammmo"
+    public int currCurrency;
 
     public enum currentPowerUp { None, Hammer, Health }
 
@@ -23,6 +24,10 @@ public class Player : MonoBehaviour
     {
         maxHealth = 100;
         currHealth = maxHealth;
+
+        currEnergy = 50;
+        currCurrency = 0;
+
         rb = GetComponent<Rigidbody>();
     }
 
@@ -45,6 +50,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    //health
     public void TakeDamage(int damage)
     {
         currHealth -= damage;
@@ -53,6 +59,18 @@ public class Player : MonoBehaviour
     public virtual void Die()
     {
         Destroy(gameObject);
+    }
+
+    //energy "Ammo"
+    public void UseEnergy(int energyUsed)
+    {
+        currEnergy -= energyUsed;
+    }
+
+    //currency
+    public void UseCurrency(int currencyUsed)
+    {
+        currCurrency -= currencyUsed;
     }
 
     private void OnCollisionEnter(Collision other)
@@ -66,20 +84,7 @@ public class Player : MonoBehaviour
             powerUp = other.gameObject.GetComponent<PowerUp>();
             powerUp.ApplyPowerUp();
         }
-        if (other.gameObject.CompareTag("Hammer"))
-        {
-            ItsHammerTime();
-        }
-    }
-    public void ItsHammerTime()
-    {
-        Hammer hammer = GameObject.Find("Hammer").GetComponent<Hammer>();
-        currentPowerUpDuration -= currentPowerUpDuration * Time.deltaTime;
 
-        if(currentPowerUpDuration == 0)
-        {
-            Destroy(hammer);
-            //hammer.ByeByeHammer();
-        }
     }
+
 }
