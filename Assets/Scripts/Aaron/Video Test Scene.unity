@@ -4127,6 +4127,7 @@ GameObject:
   - component: {fileID: 218916130}
   - component: {fileID: 218916129}
   - component: {fileID: 218916141}
+  - component: {fileID: 218916142}
   m_Layer: 6
   m_Name: XR Origin
   m_TagString: Untagged
@@ -4335,6 +4336,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd36c6e005b14d344b128796fffc3d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &218916142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218916128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daa4cd375489c5146b59cf5aa67bfbb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleUI: {fileID: -7317676131023394613, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &219606067
 GameObject:
   m_ObjectHideFlags: 0
@@ -5187,6 +5201,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5686134208185362932, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686134208185362934, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
 --- !u!4 &273154458 stripped
@@ -5265,6 +5287,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 513627381}
     m_Modifications:
+    - target: {fileID: 109434732395284505, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 109434732395284507, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 109434732395284509, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
       propertyPath: m_Name
       value: Custom Left Hand Model
@@ -5902,6 +5932,22 @@ PrefabInstance:
     - target: {fileID: 1590290956986552418, guid: f493089e6ca188c46895694318ff6db8, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590290956986552418, guid: f493089e6ca188c46895694318ff6db8, type: 3}
+      propertyPath: maxHealth
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590290956986552418, guid: f493089e6ca188c46895694318ff6db8, type: 3}
+      propertyPath: currEnergy
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590290956986552418, guid: f493089e6ca188c46895694318ff6db8, type: 3}
+      propertyPath: currHealth
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590290956986552418, guid: f493089e6ca188c46895694318ff6db8, type: 3}
+      propertyPath: currCurrency
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 2846385195808029936, guid: f493089e6ca188c46895694318ff6db8, type: 3}
       propertyPath: m_Enabled
@@ -13566,6 +13612,33 @@ Transform:
   m_Father: {fileID: 1051103440}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &736171629
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Custom_BIRP_GrassComputeVertexFrag(Clone)
+  m_Shader: {fileID: 4800000, guid: 6f5c5086087ff674a915a0b23a6d385f, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _AmbientAdjustment: 0
+    - _BlendFloor: 0
+    - _Fade: 0.3
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &736465716
 GameObject:
   m_ObjectHideFlags: 0
@@ -14763,7 +14836,7 @@ MonoBehaviour:
   topTint: {r: 1, g: 1, b: 1, a: 1}
   bottomTint: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
   castShadow: 1
-  m_InstantiatedMaterial: {fileID: 1084170506}
+  m_InstantiatedMaterial: {fileID: 736171629}
 --- !u!114 &808650345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23655,33 +23728,6 @@ Transform:
   m_Father: {fileID: 2057337732}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1084170506
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_BIRP_GrassComputeVertexFrag(Clone)
-  m_Shader: {fileID: 4800000, guid: 6f5c5086087ff674a915a0b23a6d385f, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs: []
-    m_Ints: []
-    m_Floats:
-    - _AmbientAdjustment: 0
-    - _BlendFloor: 0
-    - _Fade: 0.3
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1 &1085593189 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1389845430278060, guid: 93e622a43d549aa48bf1e69b8d801c5b, type: 3}
@@ -35075,7 +35121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8402053691346425987, guid: 5ad264affe24ae144a593ebf0740e46f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8402053691346426014, guid: 5ad264affe24ae144a593ebf0740e46f, type: 3}
       propertyPath: m_RootOrder
@@ -40883,7 +40929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7337336893107564693, guid: c80aa089cd71c95448ad74ecf6b5e8c5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c80aa089cd71c95448ad74ecf6b5e8c5, type: 3}
@@ -43652,7 +43698,7 @@ MonoBehaviour:
   - {fileID: 7538295080796005786, guid: a298d34174e348c40bccd5822016e29d, type: 3}
   - {fileID: 1925218690683266100, guid: 7726ffcc4228e034786005ac61e84328, type: 3}
   enemy3: {fileID: 6831677063621224829, guid: c1a20e557319cf44fba2243b793d7e4a, type: 3}
-  waveNumber: 0
+  waveNumber: 5
   enemyAmount: 0
   enemiesKilled: 0
   ui: {fileID: 0}

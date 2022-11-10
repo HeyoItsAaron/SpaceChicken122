@@ -89,16 +89,16 @@ public class WristUI : MonoBehaviour
     public void ToggleVisibility()
     {
         //if on, turn off
-        if(gameObject.activeSelf == true)
-        {
-            gameObject.SetActive(false);
-        }
+        //if(gameObject.activeInHierarchy == true)
+        //{
+            gameObject.SetActive(!gameObject.activeInHierarchy);
+        //}
 
         //if off, turn on
-        if (gameObject.activeSelf == false)
-        {
-            gameObject.SetActive(true);
-        }
+        //if (gameObject.activeInHierarchy == false)
+        //{
+        //    gameObject.SetActive(true);
+        //}
     }
 
 }

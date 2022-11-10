@@ -38,8 +38,8 @@ public class Player : MonoBehaviour
     //load spawn stats
     public void loadSpawnStats()
     {
-        maxHealth = 0f;
-        currHealth = maxHealth;
+        maxHealth = 100f;
+        currHealth = 85;
         currEnergy = 50f;
         currCurrency = 69.00f;
         isDead = false;

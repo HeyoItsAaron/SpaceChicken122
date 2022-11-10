@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         spawners = new GameObject[5];
-        ui = GameObject.Find("XR Origin").GetComponentInChildren<WristUI>();
+        ui = GameObject.FindObjectOfType<WristUI>();
 
         for (int i = 0; i < spawners.Length; i++)
         {
