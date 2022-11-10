@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 2180835859524312826}
   - component: {fileID: 2180835859524312828}
   m_Layer: 7
-  m_Name: Video Hammer
-  m_TagString: HAMMER
+  m_Name: Falling Hammer
+  m_TagString: FALLING HAMMER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

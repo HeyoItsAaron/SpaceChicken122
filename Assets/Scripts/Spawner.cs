@@ -10,15 +10,17 @@ public class Spawner : MonoBehaviour
     public GameObject[] spawners;
     public GameObject[] Enemies;
     public GameObject enemy3;
-    private int waveNumber = 0;
+    public int waveNumber = 0;
     public int enemyAmount = 0;
     public int enemiesKilled = 0;
+    public WristUI ui;
   
 
     // Start is called before the first frame update
     private void Start()
     {
         spawners = new GameObject[5];
+        ui = GameObject.Find("XR Origin").GetComponentInChildren<WristUI>();
 
         for (int i = 0; i < spawners.Length; i++)
         {
@@ -75,6 +77,7 @@ public class Spawner : MonoBehaviour
         waveNumber++;
         enemyAmount += 2;
         enemiesKilled = 0;
+        ui.LinkWaveUI();
 
         for (int i = 0; i < enemyAmount; i++)
         {
