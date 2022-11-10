@@ -1,6 +1,7 @@
 using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,19 +17,19 @@ public class WristUI : MonoBehaviour
     public Image healthBar; //count-ish
     public Image powerUpBar; //duration
     public Image ammoCountBar; //count
-    public Text currencyCount;
-    public Text waveText;
+    public TextMeshProUGUI currencyCount;
+    public TextMeshProUGUI waveText;
 
     [Range(0, 100)]
-    public float healthFill = 0;
+    public float healthFill;
     public float healthMax = 100.0f;
 
     [Range(0, 100)]
-    public float powerUpFill = 0;
+    public float powerUpFill;
     public float powerUpMax = 100.0f;
 
     [Range(0, 100)]
-    public float ammoCountFill = 0;
+    public float ammoCountFill;
     public float ammoCountMax = 100.0f;
 
 
@@ -36,8 +37,9 @@ public class WristUI : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("XR Origin").GetComponent<Player>();
+        player = GameObject.FindObjectOfType<Player>();
         spawner = GameObject.FindObjectOfType<Spawner>();
+        linkAllStats();
     }
 
     void Update()
@@ -47,21 +49,16 @@ public class WristUI : MonoBehaviour
     }
 
     //link UI to playerStats
-    /*
-    public void linkPlayerStats()
+    
+    //link all stats
+    public void linkAllStats()
     {
-        healthFill = player.currHealth;
-        powerUpFill = player.currentPowerUpDuration;
-        ammoCountFill = player.currEnergy;
+        LinkHealthUI();
+        LinkPowerUpUI();
+        LinkEnergyUI();
+        LinkCurrencyUI();
+        LinkWaveUI();
     }
-    //fill bars according to stats
-    public void fillBars()
-    {
-        healthBar.fillAmount = (healthFill / 100.0f);
-        powerUpBar.fillAmount = (powerUpFill / 100.0f);
-        ammoCountBar.fillAmount = (ammoCountFill / 100.0f);
-    }
-    */
 
     //Link individual stats
     public void LinkHealthUI()
@@ -76,7 +73,7 @@ public class WristUI : MonoBehaviour
     }
     public void LinkEnergyUI()
     {
-        powerUpFill = player.currentPowerUpDuration;
+        ammoCountFill = player.currEnergy;
         ammoCountBar.fillAmount = (ammoCountFill / 100.0f);
     }
     public void LinkCurrencyUI()
@@ -88,5 +85,20 @@ public class WristUI : MonoBehaviour
         waveText.text = spawner.waveNumber.ToString();
     }
 
+
+    public void ToggleVisibility()
+    {
+        //if on, turn off
+        if(gameObject.activeSelf == true)
+        {
+            gameObject.SetActive(false);
+        }
+
+        //if off, turn on
+        if (gameObject.activeSelf == false)
+        {
+            gameObject.SetActive(true);
+        }
+    }
 
 }

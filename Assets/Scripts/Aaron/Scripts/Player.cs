@@ -5,16 +5,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int currHealth;
-    public int maxHealth;
-    public bool isDead = false;
+    public float currHealth;
+    public float maxHealth;
+    public bool isDead;
 
-    public float currentPowerUpDuration = 0;
+    public float currentPowerUpDuration;
 
-    public int currEnergy; //this is "ammmo"
-    public int currCurrency;
+    public float currEnergy; //this is "ammmo"
+    public double currCurrency;
 
-    public enum currentPowerUp { None, Hammer, Health }
+    //public enum currentPowerUp { None, Hammer, Health };
 
     Rigidbody rb;
     WristUI ui;
@@ -24,14 +24,9 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = 100;
-        currHealth = maxHealth;
-
-        currEnergy = 50;
-        currCurrency = 0;
-
+        loadSpawnStats();
         rb = GetComponent<Rigidbody>();
-        ui = GameObject.Find("XR Origin").GetComponentInChildren<WristUI>();
+        ui = GameObject.FindObjectOfType<WristUI>();
     }
 
     // Update is called once per frame
@@ -39,6 +34,19 @@ public class Player : MonoBehaviour
     {
         CheckHealth();
     }
+
+    //load spawn stats
+    public void loadSpawnStats()
+    {
+        maxHealth = 0f;
+        currHealth = maxHealth;
+        currEnergy = 50f;
+        currCurrency = 69.00f;
+        isDead = false;
+        ui.linkAllStats();
+    }
+
+    // trigger death on 0 health
     public void CheckHealth()
     {
         if (currHealth >= maxHealth)
@@ -55,13 +63,13 @@ public class Player : MonoBehaviour
 
     //health
     // + health
-    public void Gainhealth(int healthAdded)
+    public void Gainhealth(float healthAdded)
     {
         currHealth += healthAdded;
         ui.LinkHealthUI();
     }
     // - health
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currHealth -= damage;
         ui.LinkHealthUI();
@@ -74,13 +82,13 @@ public class Player : MonoBehaviour
 
     //energy (Ammo)
     // + energy (Ammo)
-    public void AddEnergy(int energyAdded)
+    public void AddEnergy(float energyAdded)
     {
         currEnergy += energyAdded;
         ui.LinkEnergyUI();
     }
     // - energy (Ammo)
-    public void UseEnergy(int energyUsed)
+    public void UseEnergy(float energyUsed)
     {
         currEnergy -= energyUsed;
         ui.LinkEnergyUI();
@@ -88,19 +96,19 @@ public class Player : MonoBehaviour
 
     // currency
     // + currency
-    public void AddCurrency(int currencyAdded)
+    public void AddCurrency(float currencyAdded)
     {
         currCurrency += currencyAdded;
         ui.LinkCurrencyUI();
     }
     // - currency
-    public void UseCurrency(int currencyUsed)
+    public void UseCurrency(float currencyUsed)
     {
         currCurrency -= currencyUsed;
         ui.LinkCurrencyUI();
     }
 
-    // ON COLLISION // Damage + PowerUps
+    // ON COLLISION ----> Damage + PowerUps
     private void OnCollisionEnter(Collision other)
     {
         if (other.collider.gameObject.CompareTag("egg"))
