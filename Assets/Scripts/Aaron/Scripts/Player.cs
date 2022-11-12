@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
         currEnergy = 50f;
         currCurrency = 69.00f;
         isDead = false;
-        ui.linkAllStats();
+        //ui.linkAllStats();
     }
 
     // trigger death on 0 health

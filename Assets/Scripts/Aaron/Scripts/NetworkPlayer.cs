@@ -5,6 +5,7 @@ using UnityEngine.XR;
 using Photon.Pun;
 using UnityEngine.XR.Interaction.Toolkit;
 using Unity.XR.CoreUtils;
+using UnityEngine.Rendering;
 
 public class NetworkPlayer : MonoBehaviour
 {
@@ -55,10 +56,36 @@ public class NetworkPlayer : MonoBehaviour
         leftHandAnimator = avatarInfo.leftHandAnimator;
         rightHandAnimator = avatarInfo.rightHandAnimator;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
+        if (RenderPipelineManager.currentPipeline != null)
+        {
+            RenderPipelineManager.beginCameraRendering += RenderPipelineBeforeRenderCallback;
+        }
+        else
+        {
+            Camera.onPreRender += BuiltinPipelineBeforeRenderCallback;
+        }
+    }
+
+    private void OnDisable()
+    {
+        RenderPipelineManager.beginCameraRendering -= RenderPipelineBeforeRenderCallback;
+        Camera.onPreRender -= BuiltinPipelineBeforeRenderCallback;
+    }
+
+    private void RenderPipelineBeforeRenderCallback(ScriptableRenderContext argA, Camera argB)
+      => BeforeRenderUpdate();
+
+    private void BuiltinPipelineBeforeRenderCallback(Camera argA)
+      => BeforeRenderUpdate();
+
+    private void BeforeRenderUpdate()
+    {
+        // Update is called once per frame
+        //void Update()
+    //{
+
         if(photonView.IsMine)
         {          
             MapPosition(head, headRig);

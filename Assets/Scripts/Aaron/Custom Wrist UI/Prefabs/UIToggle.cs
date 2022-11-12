@@ -6,21 +6,27 @@ using UnityEngine.InputSystem;
 public class UIToggle : MonoBehaviour
 {
     WristUI ui;
+    Menu menu;
     public InputActionReference toggleUI;
+    public InputActionReference toggleMenu;
     // Start is called before the first frame update
     void Start()
     {
-        toggleUI.action.performed += RightTriggerPulled;
+        toggleUI.action.performed += LeftPrimaryButtonPressed;
         ui = GameObject.FindObjectOfType<WristUI>();
+
+        toggleMenu.action.performed += LeftMenuButtonPressed;
+        menu = GameObject.FindObjectOfType<Menu>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    void RightTriggerPulled(InputAction.CallbackContext context)
+
+    void LeftPrimaryButtonPressed(InputAction.CallbackContext context)
     {
         ui.ToggleVisibility();
     }
+    void LeftMenuButtonPressed(InputAction.CallbackContext context)
+    {
+        menu.ToggleVisibility();
+    }
+
 }

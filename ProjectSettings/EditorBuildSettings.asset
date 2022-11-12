@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Lobby.unity
+    path: Assets/Scripts/Aaron/Lobby.unity
     guid: b6ce212a31b383946b55b90cb498b4b3
   - enabled: 1
     path: Assets/Scripts/Aaron/Video Test Scene.unity
