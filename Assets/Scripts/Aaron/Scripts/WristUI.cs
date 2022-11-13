@@ -35,7 +35,7 @@ public class WristUI : MonoBehaviour
 
 
 
-    void Start()
+    void OnAwake()
     {
         player = GameObject.FindObjectOfType<Player>();
         spawner = GameObject.FindObjectOfType<Spawner>();

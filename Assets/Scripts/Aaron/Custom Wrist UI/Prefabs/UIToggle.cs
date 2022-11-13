@@ -10,7 +10,7 @@ public class UIToggle : MonoBehaviour
     public InputActionReference toggleUI;
     public InputActionReference toggleMenu;
     // Start is called before the first frame update
-    void Start()
+    void OnAwake()
     {
         toggleUI.action.performed += LeftPrimaryButtonPressed;
         ui = GameObject.FindObjectOfType<WristUI>();

@@ -39,11 +39,11 @@ public class Player : MonoBehaviour
     public void loadSpawnStats()
     {
         maxHealth = 100f;
-        currHealth = 85;
-        currEnergy = 50f;
-        currCurrency = 69.00f;
+        currHealth = maxHealth;
+        currEnergy = 69f;
+        currCurrency = 0f;
         isDead = false;
-        //ui.linkAllStats();
+        ui.linkAllStats();
     }
 
     // trigger death on 0 health
