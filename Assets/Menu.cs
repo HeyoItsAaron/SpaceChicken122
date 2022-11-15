@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour //change to MonoBehaviourPunCallbacks??
 
     GameObject ray;
     // Start is called before the first frame update
-    void Start()
+    void OnAwake()
     {
         ray = GameObject.Find("XR Origin/Camera Offset/RightHand Controller/Ray Interactor");
     }
