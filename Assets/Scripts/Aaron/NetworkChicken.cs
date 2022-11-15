@@ -1,5 +1,7 @@
 // Written by Aidan Urbina
 // Aaron Williams converted to Network Script
+using Photon.Pun;
+using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +14,7 @@ public class NetworkChicken : ChickenStats
 {
     // variables
     private Rigidbody[] rbs;
+    Photon.Realtime.Player[] playerList = PhotonNetwork.PlayerList;
     public Transform myTarget;
     public Transform currentTarget;
     public NavMeshAgent myAgent;
