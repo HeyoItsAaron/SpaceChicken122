@@ -888,6 +888,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3210733940384132257, guid: b4fd61c1b42d737498c9755810b0408f, type: 3}
   m_PrefabInstance: {fileID: 84650401}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &100793048
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Custom_BIRP_GrassComputeVertexFrag(Clone)
+  m_Shader: {fileID: 4800000, guid: 6f5c5086087ff674a915a0b23a6d385f, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _AmbientAdjustment: 0
+    - _BlendFloor: 0
+    - _Fade: 0.3
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1001 &120405397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -966,10 +993,6 @@ PrefabInstance:
     - target: {fileID: 8248555612544358175, guid: 09e0a1f6012574e4ba2521e15d84a698, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: sceneViewId
-      value: 63
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5898511815815249078, guid: 09e0a1f6012574e4ba2521e15d84a698, type: 3}
@@ -2258,33 +2281,6 @@ Transform:
   m_Father: {fileID: 1323463277}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: -174.317, z: 0}
---- !u!21 &453623185
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_BIRP_GrassComputeVertexFrag(Clone)
-  m_Shader: {fileID: 4800000, guid: 6f5c5086087ff674a915a0b23a6d385f, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs: []
-    m_Ints: []
-    m_Floats:
-    - _AmbientAdjustment: 0
-    - _BlendFloor: 0
-    - _Fade: 0.3
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1001 &460891157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2387,10 +2383,6 @@ PrefabInstance:
     - target: {fileID: 6678865004799666436, guid: 3ebce541c90373c4993715cbaf3d0184, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: sceneViewId
-      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ebce541c90373c4993715cbaf3d0184, type: 3}
@@ -3217,7 +3209,7 @@ MonoBehaviour:
   topTint: {r: 1, g: 1, b: 1, a: 1}
   bottomTint: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
   castShadow: 1
-  m_InstantiatedMaterial: {fileID: 453623185}
+  m_InstantiatedMaterial: {fileID: 100793048}
 --- !u!114 &808650345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7474,7 +7466,7 @@ MonoBehaviour:
   rangeG: 0
   rangeB: 0
   AdjustedColor: {r: 0.0010039806, g: 1, b: 0, a: 1}
-  hitPosGizmo: {x: 74.55243, y: 4.810182, z: 111.985954}
+  hitPosGizmo: {x: 83.27745, y: 4.9925804, z: 107.56447}
   hitNormal: {x: 0, y: 0.99999994, z: 0}
 --- !u!33 &808650346
 MeshFilter:
@@ -7809,7 +7801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142500, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
       propertyPath: m_Pivot.x
@@ -7913,11 +7905,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5456457732542206067, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7526210881949787691, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
@@ -7987,10 +7979,6 @@ PrefabInstance:
     - target: {fileID: 8962709630393820536, guid: dfa62a5d1e2ab0d4cbd9b8b265b42a62, type: 3}
       propertyPath: sceneViewId
       value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: sceneViewId
-      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1091938088, guid: dfa62a5d1e2ab0d4cbd9b8b265b42a62, type: 3}
@@ -8113,7 +8101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4332894264852038723, guid: 0e037f98307ff734e9c4623c96d79ace, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4332894264852038725, guid: 0e037f98307ff734e9c4623c96d79ace, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -8569,10 +8557,6 @@ PrefabInstance:
     - target: {fileID: 4240322366499831737, guid: 15f4a4c1bf4ee8d4aac42c951f2ba2ec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: sceneViewId
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 931498460, guid: 15f4a4c1bf4ee8d4aac42c951f2ba2ec, type: 3}
@@ -9112,10 +9096,6 @@ PrefabInstance:
     - target: {fileID: 3020852387006796126, guid: 5ca2f39bbba94a549a06cd94bb1d2e37, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -198.657
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ca2f39bbba94a549a06cd94bb1d2e37, type: 3}
