@@ -1,29 +1,32 @@
+using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int currHealth;
-    public int maxHealth;
-    public bool isDead = false;
+    public float currHealth;
+    public float maxHealth;
+    public bool isDead;
 
-    public float currentPowerUpDuration = 0;
+    public float currentPowerUpDuration;
 
-    public int currentAmmoCount;
+    public float currEnergy; //this is "ammmo"
+    public double currCurrency;
 
-    public enum currentPowerUp { None, Hammer, Health }
+    //public enum currentPowerUp { None, Hammer, Health };
 
     Rigidbody rb;
+    WristUI ui;
 
     PowerUp powerUp;
 
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = 100;
-        currHealth = maxHealth;
+        loadSpawnStats();
         rb = GetComponent<Rigidbody>();
+        ui = GameObject.FindObjectOfType<WristUI>();
     }
 
     // Update is called once per frame
@@ -31,6 +34,19 @@ public class Player : MonoBehaviour
     {
         CheckHealth();
     }
+
+    //load spawn stats
+    public void loadSpawnStats()
+    {
+        maxHealth = 100f;
+        currHealth = maxHealth;
+        currEnergy = 69f;
+        currCurrency = 0f;
+        isDead = false;
+        ui.linkAllStats();
+    }
+
+    // trigger death on 0 health
     public void CheckHealth()
     {
         if (currHealth >= maxHealth)
@@ -45,16 +61,54 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    //health
+    // + health
+    public void Gainhealth(float healthAdded)
+    {
+        currHealth += healthAdded;
+        ui.LinkHealthUI();
+    }
+    // - health
+    public void TakeDamage(float damage)
     {
         currHealth -= damage;
+        ui.LinkHealthUI();
     }
-
+    // Destroy on Death
     public virtual void Die()
     {
         Destroy(gameObject);
     }
 
+    //energy (Ammo)
+    // + energy (Ammo)
+    public void AddEnergy(float energyAdded)
+    {
+        currEnergy += energyAdded;
+        ui.LinkEnergyUI();
+    }
+    // - energy (Ammo)
+    public void UseEnergy(float energyUsed)
+    {
+        currEnergy -= energyUsed;
+        ui.LinkEnergyUI();
+    }
+
+    // currency
+    // + currency
+    public void AddCurrency(float currencyAdded)
+    {
+        currCurrency += currencyAdded;
+        ui.LinkCurrencyUI();
+    }
+    // - currency
+    public void UseCurrency(float currencyUsed)
+    {
+        currCurrency -= currencyUsed;
+        ui.LinkCurrencyUI();
+    }
+
+    // ON COLLISION ----> Damage + PowerUps
     private void OnCollisionEnter(Collision other)
     {
         if (other.collider.gameObject.CompareTag("egg"))
@@ -66,20 +120,6 @@ public class Player : MonoBehaviour
             powerUp = other.gameObject.GetComponent<PowerUp>();
             powerUp.ApplyPowerUp();
         }
-        if (other.gameObject.CompareTag("Hammer"))
-        {
-            ItsHammerTime();
-        }
     }
-    public void ItsHammerTime()
-    {
-        Hammer hammer = GameObject.Find("Hammer").GetComponent<Hammer>();
-        currentPowerUpDuration -= currentPowerUpDuration * Time.deltaTime;
 
-        if(currentPowerUpDuration == 0)
-        {
-            Destroy(hammer);
-            //hammer.ByeByeHammer();
-        }
-    }
 }
