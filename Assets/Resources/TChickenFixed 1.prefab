@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 8810110439271472144}
   - component: {fileID: -8683950104094607898}
   m_Layer: 0
-  m_Name: TChickenFixed
+  m_Name: TChickenFixed 1
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
