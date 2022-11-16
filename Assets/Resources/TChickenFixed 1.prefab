@@ -278,8 +278,12 @@ MonoBehaviour:
   myAgent: {fileID: 1925218690683266099}
   range: 200
   distance: 0
+  deathClip: {fileID: 0}
+  hurt: {fileID: 0}
+  walk: {fileID: 0}
   stoppingDistance: 4
   damage: 0
+  turnRate: 0
   spawnPoint: {fileID: 1135757205760943789}
   egg: {fileID: 7354100697095544869, guid: a3b08f5b2bcc0aa40a2bec517a12d403, type: 3}
 --- !u!114 &6019389461125307152

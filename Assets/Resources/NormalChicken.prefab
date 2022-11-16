@@ -913,7 +913,11 @@ MonoBehaviour:
   myAgent: {fileID: 3834422658676958535}
   range: 200
   distance: 0
+  deathClip: {fileID: 0}
+  hurt: {fileID: 0}
+  walk: {fileID: 0}
   stoppingDistance: 1.2
+  turnRate: 0
 --- !u!136 &3834422658676958553
 CapsuleCollider:
   m_ObjectHideFlags: 0
