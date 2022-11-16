@@ -8,6 +8,10 @@ public class Weapon : MonoBehaviour
     public GameObject bullet;
     public Transform spawnPoint;
     public float fireSpeed = 20;
+    public float ammoCost = 10;
+    public AudioSource gunshot;
+    public AudioClip clip;
+    public float volume = 0.5f;
 
     public ParticleSystem muzzleFlash;
 
@@ -27,9 +31,9 @@ public class Weapon : MonoBehaviour
 
     public void FireBullet(ActivateEventArgs arg)
     {
+
         muzzleFlash.Play();
-        Debug.Log("Muzzle Flash fire!");
-        Debug.Log("Bullet Spawn!");
+        gunshot.PlayOneShot(clip, volume);
         GameObject spawnedBullet = Instantiate(bullet, spawnPoint.transform.position, spawnPoint.transform.rotation);
         spawnedBullet.transform.position = spawnPoint.position;
         spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireSpeed;
