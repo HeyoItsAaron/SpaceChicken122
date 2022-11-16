@@ -2,30 +2,29 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Threading;
 using Photon.Pun.Demo.Asteroids;
+using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Animations;
 using UnityEngine.UIElements;
 using UnityEngine.XR.Interaction.Toolkit;
 using static UnityEngine.GraphicsBuffer;
+using Vector3 = UnityEngine.Vector3;
 
 // Inherit from Chicken Stats 
 public class EggChicken : ChickenStats
 {
     // variables
     private Rigidbody[] rbs;
-    public Transform myTarget;
-    public Transform currentTarget;
-    public NavMeshAgent myAgent;
-    public int range;
-    public float distance;
     [SerializeField] float stoppingDistance;
     Animator anim;
     [SerializeField] int damage;
     Spawner spawn;
-    
+    public float turnRate;
+
     //shooting variables
     public Transform spawnPoint;
     float speed = 5;
@@ -36,6 +35,7 @@ public class EggChicken : ChickenStats
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<Animator>().SetFloat("offset", Random.Range(0.0f, 1.0f));
         InvokeRepeating("DistCheck", 0, 0.5f);
         myAgent = GetComponent<NavMeshAgent>();
         rbs = GetComponentsInChildren<Rigidbody>();
@@ -52,6 +52,10 @@ public class EggChicken : ChickenStats
     // Update is called once per frame
     void Update()
     {
+
+        //transform.LookAt(new Vector3(currentTarget.transform.position.x, transform.position.y, currentTarget.transform.position.z));
+
+
         //stoppingDistance = range;
         CheckHealth();
         //transform.LookAt(currentTarget);
@@ -171,6 +175,7 @@ public class EggChicken : ChickenStats
 
     public override void Die()
     {
+        AudioSource.PlayClipAtPoint(deathClip, transform.position);
         myAgent.enabled = false;
         anim.SetBool("isDead", true);
         Destroy(gameObject, 5);
@@ -186,11 +191,12 @@ public class EggChicken : ChickenStats
 
     public void TakeDamage(int damage)
     {
+        AudioSource.PlayClipAtPoint(hurt, transform.position);
         currHealth -= damage;
     }
 
     private void OnCollisionEnter(Collision collision)
-    {
+    {   
         if (collision.collider.gameObject.CompareTag("Light Bullet"))
         {
             TakeDamage(15);

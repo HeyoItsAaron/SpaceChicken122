@@ -2,6 +2,13 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using CSCore;
+using Photon.Pun;
+using Photon.Pun.Demo.Cockpit;
+using Photon.Pun.Demo.PunBasics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
@@ -12,21 +19,21 @@ public class Chicken : ChickenStats
 {
     // variables
     private Rigidbody[] rbs;
-    public Transform myTarget;
-    public Transform currentTarget;
-    public NavMeshAgent myAgent;
-    public int range;
-    public float distance;
     [SerializeField] float stoppingDistance;
     Animator anim;
     float lastAttackTime = 0;
     float attackCooldown = 2;
     private int damage = 10;
     Spawner spawn;
+    public float turnRate;
+    private NetworkPlayer[] networkPlayers;
+
 
     // Start is called before the first frame update
     void Start()
     {
+
+        GetComponent<Animator>().SetFloat("offset", Random.Range(0.0f, 1.0f));
         InvokeRepeating("DistCheck", 0, 0.5f);
         myAgent = GetComponent<NavMeshAgent>();
         rbs = GetComponentsInChildren<Rigidbody>();
@@ -36,13 +43,17 @@ public class Chicken : ChickenStats
         currHealth = maxHealth;
         myTarget = GameObject.FindWithTag("Player").transform;
         spawn = FindObjectOfType<Spawner>();
+
+        networkPlayers = FindObjectsOfType<NetworkPlayer>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        //transform.LookAt(new Vector3(currentTarget.transform.position.x, transform.position.y, currentTarget.transform.position.z));
+
         CheckHealth();
-        //atransform.LookAt(myTarget);
 
         // If else statements to check distance from enemy and call certain method
 
@@ -60,7 +71,13 @@ public class Chicken : ChickenStats
 
             if (distance < range)
             {
-                FindTarget();
+                //FindTarget();
+                Search();
+            }
+            if(currentTarget.IsDestroyed())
+            {
+                //FindTarget();
+                Search();
             }
         }
     }
@@ -83,9 +100,23 @@ public class Chicken : ChickenStats
             item.isKinematic = true;
         }
     }
-    
-    // check distance from enenmy
 
+    // check distance from enenmy
+    
+    void Search()
+    {
+        for (int i = 0; i < networkPlayers.Count(); i++)
+        {
+            float DistanceFromPlayer = Vector3.Distance(networkPlayers[i].head.position, transform.position);
+
+            if (DistanceFromPlayer <= range)
+            {
+                FindTarget(i);
+            }
+        }
+    }
+    
+    
     public void DistCheck()
     {
          float dist = Vector3.Distance(this.transform.position, myTarget.transform.position);
@@ -96,7 +127,8 @@ public class Chicken : ChickenStats
             distance = dist;
         }
     }
-    
+
+
     // Stop enemy
 
     private void StopEnemy()
@@ -125,7 +157,7 @@ public class Chicken : ChickenStats
     
     // Find current target
 
-    private void FindTarget()
+    private void FindTarget(int num)
     {
         myAgent.enabled = true;
         anim.SetBool("isWalking", true);
@@ -138,6 +170,7 @@ public class Chicken : ChickenStats
 
     public override void Die()
     {
+        AudioSource.PlayClipAtPoint(deathClip, transform.position); 
         myAgent.enabled = false;
         anim.SetBool("isDead", true);
         Destroy(gameObject, 5);
@@ -146,11 +179,12 @@ public class Chicken : ChickenStats
 
     public void TakeDamage(int damage)
     {
+        AudioSource.PlayClipAtPoint(hurt, transform.position);
         currHealth -= damage;
     }
 
     private void OnCollisionEnter(Collision collision)
-    {
+    {   
         if (collision.collider.gameObject.CompareTag("Light Bullet"))
         {
             TakeDamage(15);

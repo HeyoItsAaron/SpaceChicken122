@@ -213,7 +213,9 @@ MonoBehaviour:
   myAgent: {fileID: 3834422658676958535, guid: a298d34174e348c40bccd5822016e29d, type: 3}
   range: 200
   distance: 0
+  deathClip: {fileID: 8300000, guid: fc8e0f7bc9a2ac341aa88eb61130e779, type: 3}
   stoppingDistance: 1.2
+  turnRate: 0
 --- !u!114 &6333896777747265695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +240,9 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 0
     Name: isAttacking
+  - Type: 1
+    SynchronizeType: 0
+    Name: offset
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
@@ -259,7 +264,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 0}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

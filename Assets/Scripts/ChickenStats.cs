@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ChickenStats : MonoBehaviour
 {
@@ -10,6 +11,16 @@ public class ChickenStats : MonoBehaviour
     public int maxHealth;
     public bool isDead = false;
     Spawner spawn;
+
+    public Transform myTarget;
+    public Transform currentTarget;
+    public NavMeshAgent myAgent;
+    public int range;
+    public float distance;
+
+    public AudioClip deathClip;
+    public AudioClip hurt;
+    public AudioClip walk;
 
     // Start is called before the first frame update
     void Start()
