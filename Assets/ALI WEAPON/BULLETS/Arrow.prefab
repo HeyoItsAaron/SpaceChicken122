@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: -5158161565920044586}
   m_Layer: 2
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: Heavy Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -447,6 +447,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 6811113649739513852}
+  - {fileID: -5158161565920044586}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

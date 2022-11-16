@@ -27,7 +27,6 @@ public class Weapon : MonoBehaviour
 
     public void FireBullet(ActivateEventArgs arg)
     {
-
         muzzleFlash.Play();
         Debug.Log("Muzzle Flash fire!");
         Debug.Log("Bullet Spawn!");
