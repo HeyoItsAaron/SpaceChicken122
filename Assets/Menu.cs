@@ -18,7 +18,6 @@ public class Menu : MonoBehaviour //change to MonoBehaviourPunCallbacks??
     void Start()
     {
         ray = GameObject.Find("XR Origin/Camera Offset/RightHand Controller/Ray Interactor");
-        gameObject.SetActive(false);
     }
     void Update()
     {
@@ -28,6 +27,10 @@ public class Menu : MonoBehaviour //change to MonoBehaviourPunCallbacks??
     {
         gameObject.SetActive(!gameObject.activeInHierarchy);
         ray.SetActive(!ray.activeInHierarchy);
+        if (gameObject.activeInHierarchy)
+            GameObject.FindObjectOfType<HoldCheck>().hasItemInHand = true;
+        if (!gameObject.activeInHierarchy)
+            GameObject.FindObjectOfType<HoldCheck>().hasItemInHand = false;
     }
     public void RecalibrateHeight()
     {
