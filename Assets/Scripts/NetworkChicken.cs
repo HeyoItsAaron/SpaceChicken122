@@ -39,7 +39,7 @@ public class NetworkChicken : ChickenStats
     // Update is called once per frame
     void Update()
     {
-        CheckHealth();
+        CheckHealth(currHealth,maxHealth);
         //atransform.LookAt(myTarget);
 
         // If else statements to check distance from enemy and call certain method

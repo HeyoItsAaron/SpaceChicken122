@@ -7,8 +7,8 @@ using UnityEngine.AI;
 
 public class ChickenStats : MonoBehaviour
 {
-    public int currHealth;
-    public int maxHealth;
+    //public int currHealth;
+    //public int maxHealth;
     public bool isDead = false;
     Spawner spawn;
 
@@ -22,24 +22,27 @@ public class ChickenStats : MonoBehaviour
     public AudioClip hurt;
     public AudioClip walk;
 
+    public int maxHealth;
+    public int currHealth;
+
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = 100;
-        currHealth = maxHealth;
+        //maxHealth = 100;
+        //currHealth = maxHealth;
         spawn = GetComponent<Spawner>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckHealth();
+        //CheckHealth();
     }
 
 
     // Methods
 
-    public void CheckHealth()
+    public void CheckHealth(int currHealth, int maxHealth)
     {
         if(currHealth >= maxHealth)
         {
