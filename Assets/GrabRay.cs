@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivateGrabRay : MonoBehaviour
+public class GrabRay : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +14,9 @@ public class ActivateGrabRay : MonoBehaviour
     void Update()
     {
         
+    }
+    public void ToggleVisibility()
+    {
+        gameObject.SetActive(!gameObject.activeInHierarchy);
     }
 }

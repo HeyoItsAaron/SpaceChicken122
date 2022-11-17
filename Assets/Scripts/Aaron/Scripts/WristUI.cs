@@ -41,7 +41,6 @@ public class WristUI : MonoBehaviour
         player = GameObject.FindObjectOfType<Player>();
         spawner = GameObject.FindObjectOfType<Spawner>();
         linkAllStats();
-        gameObject.SetActive(false);
     }
     void Update()
     {
