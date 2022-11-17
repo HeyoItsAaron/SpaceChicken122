@@ -13,9 +13,6 @@ public class Tutorial : MonoBehaviour
     // variables
     [SerializeField] private GameObject[] slides;
     private int slideIndex;
-    [SerializeField] private TextMeshProUGUI nextButtonA;
-    [SerializeField] private TextMeshProUGUI nextButtonB;
-    [SerializeField] private TextMeshProUGUI backButtonB;
 
     // methods
     void Start()
@@ -24,19 +21,23 @@ public class Tutorial : MonoBehaviour
         ActivateSlideAtIndex();
     }
 
-    void NextSlide()
-    {
-        if(slideIndex == slides.Count() - 1)
-        {
-            slideIndex = 0;
+    [ContextMenu("NextSlide")]
+    [ContextMenu("PreviousSlide")]
 
-        }
-        slideIndex++;
+    public void NextSlide()
+    {
+        if (slideIndex == slides.Count() - 1)
+            slideIndex = 0;
+        else
+            slideIndex++;
         ActivateSlideAtIndex();
     }
-    void PreviousSlide()
+    public void PreviousSlide()
     {
-        slideIndex--;
+        if (slideIndex == 0)
+            slideIndex = slides.Count()-1;
+        else
+            slideIndex--;
         ActivateSlideAtIndex();
     }
     void ActivateSlideAtIndex()
