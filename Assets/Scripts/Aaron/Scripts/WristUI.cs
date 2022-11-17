@@ -1,3 +1,6 @@
+// Aaron Williams
+// 11/4/2022
+
 using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
@@ -32,24 +35,20 @@ public class WristUI : MonoBehaviour
     public float ammoCountFill;
     public float ammoCountMax = 100.0f;
 
-
-
-
-    void OnAwake()
+    //methods
+    void Start()
     {
         player = GameObject.FindObjectOfType<Player>();
         spawner = GameObject.FindObjectOfType<Spawner>();
         linkAllStats();
+        gameObject.SetActive(false);
     }
-
     void Update()
     {
         //linkPlayerStats();
         //fillBars();
     }
-
     //link UI to playerStats
-    
     //link all stats
     public void linkAllStats()
     {
@@ -59,7 +58,6 @@ public class WristUI : MonoBehaviour
         LinkCurrencyUI();
         LinkWaveUI();
     }
-
     //Link individual stats
     public void LinkHealthUI()
     {
@@ -84,8 +82,6 @@ public class WristUI : MonoBehaviour
     {
         waveText.text = spawner.waveNumber.ToString();
     }
-
-
     public void ToggleVisibility()
     { 
         gameObject.SetActive(!gameObject.activeInHierarchy);

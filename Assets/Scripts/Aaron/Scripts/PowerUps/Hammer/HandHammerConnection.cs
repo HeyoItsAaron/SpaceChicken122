@@ -13,6 +13,7 @@ public class HandHammerConnection : MonoBehaviour
     //public InputActionReference leftTriggerPull;
     public InputActionReference rightTriggerPull;
     public Hammer hammer;
+    public bool hasItemInHand;
     //public bool isHammerTime = true;
 
     // Start is called before the first frame update
@@ -20,6 +21,7 @@ public class HandHammerConnection : MonoBehaviour
     {
         hammer = GameObject.FindObjectOfType<Hammer>();
         rightTriggerPull.action.performed += RightTriggerPulled;
+        hasItemInHand = false;
         //leftTriggerPull.action.performed += LeftTriggerPulled;
     }
 
@@ -42,9 +44,18 @@ public class HandHammerConnection : MonoBehaviour
         
     }
     */
+    public void SetItemInHand()
+    {
+        hasItemInHand = true;
+    }
+    public void SetHandEmpty()
+    {
+        hasItemInHand = false;
+    }
     void RightTriggerPulled(InputAction.CallbackContext context)
     {
-        hammer.ReturnHammer();
+        if(hammer.hasTouchedHammer == true && hasItemInHand == false)
+            hammer.ReturnHammer();
     }
     //void LeftTriggerPulled(InputAction.CallbackContext context)
     //{

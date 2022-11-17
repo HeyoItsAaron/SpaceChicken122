@@ -213,7 +213,11 @@ MonoBehaviour:
   myAgent: {fileID: 3834422658676958535, guid: a298d34174e348c40bccd5822016e29d, type: 3}
   range: 200
   distance: 0
+  deathClip: {fileID: 0}
+  hurt: {fileID: 0}
+  walk: {fileID: 0}
   stoppingDistance: 1.2
+  turnRate: 0
 --- !u!114 &6333896777747265695
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class Hammer : MonoBehaviour
     State state;
 
     public Transform playerHand;
+    public bool hasTouchedHammer;
 
     //built-in methods
     void Start()
@@ -24,6 +25,7 @@ public class Hammer : MonoBehaviour
         hammerRigidBody = GetComponent<Rigidbody>();
         XROrigin rig = FindObjectOfType<XROrigin>();
         playerHand = rig.transform.Find("Camera Offset/RightHand Controller");
+        hasTouchedHammer = false;
     }
 
     void Update()
@@ -33,12 +35,14 @@ public class Hammer : MonoBehaviour
             case State.Throw:
                 {
                     hammerRigidBody.velocity = hammerRigidBody.velocity.normalized * hammerSpeed;
+                    if (hasTouchedHammer == false)
+                        hasTouchedHammer = true;
                 }
 
                 break;
             case State.Return:
                 {
-                    if(Vector3.SqrMagnitude(playerHand.position - transform.position) > 16)
+                    if(Vector3.SqrMagnitude(playerHand.position - transform.position) > 4)
                     {
                         Vector3 direction = (playerHand.position - transform.position).normalized;
                         hammerRigidBody.velocity = direction * hammerSpeed;
