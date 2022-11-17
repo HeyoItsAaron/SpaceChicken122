@@ -28,6 +28,14 @@ public class Chicken : ChickenStats
     public float turnRate;
     private NetworkPlayer[] networkPlayers;
 
+    // test variables
+    int lightCount = 0;
+    int mediumCount = 0;
+    int heavyCount = 0;
+    int hammerCount = 0;
+    int fallingCount = 0;
+    PhotonView PV;
+
 
     // Start is called before the first frame update
     void Start()
@@ -53,7 +61,7 @@ public class Chicken : ChickenStats
     {
         //transform.LookAt(new Vector3(currentTarget.transform.position.x, transform.position.y, currentTarget.transform.position.z));
 
-        CheckHealth();
+        CheckHealth(currHealth, maxHealth);
 
         // If else statements to check distance from enemy and call certain method
 
@@ -179,10 +187,17 @@ public class Chicken : ChickenStats
 
     public void TakeDamage(int damage)
     {
+        PV.RPC(nameof(RPC_TakeDamage), PV.Owner, damage);
+    }
+
+    [PunRPC]
+    void RPC_TakeDamage(int damage)
+    {
         AudioSource.PlayClipAtPoint(hurt, transform.position);
         currHealth -= damage;
     }
 
+    // old
     private void OnCollisionEnter(Collision collision)
     {   
         if (collision.gameObject.tag == "Light Bullet")
@@ -202,5 +217,52 @@ public class Chicken : ChickenStats
             TakeDamage(50);
         }
     }
+
+    // test this
+    /*
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Light Bullet")
+        {
+            lightCount++;
+            if(lightCount > 7)
+            {
+                Die();
+            }
+        }
+        if (collision.gameObject.tag == "Medium Bullet")
+        {
+            mediumCount++;
+            if (mediumCount > 5)
+            {
+                Die();
+            }
+        }
+        if (collision.gameObject.tag == "Heavy Bullet")
+        {
+            heavyCount++;
+            if (heavyCount > 3)
+            {
+                Die();
+            }
+        }
+        if (collision.gameObject.tag == "HAMMER")
+        {
+            hammerCount++;
+            if (lightCount > 2)
+            {
+                Die();
+            }
+        }
+        if (collision.gameObject.tag == "FALLING HAMMER")
+        {
+            fallingCount++;
+            if (fallingCount > 1)
+            {
+                Die();
+            }
+        }
+    }
+    */
 
 }

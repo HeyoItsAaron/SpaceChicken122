@@ -57,7 +57,7 @@ public class EggChicken : ChickenStats
 
 
         //stoppingDistance = range;
-        CheckHealth();
+        CheckHealth(currHealth, maxHealth);
         //transform.LookAt(currentTarget);
         fireRate -= Time.deltaTime;
 
