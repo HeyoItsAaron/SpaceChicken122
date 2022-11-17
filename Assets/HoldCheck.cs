@@ -12,7 +12,8 @@ public class HoldCheck : MonoBehaviour
     public void SetItemInHand()
     {
         hasItemInHand = true;
-        StartCoroutine(WaitSeconds());
+        if(GameObject.Find("Grab Ray").activeInHierarchy)
+            StartCoroutine(WaitSeconds());
     }
     public void SetHandEmpty()
     {
