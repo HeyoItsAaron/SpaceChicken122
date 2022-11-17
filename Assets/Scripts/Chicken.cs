@@ -185,19 +185,19 @@ public class Chicken : ChickenStats
 
     private void OnCollisionEnter(Collision collision)
     {   
-        if (collision.collider.gameObject.CompareTag("Light Bullet"))
+        if (collision.gameObject.tag == "Light Bullet")
         {
             TakeDamage(15);
         }
-        if (collision.collider.gameObject.CompareTag("Medium Bullet"))
+        if (collision.gameObject.tag == "Medium Bullet")
         {
             TakeDamage(25);
         }
-        if (collision.collider.gameObject.CompareTag("Heavy Bullet"))
+        if (collision.gameObject.tag == "Heavy Bullet")
         {
             TakeDamage(35);
         }
-        if (collision.collider.gameObject.CompareTag("HAMMER"))
+        if (collision.gameObject.tag ==  "HAMMER")
         {
             TakeDamage(50);
         }
