@@ -4,7 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Chicken
   - Enemy
+  - Medium Bullet
+  - Heavy Bullet
+  - Light Bullet
+  - Bullet
+  - Lazer
   layers:
   - Default
   - TransparentFX
@@ -12,22 +18,22 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - Hand
-  - Button
-  - Enemy
-  - LevelGeometry
   - Player
-  - Grabbable
-  - Lever
-  - VisualSensor
-  - AI_Stimulation_Enemy
-  - AI_Stimulation_Player
-  - IgnoreCollision
-  - Dropzone_Trigger
-  - LaserSword
-  - GrabCollider
+  - Interactable
+  - Grass Blend Layer
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
