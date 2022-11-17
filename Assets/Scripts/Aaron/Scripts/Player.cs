@@ -1,6 +1,7 @@
 using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -26,7 +27,7 @@ public class Player : MonoBehaviour
     {
         loadSpawnStats();
         rb = GetComponent<Rigidbody>();
-        ui = GameObject.FindObjectOfType<WristUI>();
+        ui = GameObject.Find("Robot Kyle Avatar").GetComponentInChildren<WristUI>();
     }
 
     // Update is called once per frame

@@ -1374,33 +1374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!21 &214317843
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_BIRP_GrassComputeVertexFrag(Clone)
-  m_Shader: {fileID: 4800000, guid: 6f5c5086087ff674a915a0b23a6d385f, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs: []
-    m_Ints: []
-    m_Floats:
-    - _AmbientAdjustment: 0
-    - _BlendFloor: 0
-    - _Fade: 0.3
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1 &218916128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,7 +1578,7 @@ MonoBehaviour:
   m_Camera: {fileID: 831863763}
   m_OriginBaseGameObject: {fileID: 218916128}
   m_CameraFloorOffsetObject: {fileID: 706293304}
-  m_RequestedTrackingOriginMode: 1
+  m_RequestedTrackingOriginMode: 2
   m_CameraYOffset: 2
 --- !u!4 &218916140
 Transform:
@@ -2160,6 +2133,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f493089e6ca188c46895694318ff6db8, type: 3}
+--- !u!21 &308031976
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Custom_BIRP_GrassComputeVertexFrag(Clone)
+  m_Shader: {fileID: 4800000, guid: 6f5c5086087ff674a915a0b23a6d385f, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _AmbientAdjustment: 0
+    - _BlendFloor: 0
+    - _Fade: 0.3
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &364070324
 GameObject:
   m_ObjectHideFlags: 0
@@ -2983,6 +2983,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1344876960}
     m_Modifications:
+    - target: {fileID: 1862214570937142496, guid: 76fb2de7f10cb7542b58dc479814166e,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 831863763}
     - target: {fileID: 1862214570937142497, guid: 76fb2de7f10cb7542b58dc479814166e,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -3234,7 +3239,7 @@ MonoBehaviour:
   topTint: {r: 1, g: 1, b: 1, a: 1}
   bottomTint: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
   castShadow: 1
-  m_InstantiatedMaterial: {fileID: 214317843}
+  m_InstantiatedMaterial: {fileID: 308031976}
 --- !u!114 &808650345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7720,6 +7725,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1344876960}
     m_Modifications:
+    - target: {fileID: 1862214570937142496, guid: 76fb2de7f10cb7542b58dc479814166e,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 831863763}
     - target: {fileID: 1862214570937142497, guid: 76fb2de7f10cb7542b58dc479814166e,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -7886,6 +7896,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1344876960}
     m_Modifications:
+    - target: {fileID: 1862214570937142496, guid: 76fb2de7f10cb7542b58dc479814166e,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 831863763}
     - target: {fileID: 1862214570937142497, guid: 76fb2de7f10cb7542b58dc479814166e,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -8046,6 +8061,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1344876960}
     m_Modifications:
+    - target: {fileID: 1862214570937142496, guid: 76fb2de7f10cb7542b58dc479814166e,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 831863763}
     - target: {fileID: 1862214570937142497, guid: 76fb2de7f10cb7542b58dc479814166e,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -8217,6 +8237,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1344876960}
     m_Modifications:
+    - target: {fileID: 1862214570937142496, guid: 837d9df2c413a8d4e809c7a53b911a39,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 831863763}
+    - target: {fileID: 1862214570937142497, guid: 837d9df2c413a8d4e809c7a53b911a39,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142500, guid: 837d9df2c413a8d4e809c7a53b911a39,
         type: 3}
       propertyPath: m_Name
@@ -8361,6 +8391,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1344876960}
     m_Modifications:
+    - target: {fileID: 1862214570937142496, guid: 30c1f5f0d66c4bc45a338d5b162c4bd1,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 831863763}
+    - target: {fileID: 1862214570937142497, guid: 30c1f5f0d66c4bc45a338d5b162c4bd1,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142500, guid: 30c1f5f0d66c4bc45a338d5b162c4bd1,
         type: 3}
       propertyPath: m_Name
@@ -9700,6 +9740,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1344876960}
     m_Modifications:
+    - target: {fileID: 1862214570937142496, guid: 76fb2de7f10cb7542b58dc479814166e,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 831863763}
     - target: {fileID: 1862214570937142497, guid: 76fb2de7f10cb7542b58dc479814166e,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -11806,6 +11851,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1344876960}
     m_Modifications:
+    - target: {fileID: 1862214570937142496, guid: 76fb2de7f10cb7542b58dc479814166e,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 831863763}
     - target: {fileID: 1862214570937142497, guid: 76fb2de7f10cb7542b58dc479814166e,
         type: 3}
       propertyPath: m_PresetInfoIsWorld

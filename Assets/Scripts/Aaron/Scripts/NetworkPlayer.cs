@@ -30,6 +30,7 @@ public class NetworkPlayer : MonoBehaviour
     private Transform rightHandRig;
     private GameObject spawnedAvatar;
 
+
     // Methods
 
     // Start is called before the first frame update
