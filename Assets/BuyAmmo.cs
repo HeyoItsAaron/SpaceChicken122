@@ -1,17 +1,12 @@
-// Aaron Williams
-// 11/16/2022
-
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
-using Photon.Realtime;
 
-public class WallBuy : MonoBehaviour
+public class BuyAmmo : MonoBehaviour
 {
     // variables
-    [SerializeField] private GameObject weaponPrefab;
-    [SerializeField] private GameObject weaponSpawnPoint;
+    [SerializeField] private float energyBought;
     [SerializeField] private float price;
     private Player player;
 
@@ -22,13 +17,12 @@ public class WallBuy : MonoBehaviour
         player = GameObject.FindObjectOfType<Player>();
     }
 
-    public void BuyWeapon()
+    public void BuyEnergy()
     {
         if (player.currCurrency >= price)
         {
             player.currCurrency -= price;
-            PhotonNetwork.Instantiate(weaponPrefab.name, weaponSpawnPoint.transform.position, weaponSpawnPoint.transform.rotation);
+            player.currEnergy += energyBought;
         }
     }
-
 }
