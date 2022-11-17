@@ -141,6 +141,10 @@ MonoBehaviour:
   bullet: {fileID: 7916982016811738264, guid: edd46995b771f75488a0f5213ed359d6, type: 3}
   spawnPoint: {fileID: 2053188348816018447}
   fireSpeed: 20
+  ammoCost: 10
+  gunshot: {fileID: 0}
+  clip: {fileID: 0}
+  volume: 0.5
   muzzleFlash: {fileID: 5331257096129233297}
 --- !u!114 &1616747689
 MonoBehaviour:
@@ -208,10 +212,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: HandHammerConnection, Assembly-CSharp
+        m_MethodName: SetItemInHand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: HandHammerConnection, Assembly-CSharp
+        m_MethodName: SetHandEmpty
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Activated:
     m_PersistentCalls:
       m_Calls: []
