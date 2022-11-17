@@ -32,9 +32,6 @@ public class WristUI : MonoBehaviour
     public float ammoCountFill;
     public float ammoCountMax = 100.0f;
 
-
-
-
     void OnAwake()
     {
         player = GameObject.FindObjectOfType<Player>();
