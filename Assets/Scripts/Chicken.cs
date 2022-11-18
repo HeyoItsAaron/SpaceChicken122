@@ -33,7 +33,6 @@ public class Chicken : ChickenStats
     void Start()
     {
         GetComponent<Animator>().SetFloat("offset", Random.Range(0.0f, 1.0f));
-        InvokeRepeating("Search", 0, 0.5f);
         myAgent = GetComponent<NavMeshAgent>();
         rbs = GetComponentsInChildren<Rigidbody>();
         anim = GetComponent<Animator>();
@@ -44,6 +43,9 @@ public class Chicken : ChickenStats
         networkPlayers = FindObjectsOfType<NetworkPlayer>();
         myTarget = networkPlayers[0].head;
         currentTarget = myTarget;
+        playerPosition = 0;
+        distance = Vector3.Distance(networkPlayers[0].head.position, transform.position);
+        InvokeRepeating("Search", 0, 0.5f);
     }
 
     // Update is called once per frame
