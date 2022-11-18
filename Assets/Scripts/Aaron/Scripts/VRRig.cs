@@ -39,7 +39,7 @@ public class VRRig : MonoBehaviour
     }
 
     // Update is called once per frame
-    /*
+    
     private void OnEnable()
     {
         if (RenderPipelineManager.currentPipeline != null)
@@ -67,7 +67,7 @@ public class VRRig : MonoBehaviour
     private void BeforeRenderUpdate()
     {
         // Put your update code here
-    }*/
+    }
     void LateUpdate()
     {
         root.position = head.rigTarget.position + headBodyOffset;

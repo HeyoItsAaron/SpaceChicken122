@@ -15,18 +15,19 @@ public class Menu : MonoBehaviour //change to MonoBehaviourPunCallbacks??
     GameObject ray;
 
     // methods
-    void LateStart()
+    void Start()
     {
         ray = GameObject.Find("XR Origin/Camera Offset/RightHand Controller/Ray Interactor");
     }
-    void Update()
-    {
-        
-    }
+
     public void ToggleVisibility()
     {
         gameObject.SetActive(!gameObject.activeInHierarchy);
         ray.SetActive(!ray.activeInHierarchy);
+        if (gameObject.activeInHierarchy)
+            GameObject.FindObjectOfType<HoldCheck>().hasItemInHand = true;
+        if (!gameObject.activeInHierarchy)
+            GameObject.FindObjectOfType<HoldCheck>().hasItemInHand = false;
     }
     public void RecalibrateHeight()
     {
