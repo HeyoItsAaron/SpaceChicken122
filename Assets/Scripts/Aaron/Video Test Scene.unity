@@ -3126,6 +3126,33 @@ Transform:
   m_Father: {fileID: 218916140}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &760311456
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Custom_BIRP_GrassComputeVertexFrag(Clone)
+  m_Shader: {fileID: 4800000, guid: 6f5c5086087ff674a915a0b23a6d385f, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _AmbientAdjustment: 0
+    - _BlendFloor: 0
+    - _Fade: 0.3
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &808650343
 GameObject:
   m_ObjectHideFlags: 0
@@ -3178,7 +3205,7 @@ MonoBehaviour:
   topTint: {r: 1, g: 1, b: 1, a: 1}
   bottomTint: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
   castShadow: 1
-  m_InstantiatedMaterial: {fileID: 1405699783}
+  m_InstantiatedMaterial: {fileID: 760311456}
 --- !u!114 &808650345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9620,33 +9647,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8248555612544358175, guid: 09e0a1f6012574e4ba2521e15d84a698, type: 3}
   m_PrefabInstance: {fileID: 1398692119}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1405699783
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_BIRP_GrassComputeVertexFrag(Clone)
-  m_Shader: {fileID: 4800000, guid: 6f5c5086087ff674a915a0b23a6d385f, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs: []
-    m_Ints: []
-    m_Floats:
-    - _AmbientAdjustment: 0
-    - _BlendFloor: 0
-    - _Fade: 0.3
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!114 &1441336914 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3031530637717211912, guid: 5ca2f39bbba94a549a06cd94bb1d2e37, type: 3}
@@ -12545,12 +12545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b172f04c80f1b4c89e7ebd17527406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawners:
-  - {fileID: 321185418302646446}
-  - {fileID: 321185419189116826}
-  - {fileID: 321185417872535922}
-  - {fileID: 321185419448396946}
-  - {fileID: 321185419678538471}
+  spawners: []
   Enemies:
   - NormalChicken
   - NormalChicken

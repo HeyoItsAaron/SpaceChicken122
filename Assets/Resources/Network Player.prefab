@@ -417,4 +417,5 @@ MonoBehaviour:
   isDead: 0
   currentPowerUpDuration: 69
   currEnergy: 69
+  maxEnergy: 0
   currCurrency: 69

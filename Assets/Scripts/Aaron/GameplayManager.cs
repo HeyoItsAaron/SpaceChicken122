@@ -9,23 +9,41 @@ public class GameplayManager : MonoBehaviour
     public int waveNumber;
     public int enemyAmount;
     public testSpawner spawner;
+    int spawnThisMany;
+    bool isSafe;
 
     // methods
-    void Start()
+    void OnEnable()
     {
         waveNumber = 0;
         spawner = GameObject.FindObjectOfType<testSpawner>();
+
+        if (spawner != null || spawner.spawners != null)
+        {
+            StartWave();
+        }
     }
     void Update()
     {
-        if (enemyAmount == 0)
+        if (isSafe)
         {
-            spawner.NextWave();
+            if (enemyAmount == 0)
+            {
+                StartWave();
+            }
         }
     }
-
+    void safetyCheck()
+    {
+        if(spawner != null || spawner.spawners !=null)
+        {
+            isSafe = true;
+        }
+    }
     public void StartWave()
     {
-        //spawner.SpawnEnemy(this many);
+        waveNumber++;
+        spawnThisMany = waveNumber * 2;
+        spawner.SpawnEnemy((waveNumber * 2));
     }
 }
