@@ -7,17 +7,17 @@ using Photon.Pun;
 public class Billboard : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI WaveNum;
-    public NetworkSpawner spawner;
+    public testSpawner spawner;
 
     void Start()
     {
-        spawner = FindObjectOfType<NetworkSpawner>();
+        spawner = FindObjectOfType<testSpawner>();
     }
     void Update()
     {
         if (spawner == null)
         {
-            spawner = FindObjectOfType<NetworkSpawner>();
+            spawner = FindObjectOfType<testSpawner>();
         }
         gameObject.GetComponent<PhotonView>().RPC("LinkWave", RpcTarget.AllBuffered);
     }
