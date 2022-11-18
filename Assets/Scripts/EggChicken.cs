@@ -149,7 +149,8 @@ public class EggChicken : ChickenStats
         myAgent.enabled = false;
         anim.SetBool("isDead", true);
         StartCoroutine(despawnAfterSeconds());
-        spawn.enemiesKilled++;
+        //spawn.enemiesKilled++;
+        spawn.enemyAmount--;
     }
 
     // RPC Damage function for chicken damage over network

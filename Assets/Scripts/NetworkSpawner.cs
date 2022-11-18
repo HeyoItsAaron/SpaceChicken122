@@ -17,6 +17,7 @@ public class NetworkSpawner : MonoBehaviour
     public int enemyAmount = 0;
     public int enemiesKilled = 0;
     //public WristUI ui;
+    // hi
   
 
     // Start is called before the first frame update
