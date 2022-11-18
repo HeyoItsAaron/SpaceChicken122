@@ -545,7 +545,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectActionTrigger: 0
   m_HideControllerOnSelect: 0
-  m_AllowHoveredActivate: 0
+  m_AllowHoveredActivate: 1
   m_TargetPriorityMode: 0
   m_PlayAudioClipOnSelectEntered: 0
   m_AudioClipForOnSelectEntered: {fileID: 0}
@@ -581,7 +581,7 @@ MonoBehaviour:
   m_AllowHoverHapticsWhileSelecting: 1
   m_LineType: 0
   m_BlendVisualLinePoints: 1
-  m_MaxRaycastDistance: 1.2
+  m_MaxRaycastDistance: 30
   m_RayOriginTransform: {fileID: 0}
   m_ReferenceFrame: {fileID: 0}
   m_Velocity: 16
@@ -600,7 +600,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
   m_HitClosestOnly: 0
-  m_HoverToSelect: 0
+  m_HoverToSelect: 1
   m_HoverTimeToSelect: 0.5
   m_EnableUIInteraction: 1
   m_AllowAnchorControl: 1
@@ -636,139 +636,183 @@ MonoBehaviour:
       m_Name: Position
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: ead3b862-5331-4bf6-b465-932f8c74bca2
+      m_Id: f92d2cea-f21e-4d1d-b23f-207461227fd2
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+<<<<<<< HEAD
     m_Reference: {fileID: -3326005586356538449, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+=======
+    m_Reference: {fileID: 0}
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
   m_RotationAction:
     m_UseReference: 0
     m_Action:
       m_Name: Rotation
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 15000329-03ad-4d77-8739-7313833aef19
+      m_Id: d340a09c-30d1-40fa-8003-6df41ea5a583
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+<<<<<<< HEAD
     m_Reference: {fileID: 5101698808175986029, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+=======
+    m_Reference: {fileID: 0}
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
   m_TrackingStateAction:
     m_UseReference: 0
     m_Action:
       m_Name: Tracking State
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 691b60f0-9d23-424f-a06f-fff3e42a7f04
+      m_Id: c169f095-6463-46a6-ac38-3dae49ce759d
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+<<<<<<< HEAD
     m_Reference: {fileID: -1277054153949319361, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+=======
+    m_Reference: {fileID: 0}
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
   m_SelectAction:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
       m_Name: Select
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: e3317fe4-821a-476c-aa50-3ec58c531947
+      m_Id: 0e27bb9e-4eb5-4ac7-a36c-4213a0ad2f58
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+<<<<<<< HEAD
     m_Reference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+=======
+    m_Reference: {fileID: 0}
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
   m_SelectActionValue:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
       m_Name: Select Action Value
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 12663ed7-5539-439e-a383-32526753921f
+      m_Id: 87f5fcb1-1758-447f-b1f6-a77a935f08eb
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+<<<<<<< HEAD
     m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+=======
+    m_Reference: {fileID: 0}
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
   m_ActivateAction:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
       m_Name: Activate
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: ecca660e-ff68-4bb9-a7d7-1e4e8a487dcf
+      m_Id: 5e8751d6-998a-46f0-b9e3-db135e029200
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+<<<<<<< HEAD
     m_Reference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+=======
+    m_Reference: {fileID: 0}
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
   m_ActivateActionValue:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
       m_Name: Activate Action Value
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: c86b5a8f-4273-46e1-ad1f-643165c646bd
+      m_Id: bcb02c97-e8b9-451e-acd2-d732c5623d78
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+<<<<<<< HEAD
     m_Reference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+=======
+    m_Reference: {fileID: 0}
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
   m_UIPressAction:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
       m_Name: UI Press
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 8b19e3c6-7609-4382-a704-d0237480d4bd
+      m_Id: bfd7ae6c-f76b-4f8b-8884-5c52802b7c49
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+<<<<<<< HEAD
     m_Reference: {fileID: 3279264004350380116, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+=======
+    m_Reference: {fileID: 0}
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
   m_UIPressActionValue:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
       m_Name: UI Press Action Value
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: d30ff775-3f7c-441f-aefa-111cb8827115
+      m_Id: 1ae1383d-ee9d-4b8d-90ad-b075a2e8b21a
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+<<<<<<< HEAD
     m_Reference: {fileID: -5908353012961274365, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+=======
+    m_Reference: {fileID: 0}
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
   m_HapticDeviceAction:
     m_UseReference: 0
     m_Action:
       m_Name: Haptic Device
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: e84c31a2-0444-4c39-988d-048a61675c3f
+      m_Id: acecc17e-fc0d-4421-a419-0557c3cb8229
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+<<<<<<< HEAD
     m_Reference: {fileID: -8222252007134549311, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+=======
+    m_Reference: {fileID: 0}
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
   m_RotateAnchorAction:
     m_UseReference: 0
     m_Action:
       m_Name: Rotate Anchor
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 8b4d7197-8a21-468f-9a92-3ff86f991554
+      m_Id: c6ad192d-0b25-466e-9384-4676feb380e2
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+<<<<<<< HEAD
     m_Reference: {fileID: -5913262927076077117, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+=======
+    m_Reference: {fileID: 0}
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
   m_DirectionalAnchorRotationAction:
     m_UseReference: 0
     m_Action:
       m_Name: Directional Anchor Rotation
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 95096207-d07c-44d5-8cac-8949e8c3883a
+      m_Id: 2738d9b0-a3f9-4438-b471-1f1b5ee2c472
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -780,12 +824,16 @@ MonoBehaviour:
       m_Name: Translate Anchor
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 38197669-85d1-4fcc-b7a2-481e00cb6880
+      m_Id: 484ee440-16a9-4385-bcda-805f475246e3
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+<<<<<<< HEAD
     m_Reference: {fileID: 875253871413052681, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+=======
+    m_Reference: {fileID: 0}
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
   m_ButtonPressPoint: 0.5
 --- !u!1 &70426825 stripped
 GameObject:
@@ -826,11 +874,11 @@ PrefabInstance:
     - target: {fileID: 206931438, guid: b4fd61c1b42d737498c9755810b0408f, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 218916144}
+      objectReference: {fileID: 218916129}
     - target: {fileID: 206931438, guid: b4fd61c1b42d737498c9755810b0408f, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 218916144}
+      objectReference: {fileID: 218916129}
     - target: {fileID: 206931438, guid: b4fd61c1b42d737498c9755810b0408f, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -849,11 +897,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 206931438, guid: b4fd61c1b42d737498c9755810b0408f, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HoldCheck, Assembly-CSharp
+      value: HandHammerConnection, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 206931438, guid: b4fd61c1b42d737498c9755810b0408f, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HoldCheck, Assembly-CSharp
+      value: HandHammerConnection, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 206931438, guid: b4fd61c1b42d737498c9755810b0408f, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1327,7 +1375,6 @@ GameObject:
   - component: {fileID: 218916141}
   - component: {fileID: 218916142}
   - component: {fileID: 218916143}
-  - component: {fileID: 218916144}
   m_Layer: 6
   m_Name: XR Origin
   m_TagString: Untagged
@@ -1349,6 +1396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightTriggerPull: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   hammer: {fileID: 1347696185}
+  hasItemInHand: 0
 --- !u!114 &218916130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1507,7 +1555,7 @@ MonoBehaviour:
   m_OriginBaseGameObject: {fileID: 218916128}
   m_CameraFloorOffsetObject: {fileID: 706293304}
   m_RequestedTrackingOriginMode: 1
-  m_CameraYOffset: 2
+  m_CameraYOffset: 2.2
 --- !u!4 &218916140
 Transform:
   m_ObjectHideFlags: 0
@@ -1550,7 +1598,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toggleUI: {fileID: -7317676131023394613, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   toggleMenu: {fileID: -61373908613834135, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+<<<<<<< HEAD
   toggleGrabRay: {fileID: 6302449617213786958, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+=======
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
 --- !u!114 &218916143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1565,19 +1616,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultHeight: 2
   aCamera: {fileID: 0}
---- !u!114 &218916144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218916128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93e9bbddd3004d34390be59bb602a596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasItemInHand: 0
 --- !u!43 &254200228
 Mesh:
   m_ObjectHideFlags: 0
@@ -1773,7 +1811,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1919,6 +1957,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD
+=======
+    - target: {fileID: 1590290956986552418, guid: f493089e6ca188c46895694318ff6db8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590290956986552418, guid: f493089e6ca188c46895694318ff6db8, type: 3}
+      propertyPath: maxHealth
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590290956986552418, guid: f493089e6ca188c46895694318ff6db8, type: 3}
+      propertyPath: currEnergy
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590290956986552418, guid: f493089e6ca188c46895694318ff6db8, type: 3}
+      propertyPath: currHealth
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590290956986552418, guid: f493089e6ca188c46895694318ff6db8, type: 3}
+      propertyPath: currCurrency
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846385195808029936, guid: f493089e6ca188c46895694318ff6db8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
     - target: {fileID: 2846385195808029936, guid: f493089e6ca188c46895694318ff6db8, type: 3}
       propertyPath: head.vrTarget
       value: 
@@ -1931,6 +1996,17 @@ PrefabInstance:
       propertyPath: rightHand.vrTarget
       value: 
       objectReference: {fileID: 1829754772}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 2846385195808029937, guid: f493089e6ca188c46895694318ff6db8, type: 3}
+      propertyPath: footOffset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846385195808029940, guid: f493089e6ca188c46895694318ff6db8, type: 3}
+      propertyPath: drawBones
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
     - target: {fileID: 3406977439506733391, guid: f493089e6ca188c46895694318ff6db8, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1939,22 +2015,34 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 831863763}
+<<<<<<< HEAD
     - target: {fileID: 5897194804119141915, guid: f493089e6ca188c46895694318ff6db8, type: 3}
       propertyPath: volumeSlider
       value: 
       objectReference: {fileID: 652860148}
+=======
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
     - target: {fileID: 6098306378602784160, guid: f493089e6ca188c46895694318ff6db8, type: 3}
       propertyPath: m_Name
       value: Robot Kyle Avatar
       objectReference: {fileID: 0}
     - target: {fileID: 6098306378602784160, guid: f493089e6ca188c46895694318ff6db8, type: 3}
       propertyPath: m_IsActive
+<<<<<<< HEAD
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6840283168417362820, guid: f493089e6ca188c46895694318ff6db8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+=======
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6840283168417362820, guid: f493089e6ca188c46895694318ff6db8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
     - target: {fileID: 7132242275639809971, guid: f493089e6ca188c46895694318ff6db8, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -2001,7 +2089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9018127038746117596, guid: f493089e6ca188c46895694318ff6db8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f493089e6ca188c46895694318ff6db8, type: 3}
@@ -2086,7 +2174,7 @@ Transform:
   - {fileID: 1533530091}
   - {fileID: 1398692120}
   m_Father: {fileID: 1344876960}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &440964027
 GameObject:
@@ -2814,7 +2902,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 76fb2de7f10cb7542b58dc479814166e, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 76fb2de7f10cb7542b58dc479814166e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2862,7 +2950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 76fb2de7f10cb7542b58dc479814166e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.2200012
+      value: 1.22
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 76fb2de7f10cb7542b58dc479814166e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2919,6 +3007,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1862214570937142527, guid: 76fb2de7f10cb7542b58dc479814166e, type: 3}
   m_PrefabInstance: {fileID: 555058123}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &652860148 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6820509428468700903, guid: f493089e6ca188c46895694318ff6db8, type: 3}
@@ -2930,6 +3019,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
 --- !u!1 &706293304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3016,7 +3107,11 @@ MonoBehaviour:
   topTint: {r: 1, g: 1, b: 1, a: 1}
   bottomTint: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
   castShadow: 1
+<<<<<<< HEAD
   m_InstantiatedMaterial: {fileID: 852617434}
+=======
+  m_InstantiatedMaterial: {fileID: 1688001996}
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
 --- !u!114 &808650345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7520,7 +7615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 76fb2de7f10cb7542b58dc479814166e, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 76fb2de7f10cb7542b58dc479814166e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7682,7 +7777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 76fb2de7f10cb7542b58dc479814166e, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 76fb2de7f10cb7542b58dc479814166e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7812,7 +7907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 76fb2de7f10cb7542b58dc479814166e, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 76fb2de7f10cb7542b58dc479814166e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7951,7 +8046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 837d9df2c413a8d4e809c7a53b911a39, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 837d9df2c413a8d4e809c7a53b911a39, type: 3}
       propertyPath: m_AnchorMax.x
@@ -8482,6 +8577,7 @@ Transform:
   - {fileID: 1009138309}
   - {fileID: 543450651743763793}
   - {fileID: 4519677896822593}
+  - {fileID: 1862214571682452929}
   - {fileID: 431307429}
   - {fileID: 1104430897}
   - {fileID: 1720164703}
@@ -8510,6 +8606,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3020852387006796126, guid: 93e3e61b2fa695b4e8219a3004619160, type: 3}
   m_PrefabInstance: {fileID: 1640043382}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &1349020337
 GameObject:
   m_ObjectHideFlags: 0
@@ -9095,6 +9192,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 875253871413052681, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ButtonPressPoint: 0.5
+=======
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
 --- !u!1001 &1398692119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9118,6 +9217,7 @@ PrefabInstance:
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 1515438701, guid: 09e0a1f6012574e4ba2521e15d84a698, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -9166,6 +9266,8 @@ PrefabInstance:
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
     - target: {fileID: 5898511815815249078, guid: 09e0a1f6012574e4ba2521e15d84a698, type: 3}
       propertyPath: sceneViewId
       value: 61
@@ -9192,7 +9294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8248555612544358175, guid: 09e0a1f6012574e4ba2521e15d84a698, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8248555612544358175, guid: 09e0a1f6012574e4ba2521e15d84a698, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9343,7 +9445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 76fb2de7f10cb7542b58dc479814166e, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 76fb2de7f10cb7542b58dc479814166e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -9599,11 +9701,11 @@ PrefabInstance:
     - target: {fileID: 292780119, guid: 15f4a4c1bf4ee8d4aac42c951f2ba2ec, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 218916144}
+      objectReference: {fileID: 218916129}
     - target: {fileID: 292780119, guid: 15f4a4c1bf4ee8d4aac42c951f2ba2ec, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 218916144}
+      objectReference: {fileID: 218916129}
     - target: {fileID: 292780119, guid: 15f4a4c1bf4ee8d4aac42c951f2ba2ec, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -9622,11 +9724,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 292780119, guid: 15f4a4c1bf4ee8d4aac42c951f2ba2ec, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HoldCheck, Assembly-CSharp
+      value: HandHammerConnection, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 292780119, guid: 15f4a4c1bf4ee8d4aac42c951f2ba2ec, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HoldCheck, Assembly-CSharp
+      value: HandHammerConnection, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 292780119, guid: 15f4a4c1bf4ee8d4aac42c951f2ba2ec, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -9670,7 +9772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4240322366499831737, guid: 15f4a4c1bf4ee8d4aac42c951f2ba2ec, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4240322366499831737, guid: 15f4a4c1bf4ee8d4aac42c951f2ba2ec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9794,10 +9896,11 @@ PrefabInstance:
     - target: {fileID: 1616747690, guid: dfa62a5d1e2ab0d4cbd9b8b265b42a62, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 218916144}
+      objectReference: {fileID: 218916129}
     - target: {fileID: 1616747690, guid: dfa62a5d1e2ab0d4cbd9b8b265b42a62, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+<<<<<<< HEAD
       objectReference: {fileID: 218916144}
     - target: {fileID: 1616747690, guid: dfa62a5d1e2ab0d4cbd9b8b265b42a62, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -9815,9 +9918,12 @@ PrefabInstance:
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: HoldCheck, Assembly-CSharp
       objectReference: {fileID: 0}
+=======
+      objectReference: {fileID: 218916129}
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
     - target: {fileID: 33349778274931545, guid: dfa62a5d1e2ab0d4cbd9b8b265b42a62, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 33349778274931545, guid: dfa62a5d1e2ab0d4cbd9b8b265b42a62, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10148,6 +10254,7 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 494874696}
+<<<<<<< HEAD
     - target: {fileID: 3607855484291988387, guid: 93e3e61b2fa695b4e8219a3004619160, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -10204,8 +10311,37 @@ PrefabInstance:
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93e3e61b2fa695b4e8219a3004619160, type: 3}
+--- !u!21 &1688001996
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Custom_BIRP_GrassComputeVertexFrag(Clone)
+  m_Shader: {fileID: 4800000, guid: 6f5c5086087ff674a915a0b23a6d385f, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _AmbientAdjustment: 0
+    - _BlendFloor: 0
+    - _Fade: 0.3
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &1704095207
 GameObject:
   m_ObjectHideFlags: 0
@@ -10348,10 +10484,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 307484411318927574, guid: 3ebce541c90373c4993715cbaf3d0184, type: 3}
+<<<<<<< HEAD
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 494874696}
     - target: {fileID: 307484411318927574, guid: 3ebce541c90373c4993715cbaf3d0184, type: 3}
+=======
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -10370,11 +10509,19 @@ PrefabInstance:
     - target: {fileID: 307484411318927574, guid: 3ebce541c90373c4993715cbaf3d0184, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+<<<<<<< HEAD
       objectReference: {fileID: 218916144}
     - target: {fileID: 307484411318927574, guid: 3ebce541c90373c4993715cbaf3d0184, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 218916144}
+=======
+      objectReference: {fileID: 218916129}
+    - target: {fileID: 307484411318927574, guid: 3ebce541c90373c4993715cbaf3d0184, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 218916129}
+>>>>>>> parent of 8fc4dfc (Revert "Revert "Merge branch 'main' of https://github.com/HeyoItsAaron/SpaceChicken122"")
     - target: {fileID: 307484411318927574, guid: 3ebce541c90373c4993715cbaf3d0184, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -10393,11 +10540,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 307484411318927574, guid: 3ebce541c90373c4993715cbaf3d0184, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HoldCheck, Assembly-CSharp
+      value: HandHammerConnection, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 307484411318927574, guid: 3ebce541c90373c4993715cbaf3d0184, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HoldCheck, Assembly-CSharp
+      value: HandHammerConnection, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 307484411318927574, guid: 3ebce541c90373c4993715cbaf3d0184, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -10580,7 +10727,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 58390585}
-  - {fileID: 1349020338}
   - {fileID: 273154458}
   m_Father: {fileID: 706293305}
   m_RootOrder: 2
@@ -10906,6 +11052,111 @@ Transform:
   m_Father: {fileID: 1323463277}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -143.27, z: 0}
+--- !u!1001 &1962121534
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1344876960}
+    m_Modifications:
+    - target: {fileID: 1862214570937142500, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_Name
+      value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 744
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -100.11366
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.00000035762784
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -289.482
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -6.932
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5456457732542206067, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526210881949787691, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
 --- !u!1001 &1969216721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10943,7 +11194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2179614927706237429, guid: 6643fbc85ecf3864d9169980fd53311c, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2179614927706237429, guid: 6643fbc85ecf3864d9169980fd53311c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11223,7 +11474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 76fb2de7f10cb7542b58dc479814166e, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 76fb2de7f10cb7542b58dc479814166e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -12863,7 +13114,6 @@ GameObject:
   - component: {fileID: 543450651743763793}
   - component: {fileID: 3469287837808669428}
   - component: {fileID: 1711813854888707646}
-  - component: {fileID: 3469287837808669429}
   m_Layer: 0
   m_Name: Wall Rack
   m_TagString: Untagged
@@ -13754,6 +14004,11 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!224 &1862214571682452929 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1862214570937142527, guid: fbfd95ad295c9db4cb44a7ea243bb034, type: 3}
+  m_PrefabInstance: {fileID: 1962121534}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1864465444606569677
 Transform:
   m_ObjectHideFlags: 0
@@ -15619,20 +15874,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132147755018219}
-  m_Mesh: {fileID: 2785954280740183258, guid: ce021517f60e6424ea3c4e97f8a26fca, type: 3}
---- !u!64 &3469287837808669429
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132147755018219}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 2785954280740183258, guid: ce021517f60e6424ea3c4e97f8a26fca, type: 3}
 --- !u!23 &3509928101259676924
 MeshRenderer:

@@ -1881,8 +1881,8 @@ MonoBehaviour:
   maxHealth: 100
   isDead: 0
   currentPowerUpDuration: 0
-  currEnergy: 69
-  currCurrency: 69
+  currEnergy: 0
+  currCurrency: 0
 --- !u!114 &7109000984029144329
 MonoBehaviour:
   m_ObjectHideFlags: 0
