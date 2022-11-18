@@ -24,7 +24,7 @@ public class Chicken : ChickenStats
     float lastAttackTime = 0;
     float attackCooldown = 2;
     private int damage = 10;
-    Spawner spawn;
+    NetworkSpawner spawn;
     public float turnRate;
     private NetworkPlayer[] networkPlayers;
     private int playerPosition;
@@ -40,9 +40,10 @@ public class Chicken : ChickenStats
         maxHealth = 100;
         currHealth = maxHealth;
         //myTarget = GameObject.FindWithTag("Player").transform;
-        myTarget = networkPlayers[0].head;
-        spawn = FindObjectOfType<Spawner>();
+        spawn = FindObjectOfType<NetworkSpawner>();
         networkPlayers = FindObjectsOfType<NetworkPlayer>();
+        myTarget = networkPlayers[0].head;
+        currentTarget = myTarget;
     }
 
     // Update is called once per frame
@@ -124,8 +125,8 @@ public class Chicken : ChickenStats
         if(Time.time - lastAttackTime >= attackCooldown)
         {
             lastAttackTime = Time.time;
-            currentTarget.GetComponent<TestPlayer>().TakeDamage(damage);
-            currentTarget.GetComponent<TestPlayer>().CheckHealth();
+            //currentTarget.GetComponent<TestPlayer>().TakeDamage(damage);
+            //currentTarget.GetComponent<TestPlayer>().CheckHealth();
         }
     }
     

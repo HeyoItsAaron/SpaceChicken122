@@ -910,6 +910,7 @@ MonoBehaviour:
   isDead: 0
   myTarget: {fileID: 0}
   currentTarget: {fileID: 0}
+  tempDist: 0
   myAgent: {fileID: 3834422658676958535}
   range: 200
   distance: 0
