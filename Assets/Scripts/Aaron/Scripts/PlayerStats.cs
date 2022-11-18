@@ -20,10 +20,6 @@ public class PlayerStats: Stats
     //public bool isDead;
     XROrigin origin;
 
-    [ContextMenu("Die")]
-    [ContextMenu("Take50Damage")]
-    [ContextMenu("Respawn")]
-
     // methods
     void Start()
     {
