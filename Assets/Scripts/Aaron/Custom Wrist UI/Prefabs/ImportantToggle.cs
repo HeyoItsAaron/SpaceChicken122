@@ -33,7 +33,24 @@ public class ImportantToggle : MonoBehaviour
         grabRay.ToggleVisibility();
     }
 
-
+    void Update()
+    {
+        if(grabRay == null)
+        {
+            grabRay = GameObject.FindObjectOfType<GrabRay>();
+            grabRay.ToggleVisibility();
+        }
+        if (ui == null)
+        {
+            ui = GameObject.FindObjectOfType<WristUI>();
+            ui.ToggleVisibility();
+        }
+        if (menu == null)
+        {
+            menu = GameObject.FindObjectOfType<Menu>();
+            menu.ToggleVisibility();
+        }
+    }
     void LeftPrimaryButtonPressed(InputAction.CallbackContext context)
     {
         ui.ToggleVisibility();
