@@ -1,0 +1,112 @@
+{
+  "actions": [
+    {
+      "name": "/actions/VRShooterKit/in/Grab",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/VRShooterKit/in/Shoot",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/VRShooterKit/in/Joystick",
+      "type": "vector2"
+    },
+    {
+      "name": "/actions/VRShooterKit/in/JoystickPress",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/VRShooterKit/in/PrimaryButton",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/VRShooterKit/in/SecondaryButton",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/VRShooterKit/in/LeftHand",
+      "type": "pose",
+      "requirement": "mandatory"
+    },
+    {
+      "name": "/actions/VRShooterKit/in/RightHand",
+      "type": "pose",
+      "requirement": "mandatory"
+    },
+    {
+      "name": "/actions/VRShooterKit/out/Haptic",
+      "type": "vibration"
+    },
+    {
+      "name": "/actions/VRShooterKit/in/HeadsetOnHead",
+      "type": "boolean",
+      "requirement": "optional"
+    }
+  ],
+  "action_sets": [
+    {
+      "name": "/actions/VRShooterKit",
+      "usage": "single"
+    }
+  ],
+  "default_bindings": [
+    {
+      "controller_type": "vive_controller",
+      "binding_url": "bindings_vive_controller.json"
+    },
+    {
+      "controller_type": "oculus_touch",
+      "binding_url": "bindings_oculus_touch.json"
+    },
+    {
+      "controller_type": "knuckles",
+      "binding_url": "bindings_knuckles.json"
+    },
+    {
+      "controller_type": "holographic_controller",
+      "binding_url": "bindings_holographic_controller.json"
+    },
+    {
+      "controller_type": "vive_cosmos_controller",
+      "binding_url": "bindings_vive_cosmos_controller.json"
+    },
+    {
+      "controller_type": "logitech_stylus",
+      "binding_url": "bindings_logitech_stylus.json"
+    },
+    {
+      "controller_type": "vive_cosmos",
+      "binding_url": "binding_vive_cosmos.json"
+    },
+    {
+      "controller_type": "vive",
+      "binding_url": "binding_vive.json"
+    },
+    {
+      "controller_type": "indexhmd",
+      "binding_url": "binding_index_hmd.json"
+    },
+    {
+      "controller_type": "vive_pro",
+      "binding_url": "binding_vive_pro.json"
+    },
+    {
+      "controller_type": "rift",
+      "binding_url": "binding_rift.json"
+    },
+    {
+      "controller_type": "holographic_hmd",
+      "binding_url": "binding_holographic_hmd.json"
+    },
+    {
+      "controller_type": "vive_tracker_camera",
+      "binding_url": "binding_vive_tracker_camera.json"
+    }
+  ],
+  "localization": [
+    {
+      "language_tag": "en_US"
+    }
+  ]
+}

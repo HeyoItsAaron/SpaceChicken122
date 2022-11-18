@@ -1,0 +1,175 @@
+{
+   "action_manifest_version" : 0,
+   "alias_info" : {},
+   "app_key" : "application.generated.unity.vrshooterkit.exe",
+   "bindings" : {
+      "/actions/buggy" : {
+         "chords" : [],
+         "haptics" : [],
+         "poses" : [],
+         "skeleton" : [],
+         "sources" : []
+      },
+      "/actions/default" : {
+         "chords" : [],
+         "haptics" : [],
+         "poses" : [],
+         "skeleton" : [],
+         "sources" : []
+      },
+      "/actions/platformer" : {
+         "chords" : [],
+         "haptics" : [],
+         "poses" : [],
+         "skeleton" : [],
+         "sources" : []
+      },
+      "/actions/vrlab" : {
+         "chords" : [],
+         "haptics" : [],
+         "poses" : [],
+         "skeleton" : [],
+         "sources" : []
+      },
+      "/actions/vrshooterkit" : {
+         "chords" : [],
+         "haptics" : [
+            {
+               "output" : "/actions/vrshooterkit/out/haptic",
+               "path" : "/user/hand/left/output/haptic"
+            },
+            {
+               "output" : "/actions/vrshooterkit/out/haptic",
+               "path" : "/user/hand/right/output/haptic"
+            }
+         ],
+         "poses" : [
+            {
+               "output" : "none",
+               "path" : "/user/hand/left/pose/base"
+            },
+            {
+               "output" : "none",
+               "path" : "/user/hand/right/pose/base"
+            },
+            {
+               "output" : "none",
+               "path" : "/user/hand/left/pose/handgrip"
+            },
+            {
+               "output" : "/actions/vrshooterkit/in/righthand",
+               "path" : "/user/hand/right/pose/raw"
+            },
+            {
+               "output" : "/actions/vrshooterkit/in/lefthand",
+               "path" : "/user/hand/left/pose/raw"
+            }
+         ],
+         "skeleton" : [],
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vrshooterkit/in/shoot"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vrshooterkit/in/shoot"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vrshooterkit/in/joystickpress"
+                  },
+                  "position" : {
+                     "output" : "/actions/vrshooterkit/in/joystick"
+                  }
+               },
+               "mode" : "joystick",
+               "path" : "/user/hand/left/input/joystick"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vrshooterkit/in/joystickpress"
+                  },
+                  "position" : {
+                     "output" : "/actions/vrshooterkit/in/joystick"
+                  }
+               },
+               "mode" : "joystick",
+               "path" : "/user/hand/right/input/joystick"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vrshooterkit/in/grab"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vrshooterkit/in/grab"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vrshooterkit/in/primarybutton"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/x"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vrshooterkit/in/secondarybutton"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/y"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vrshooterkit/in/primarybutton"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/a"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vrshooterkit/in/secondarybutton"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/b"
+            }
+         ]
+      }
+   },
+   "category" : "steamvr_input",
+   "controller_type" : "oculus_touch",
+   "description" : "",
+   "name" : "Mi configuración de VRShooterKit [Testing] para Oculus Touch",
+   "options" : {},
+   "simulated_actions" : []
+}
