@@ -45,13 +45,15 @@ public class Chicken : ChickenStats
         myTarget = networkPlayers[0].head;
         currentTarget = myTarget;
         playerPosition = 0;
-        distance = Vector3.Distance(networkPlayers[0].head.position, chickenPosition.transform.position);
-        InvokeRepeating("Search", 0f, 5f);
+        distance = Vector3.Distance(networkPlayers[0].head.position, transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
+        // run the search every frame
+        Search();
+
         // Check the helth of the chicken every frame
         CheckHealth(currHealth, maxHealth);
 
@@ -84,8 +86,8 @@ public class Chicken : ChickenStats
     {
         for (int i = 0; i < networkPlayers.Count()-1; i++)
         {
-            float DistanceFromPlayer1 = Vector3.Distance(networkPlayers[0].head.position, chickenPosition.transform.position);
-            float DistanceFromPlayer = Vector3.Distance(networkPlayers[i].head.position, chickenPosition.transform.position);
+            float DistanceFromPlayer1 = Vector3.Distance(networkPlayers[0].head.position, transform.position);
+            float DistanceFromPlayer = Vector3.Distance(networkPlayers[i].head.position, transform.position);
 
             tempDist = DistanceFromPlayer1;
 
@@ -146,7 +148,7 @@ public class Chicken : ChickenStats
 
     public override void Die()
     {
-        AudioSource.PlayClipAtPoint(deathClip, chickenPosition.transform.position); 
+        AudioSource.PlayClipAtPoint(deathClip, transform.position); 
         myAgent.enabled = false;
         anim.SetBool("isDead", true);
         StartCoroutine(despawnAfterSeconds());
