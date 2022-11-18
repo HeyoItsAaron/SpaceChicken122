@@ -952,6 +952,7 @@ MonoBehaviour:
   stoppingDistance: 1.25
   turnRate: 1
   chickenPosition: {fileID: 5271153525950975970}
+  closerPlayer: {fileID: 0}
 --- !u!136 &3834422658676958553
 CapsuleCollider:
   m_ObjectHideFlags: 0
