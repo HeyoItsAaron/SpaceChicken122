@@ -18,7 +18,6 @@ public class Menu : MonoBehaviour //change to MonoBehaviourPunCallbacks??
     void Start()
     {
         ray = GameObject.Find("XR Origin/Camera Offset/RightHand Controller/Ray Interactor");
-        gameObject.SetActive(false);
     }
     void Update()
     {
