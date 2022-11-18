@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 1862214570937142527}
   - component: {fileID: 1862214570937142496}
   - component: {fileID: 4395308893218559845}
+  - component: {fileID: -6607426889332356611}
   m_Layer: 5
   m_Name: Billboard
   m_TagString: Untagged
@@ -153,6 +154,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaveNum: {fileID: 3740596376528608856}
   spawner: {fileID: 0}
+--- !u!114 &-6607426889332356611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862214570937142500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &4026619034961039488
 GameObject:
   m_ObjectHideFlags: 0
