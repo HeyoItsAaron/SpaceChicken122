@@ -5,13 +5,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 using UnityEngine.InputSystem;
 
 public class ImportantToggle : MonoBehaviour
 {
     WristUI ui;
     Menu menu;
-    GrabRay grabRay;
+    GameObject grabRay;
     public InputActionReference toggleUI;
     public InputActionReference toggleMenu;
     public InputActionReference toggleGrabRay;
@@ -19,35 +20,35 @@ public class ImportantToggle : MonoBehaviour
     void Start()
     {
         toggleGrabRay.action.performed += RightPrimaryButtonPressed;
-        grabRay = GameObject.FindObjectOfType<GrabRay>();
+        grabRay = GameObject.Find("XR Origin/Camera Offset/RightHand Controller/Grab Ray");
 
         toggleUI.action.performed += LeftPrimaryButtonPressed;
-        ui = GameObject.FindObjectOfType<WristUI>();
+        ui = FindObjectOfType<WristUI>();
 
         toggleMenu.action.performed += LeftMenuButtonPressed;
-        menu = GameObject.FindObjectOfType<Menu>();
+        menu = FindObjectOfType<Menu>();
 
 
         ui.ToggleVisibility();
         menu.ToggleVisibility();
-        grabRay.ToggleVisibility();
+        grabRay.SetActive(false);
     }
 
     void Update()
     {
         if(grabRay == null)
         {
-            grabRay = GameObject.FindObjectOfType<GrabRay>();
-            grabRay.ToggleVisibility();
+            grabRay = GameObject.Find("Main Camera/Camera Offset/RightHand Controller/Grab Ray");
+            grabRay.SetActive(false);
         }
         if (ui == null)
         {
-            ui = GameObject.FindObjectOfType<WristUI>();
+            ui = FindObjectOfType<WristUI>();
             ui.ToggleVisibility();
         }
         if (menu == null)
         {
-            menu = GameObject.FindObjectOfType<Menu>();
+            menu = FindObjectOfType<Menu>();
             menu.ToggleVisibility();
         }
     }
