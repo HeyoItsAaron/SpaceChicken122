@@ -11,6 +11,9 @@ TagManager:
   - Light Bullet
   - Bullet
   - Lazer
+  - Dummy
+  - HAMMER
+  - FALLING HAMMER
   layers:
   - Default
   - TransparentFX
@@ -21,7 +24,7 @@ TagManager:
   - Player
   - Interactable
   - Grass Blend Layer
-  - 
+  - Projectile
   - 
   - 
   - 

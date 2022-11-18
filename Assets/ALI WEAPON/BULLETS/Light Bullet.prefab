@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -3561330317483985231}
   - component: {fileID: -7780438505596786438}
   - component: {fileID: -3042627661667307497}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Light Bullet
   m_TagString: Light Bullet
   m_Icon: {fileID: 0}

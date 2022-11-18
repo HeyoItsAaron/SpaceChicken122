@@ -1513,6 +1513,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Gun",
+            "id": "19203195-8646-4aac-92ef-2a49abab77d6",
+            "actions": [
+                {
+                    "name": "Toggle",
+                    "type": "Value",
+                    "id": "c7b7385f-8ee7-4543-8600-9dc83178bb96",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a8142543-0756-4c86-a838-cb8c2e852b1d",
+                    "path": "<XRController>/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
