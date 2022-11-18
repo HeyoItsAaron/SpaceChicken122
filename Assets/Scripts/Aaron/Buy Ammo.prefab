@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ea6066d0fdfd024fbef178fc5f7d31f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyBought: 0
-  price: 0
+  energyBought: 20
+  price: 20
 --- !u!1 &2663343528291109334
 GameObject:
   m_ObjectHideFlags: 0

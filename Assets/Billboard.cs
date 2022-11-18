@@ -4,20 +4,20 @@ using UnityEngine;
 using TMPro;
 using Photon.Pun;
 
-public class Billboard : MonoBehaviour
+public class Billboard : MonoBehaviourPun
 {
     [SerializeField] private TextMeshProUGUI WaveNum;
-    public testSpawner spawner;
+    public GameplayManager game;
 
     void Start()
     {
-        spawner = FindObjectOfType<testSpawner>();
+        game = FindObjectOfType<GameplayManager>();
     }
     void Update()
     {
-        if (spawner == null)
+        if (game == null)
         {
-            spawner = FindObjectOfType<testSpawner>();
+            game = FindObjectOfType<GameplayManager>();
         }
         gameObject.GetComponent<PhotonView>().RPC("LinkWave", RpcTarget.AllBuffered);
     }
@@ -25,6 +25,6 @@ public class Billboard : MonoBehaviour
     [PunRPC]
     public void LinkWave()
     {
-        WaveNum.text = spawner.waveNumber.ToString();
+        WaveNum.text = game.waveNumber.ToString();
     }
 }
