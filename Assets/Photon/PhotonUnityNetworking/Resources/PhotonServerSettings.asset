@@ -50,6 +50,13 @@ MonoBehaviour:
   - Die
   - TakeDamage
   - CheckHealth
+  - AddCurrency
+  - AddEnergy
+  - AddHealth
+  - BuyEnergy
+  - LoseCurrency
+  - LoseEnergy
+  - BuyWeapon
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
