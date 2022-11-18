@@ -7,7 +7,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class AvatarHandController : MonoBehaviour
 {
-
     public InputActionProperty leftTriggerPull;
     public InputActionProperty leftGrabPull;
     public InputActionProperty leftPointTouch;
