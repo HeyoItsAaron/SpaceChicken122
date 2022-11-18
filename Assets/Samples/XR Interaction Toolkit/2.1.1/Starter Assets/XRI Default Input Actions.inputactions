@@ -444,7 +444,7 @@
                     "path": "<XRController>{LeftHand}/menuButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Generic XR Controller",
                     "action": "Menu Buton",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -912,7 +912,7 @@
                     "path": "<OculusTouchController>{RightHand}/thumbstickTouched",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Generic XR Controller",
                     "action": "Thumbstick Touch Sense",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -923,7 +923,7 @@
                     "path": "<OculusTouchController>{RightHand}/triggerTouched",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Generic XR Controller",
                     "action": "Trigger Touch Sense",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -934,7 +934,7 @@
                     "path": "<XRController>{RightHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Generic XR Controller",
                     "action": "Primary Button",
                     "isComposite": false,
                     "isPartOfComposite": false

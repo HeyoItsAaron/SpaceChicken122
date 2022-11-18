@@ -72,6 +72,7 @@ public class NetworkPlayer : MonoBehaviour
         leftHandAnimator = avatarInfo.leftHandAnimator;
         rightHandAnimator = avatarInfo.rightHandAnimator;
     }
+    /*
     private void OnEnable()
     {
         if (RenderPipelineManager.currentPipeline != null)
@@ -98,9 +99,9 @@ public class NetworkPlayer : MonoBehaviour
 
     private void BeforeRenderUpdate()
     {
-        // Update is called once per frame
-        //void Update()
-    //{
+       */ // Update is called once per frame
+    void Update()
+    {
 
         if(photonView.IsMine)
         {          
