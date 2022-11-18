@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public abstract class Stats : MonoBehaviour
+public abstract class Stats : MonoBehaviourPun
 {
     public float currHealth;
     public float maxHealth;

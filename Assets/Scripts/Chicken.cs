@@ -178,11 +178,12 @@ public class Chicken : ChickenStats
 
     public override void Die()
     {
-        AudioSource.PlayClipAtPoint(deathClip, transform.position); 
+        //AudioSource.PlayClipAtPoint(deathClip, transform.position); 
         myAgent.enabled = false;
         anim.SetBool("isDead", true);
-        Destroy(gameObject, 5);
+        StartCoroutine(despawnAfterSeconds());
         spawn.enemiesKilled++;
+        Debug.Log("CHICKEN TRIED TO DIE");
     }
 
     //public void TakeDamage(int damage)
@@ -197,26 +198,46 @@ public class Chicken : ChickenStats
     //    currHealth -= damage;
     //}
 
-    /* old
+    [PunRPC]
+    public void DoDamage(float damageAmount)
+    {
+        if (!isDead)
+        {
+            currHealth -= damageAmount;
+            if (currHealth <= 0)
+            {
+                Die();
+            }
+        }
+    }
     private void OnCollisionEnter(Collision collision)
     {   
         if (collision.gameObject.tag == "Light Bullet")
         {
-            TakeDamage(15);
+            gameObject.GetComponent<PhotonView>().RPC("DoDamage", RpcTarget.AllBuffered, 15f);
+            //TakeDamage(15);
         }
         if (collision.gameObject.tag == "Medium Bullet")
         {
-            TakeDamage(25);
+            gameObject.GetComponent<PhotonView>().RPC("DoDamage", RpcTarget.AllBuffered, 25f);
+            //TakeDamage(25);
         }
         if (collision.gameObject.tag == "Heavy Bullet")
         {
-            TakeDamage(35);
+            gameObject.GetComponent<PhotonView>().RPC("DoDamage", RpcTarget.AllBuffered, 35f);
+            //TakeDamage(35);
         }
         if (collision.gameObject.tag ==  "HAMMER")
         {
-            TakeDamage(50);
+            gameObject.GetComponent<PhotonView>().RPC("DoDamage", RpcTarget.AllBuffered, 50f);
+            //TakeDamage(50);
         }
-    }*/
+    }
+    IEnumerator despawnAfterSeconds()
+    {
+        yield return new WaitForSeconds(5);
+        PhotonNetwork.Destroy(gameObject);
+    }
 
     // test this
     /*
