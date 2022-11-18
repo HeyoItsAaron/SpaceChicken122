@@ -22,6 +22,7 @@ public class Quiver : XRBaseInteractable
     {
         // Create arrow, and get arrow component
         GameObject arrowObject = Instantiate(arrowPrefab, orientation.position, orientation.rotation);
+        Destroy(arrowObject, 60);
         return arrowObject.GetComponent<Arrow>();
     }
 }
