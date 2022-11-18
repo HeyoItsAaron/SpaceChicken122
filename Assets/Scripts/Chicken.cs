@@ -46,7 +46,7 @@ public class Chicken : ChickenStats
         currentTarget = myTarget;
         playerPosition = 0;
         distance = Vector3.Distance(networkPlayers[0].head.position, chickenPosition.transform.position);
-        InvokeRepeating("Search", 0, 0.5f);
+        InvokeRepeating("Search", 0f, 5f);
     }
 
     // Update is called once per frame
@@ -85,7 +85,7 @@ public class Chicken : ChickenStats
         for (int i = 0; i < networkPlayers.Count()-1; i++)
         {
             float DistanceFromPlayer1 = Vector3.Distance(networkPlayers[0].head.position, chickenPosition.transform.position);
-            float DistanceFromPlayer = Vector3.Distance(networkPlayers[i+1].head.position, chickenPosition.transform.position);
+            float DistanceFromPlayer = Vector3.Distance(networkPlayers[i].head.position, chickenPosition.transform.position);
 
             tempDist = DistanceFromPlayer1;
 
