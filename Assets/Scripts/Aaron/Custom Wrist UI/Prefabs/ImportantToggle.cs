@@ -19,6 +19,7 @@ public class ImportantToggle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject.Find("Grab Ray").SetActive(false);
         toggleGrabRay.action.performed += RightPrimaryButtonPressed;
         grabRay = FindObjectOfType<GrabRay>();
 
@@ -32,8 +33,6 @@ public class ImportantToggle : MonoBehaviour
             ui.ToggleVisibility();
         if (menu != null)
             menu.ToggleVisibility();
-        if (grabRay != null)
-            grabRay.ToggleVisibility();
     }
 
     void Update()
@@ -41,8 +40,6 @@ public class ImportantToggle : MonoBehaviour
         if(grabRay is null)
         {
             grabRay = FindObjectOfType<GrabRay>();
-            if(grabRay = FindObjectOfType<GrabRay>())
-                grabRay.ToggleVisibility();
         }
         if (ui is null)
         {

@@ -941,7 +941,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3240811303312399763, guid: b4fd61c1b42d737498c9755810b0408f, type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240811303312399763, guid: b4fd61c1b42d737498c9755810b0408f, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -2041,33 +2045,6 @@ Transform:
   m_Father: {fileID: 1323463277}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -143.27, z: 0}
---- !u!21 &412054553
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_BIRP_GrassComputeVertexFrag(Clone)
-  m_Shader: {fileID: 4800000, guid: 6f5c5086087ff674a915a0b23a6d385f, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs: []
-    m_Ints: []
-    m_Floats:
-    - _AmbientAdjustment: 0
-    - _BlendFloor: 0
-    - _Fade: 0.3
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1 &431307428
 GameObject:
   m_ObjectHideFlags: 0
@@ -3036,7 +3013,7 @@ MonoBehaviour:
   topTint: {r: 1, g: 1, b: 1, a: 1}
   bottomTint: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
   castShadow: 1
-  m_InstantiatedMaterial: {fileID: 412054553}
+  m_InstantiatedMaterial: {fileID: 1933059145}
 --- !u!114 &808650345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9209,7 +9186,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8247946491972411288, guid: 09e0a1f6012574e4ba2521e15d84a698, type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247946491972411288, guid: 09e0a1f6012574e4ba2521e15d84a698, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8248555612544358175, guid: 09e0a1f6012574e4ba2521e15d84a698, type: 3}
       propertyPath: m_RootOrder
@@ -9691,7 +9672,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4237806026759328240, guid: 15f4a4c1bf4ee8d4aac42c951f2ba2ec, type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237806026759328240, guid: 15f4a4c1bf4ee8d4aac42c951f2ba2ec, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4240322366499831737, guid: 15f4a4c1bf4ee8d4aac42c951f2ba2ec, type: 3}
       propertyPath: m_RootOrder
@@ -9890,7 +9875,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2053188347641807712, guid: dfa62a5d1e2ab0d4cbd9b8b265b42a62, type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2053188347641807712, guid: dfa62a5d1e2ab0d4cbd9b8b265b42a62, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8962709630393820536, guid: dfa62a5d1e2ab0d4cbd9b8b265b42a62, type: 3}
       propertyPath: sceneViewId
@@ -10113,6 +10102,10 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2180835859524312826, guid: 93e3e61b2fa695b4e8219a3004619160, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2180835859524312828, guid: 93e3e61b2fa695b4e8219a3004619160, type: 3}
       propertyPath: playerHand
       value: 
@@ -10131,7 +10124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3020852387006796126, guid: 93e3e61b2fa695b4e8219a3004619160, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.35699463
+      value: 0.306
       objectReference: {fileID: 0}
     - target: {fileID: 3020852387006796126, guid: 93e3e61b2fa695b4e8219a3004619160, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10931,6 +10924,33 @@ Transform:
   m_Father: {fileID: 1323463277}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -143.27, z: 0}
+--- !u!21 &1933059145
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Custom_BIRP_GrassComputeVertexFrag(Clone)
+  m_Shader: {fileID: 4800000, guid: 6f5c5086087ff674a915a0b23a6d385f, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _AmbientAdjustment: 0
+    - _BlendFloor: 0
+    - _Fade: 0.3
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1001 &1969216721
 PrefabInstance:
   m_ObjectHideFlags: 0
