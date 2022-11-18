@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaveNum: {fileID: 3740596376528608856}
-  spawner: {fileID: 0}
+  game: {fileID: 0}
 --- !u!114 &-6607426889332356611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +242,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 99
+  m_text: '10
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ff4b109cc94c0947be56f2e44999ff1, type: 2}
   m_sharedMaterial: {fileID: 4475795834633821761, guid: 3ff4b109cc94c0947be56f2e44999ff1, type: 2}

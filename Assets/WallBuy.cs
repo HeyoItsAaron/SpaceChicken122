@@ -13,22 +13,34 @@ public class WallBuy : MonoBehaviour
     [SerializeField] private GameObject weaponPrefab;
     [SerializeField] private GameObject weaponSpawnPoint;
     [SerializeField] private float price;
-    private Player player;
-
+    private PlayerStats player;
 
     // methods
     void Start()
     {
-        //player = GameObject.FindObjectOfType<Player>();
+        player = GameObject.FindObjectOfType<PlayerStats>();
     }
 
+    void Update()
+    {
+        if (player == null)
+            player = GameObject.FindObjectOfType<PlayerStats>();
+    }
+
+    public void BuyWeaponOnPress()
+    {
+        gameObject.GetComponent<PhotonView>().RPC("BuyWeapon", RpcTarget.AllBuffered);
+    }
+
+    [PunRPC]
     public void BuyWeapon()
     {
-        //if (player.currCurrency >= price)
-        //{
-        //    player.currCurrency -= price;
-        //    PhotonNetwork.Instantiate(weaponPrefab.name, weaponSpawnPoint.transform.position, weaponSpawnPoint.transform.rotation);
-        //}
+        if (player.currCurrency >= price)
+        {
+            player.currCurrency -= price;
+            PhotonNetwork.Instantiate(weaponPrefab.name, weaponSpawnPoint.transform.position, weaponSpawnPoint.transform.rotation);
+            player.AddEnergy(20f);
+        }
     }
 
 }
