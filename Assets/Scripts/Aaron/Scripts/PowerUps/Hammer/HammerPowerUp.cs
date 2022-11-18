@@ -8,7 +8,7 @@ public class HammerPowerUp : MonoBehaviour, PowerUp
     public GameObject pickupEffect;
     public Hammer hammerPrefab;
 
-    public Player player;
+    //public Player player;
 
     private Hammer hammer;
     private Rigidbody hammerRigidBody;
@@ -32,7 +32,7 @@ public class HammerPowerUp : MonoBehaviour, PowerUp
 
         //apply effect to player
             //call down hammer at power-up location
-        player.currentPowerUpDuration = 60;
+        //player.currentPowerUpDuration = 60;
         hammer = Instantiate(hammerPrefab, new Vector3(targetLocation.x, targetLocation.y + 100, targetLocation.x), Quaternion.Euler(new Vector3(0, 0, 180)));
         hammerRigidBody = hammer.GetComponent<Rigidbody>();
         hammerRigidBody.velocity = Vector3.down * 100;

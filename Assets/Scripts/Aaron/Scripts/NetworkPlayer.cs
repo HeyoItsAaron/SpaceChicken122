@@ -49,7 +49,7 @@ public class NetworkPlayer : MonoBehaviour
         leftHandRig = rig.transform.Find("Camera Offset/LeftHand Controller");
         rightHandRig = rig.transform.Find("Camera Offset/RightHand Controller");
 
-        //Retruns true if the Photon View is "owned" by the local player
+        //Returns true if the Photon View is "owned" by the local player
         if(photonView.IsMine)
             //this sets the local avatar so everyone in the game sees it.
             photonView.RPC("LoadAvatar", RpcTarget.AllBuffered, PlayerPrefs.GetInt("AvatarID"));

@@ -14,7 +14,7 @@ public class WristUI : MonoBehaviour
     //only show when wrist is raised or when menu button held
 
     //variables
-    public Player player;
+    //public Player player;
     public Spawner spawner;
 
     public Image healthBar; //count-ish
@@ -38,7 +38,7 @@ public class WristUI : MonoBehaviour
     //methods
     void Start()
     {
-        player = GameObject.FindObjectOfType<Player>();
+        //player = GameObject.FindObjectOfType<Player>();
         spawner = GameObject.FindObjectOfType<Spawner>();
         linkAllStats();
     }
@@ -60,22 +60,22 @@ public class WristUI : MonoBehaviour
     //Link individual stats
     public void LinkHealthUI()
     {
-        healthFill = player.currHealth;
+        //healthFill = player.currHealth;
         healthBar.fillAmount = (healthFill / 100.0f);
     }
     public void LinkPowerUpUI()
     {
-        powerUpFill = player.currentPowerUpDuration;
+        //powerUpFill = player.currentPowerUpDuration;
         powerUpBar.fillAmount = (powerUpFill / 100.0f);
     }
     public void LinkEnergyUI()
     {
-        ammoCountFill = player.currEnergy;
+        //ammoCountFill = player.currEnergy;
         ammoCountBar.fillAmount = (ammoCountFill / 100.0f);
     }
     public void LinkCurrencyUI()
     {
-        currencyCount.text = "$" + player.currCurrency.ToString("N2");
+        //currencyCount.text = "$" + player.currCurrency.ToString("N2");
     }
     public void LinkWaveUI()
     {

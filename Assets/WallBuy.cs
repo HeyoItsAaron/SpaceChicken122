@@ -19,16 +19,16 @@ public class WallBuy : MonoBehaviour
     // methods
     void Start()
     {
-        player = GameObject.FindObjectOfType<Player>();
+        //player = GameObject.FindObjectOfType<Player>();
     }
 
     public void BuyWeapon()
     {
-        if (player.currCurrency >= price)
-        {
-            player.currCurrency -= price;
-            PhotonNetwork.Instantiate(weaponPrefab.name, weaponSpawnPoint.transform.position, weaponSpawnPoint.transform.rotation);
-        }
+        //if (player.currCurrency >= price)
+        //{
+        //    player.currCurrency -= price;
+        //    PhotonNetwork.Instantiate(weaponPrefab.name, weaponSpawnPoint.transform.position, weaponSpawnPoint.transform.rotation);
+        //}
     }
 
 }

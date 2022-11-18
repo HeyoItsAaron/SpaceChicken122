@@ -8,21 +8,21 @@ public class BuyAmmo : MonoBehaviour
     // variables
     [SerializeField] private float energyBought;
     [SerializeField] private float price;
-    private Player player;
+    //private Player player;
 
 
     // methods
     void Start()
     {
-        player = GameObject.FindObjectOfType<Player>();
+        //player = GameObject.FindObjectOfType<Player>();
     }
 
     public void BuyEnergy()
     {
-        if (player.currCurrency >= price)
-        {
-            player.currCurrency -= price;
-            player.currEnergy += energyBought;
-        }
+        //if (player.currCurrency >= price)
+        //{
+            //player.currCurrency -= price;
+            //player.currEnergy += energyBought;
+        //}
     }
 }

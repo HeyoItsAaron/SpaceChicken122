@@ -5,11 +5,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ChickenStats : MonoBehaviour
+public class ChickenStats : Stats
 {
-    //public int currHealth;
-    //public int maxHealth;
-    public bool isDead = false;
     Spawner spawn;
 
     public Transform myTarget;
@@ -22,8 +19,6 @@ public class ChickenStats : MonoBehaviour
     public AudioClip hurt;
     public AudioClip walk;
 
-    public int maxHealth;
-    public int currHealth;
 
     // Start is called before the first frame update
     void Start()
