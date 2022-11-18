@@ -18,9 +18,5 @@ public class GrabRay : MonoBehaviour
     public void ToggleVisibility()
     {
         gameObject.SetActive(!gameObject.activeInHierarchy);
-        if(gameObject.activeInHierarchy)
-            GameObject.FindObjectOfType<HoldCheck>().hasItemInHand = true;
-        if(!gameObject.activeInHierarchy)
-            GameObject.FindObjectOfType<HoldCheck>().hasItemInHand = false;
     }
 }

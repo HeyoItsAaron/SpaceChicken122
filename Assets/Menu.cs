@@ -27,10 +27,6 @@ public class Menu : MonoBehaviour //change to MonoBehaviourPunCallbacks??
     {
         gameObject.SetActive(!gameObject.activeInHierarchy);
         ray.SetActive(!ray.activeInHierarchy);
-        if (gameObject.activeInHierarchy)
-            GameObject.FindObjectOfType<HoldCheck>().hasItemInHand = true;
-        if (!gameObject.activeInHierarchy)
-            GameObject.FindObjectOfType<HoldCheck>().hasItemInHand = false;
     }
     public void RecalibrateHeight()
     {
