@@ -37,21 +37,21 @@ public class ChickenStats : Stats
 
     // Methods
 
-    public void CheckHealth(int currHealth, int maxHealth)
+    public void CheckHealth(float currHealth, float maxHealth)
     {
         if(currHealth >= maxHealth)
         {
             currHealth = maxHealth;
         }
-        if (currHealth <= 0 && isDead == false)
+        if (currHealth <= 0f && isDead == false)
         {
-            currHealth = 0;
+            currHealth = 0f;
             isDead = true;
             Die();
         }
     }
 
-    public virtual void Die()
+    public override void Die()
     {
         Destroy(gameObject);
         if(spawn.enemiesKilled >= spawn.enemyAmount)

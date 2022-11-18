@@ -8,7 +8,6 @@ public class NetworkStatManager : MonoBehaviourPun
 {
     // variables 
     Stats thingStats;
-    float defaultDamageAmount = 50;
 
     // methods
     [PunRPC]

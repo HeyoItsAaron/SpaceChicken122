@@ -8,7 +8,7 @@ public abstract class Stats : MonoBehaviour
     public float maxHealth;
     public bool isDead;
 
-    public void Die()
+    public virtual void Die()
     {
         currHealth = 0;
         Destroy(gameObject);

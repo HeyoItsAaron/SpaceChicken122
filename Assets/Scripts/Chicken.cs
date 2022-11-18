@@ -29,12 +29,12 @@ public class Chicken : ChickenStats
     private NetworkPlayer[] networkPlayers;
 
     // test variables
-    int lightCount = 0;
-    int mediumCount = 0;
-    int heavyCount = 0;
-    int hammerCount = 0;
-    int fallingCount = 0;
-    PhotonView PV;
+    //int lightCount = 0;
+    //int mediumCount = 0;
+    //int heavyCount = 0;
+    //int hammerCount = 0;
+    //int fallingCount = 0;
+    //PhotonView PV;
 
 
     // Start is called before the first frame update
@@ -185,19 +185,19 @@ public class Chicken : ChickenStats
         spawn.enemiesKilled++;
     }
 
-    public void TakeDamage(int damage)
-    {
-        PV.RPC(nameof(RPC_TakeDamage), PV.Owner, damage);
-    }
+    //public void TakeDamage(int damage)
+    //{
+    //    PV.RPC(nameof(RPC_TakeDamage), PV.Owner, damage);
+    //}
 
-    [PunRPC]
-    void RPC_TakeDamage(int damage)
-    {
-        AudioSource.PlayClipAtPoint(hurt, transform.position);
-        currHealth -= damage;
-    }
+    //[PunRPC]
+    //void RPC_TakeDamage(int damage)
+    //{
+    //    AudioSource.PlayClipAtPoint(hurt, transform.position);
+    //    currHealth -= damage;
+    //}
 
-    // old
+    /* old
     private void OnCollisionEnter(Collision collision)
     {   
         if (collision.gameObject.tag == "Light Bullet")
@@ -216,7 +216,7 @@ public class Chicken : ChickenStats
         {
             TakeDamage(50);
         }
-    }
+    }*/
 
     // test this
     /*

@@ -16,7 +16,7 @@ public class ImportantToggle : MonoBehaviour
     public InputActionReference toggleMenu;
     public InputActionReference toggleGrabRay;
     // Start is called before the first frame update
-    void Start()
+    void LateStart()
     {
         toggleGrabRay.action.performed += RightPrimaryButtonPressed;
         grabRay = GameObject.FindObjectOfType<GrabRay>();
