@@ -15,7 +15,7 @@ public class WristUI : MonoBehaviour
 
     //variables
     //public Player player;
-    public Spawner spawner;
+    public NetworkSpawner spawner;
 
     public Image healthBar; //count-ish
     public Image powerUpBar; //duration
@@ -39,7 +39,7 @@ public class WristUI : MonoBehaviour
     void OnEnable()
     {
         //player = GameObject.FindObjectOfType<Player>();
-        spawner = GameObject.FindObjectOfType<Spawner>();
+        spawner = GameObject.FindObjectOfType<NetworkSpawner>();
         linkAllStats();
     }
     void Update()

@@ -29,6 +29,7 @@ public class Chicken : ChickenStats
     private NetworkPlayer[] networkPlayers;
     private int playerPosition;
     public GameObject chickenPosition;
+    public NetworkPlayer closerPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,7 @@ public class Chicken : ChickenStats
         currentTarget = myTarget;
         playerPosition = 0;
         distance = Vector3.Distance(networkPlayers[0].head.position, transform.position);
+        closerPlayer = networkPlayers[0];
     }
 
     // Update is called once per frame
@@ -84,7 +86,14 @@ public class Chicken : ChickenStats
     // check distance from enenmy
     void Search()
     {
-        for (int i = 0; i < networkPlayers.Count()-1; i++)
+        for (int i = 0; i < networkPlayers.Count(); i++)
+        {
+            if (Vector3.Distance(networkPlayers[i].head.position, transform.position) > Vector3.Distance(closerPlayer.head.position, transform.position))
+                closerPlayer = networkPlayers[i];
+        }
+        currentTarget = closerPlayer.head;
+        distance = Vector3.Distance(currentTarget.position, transform.position);
+        /*for (int i = 0; i < networkPlayers.Count()-1; i++)
         {
             float DistanceFromPlayer1 = Vector3.Distance(networkPlayers[0].head.position, transform.position);
             float DistanceFromPlayer = Vector3.Distance(networkPlayers[i].head.position, transform.position);
@@ -98,7 +107,7 @@ public class Chicken : ChickenStats
             }
         }
         currentTarget = networkPlayers[playerPosition].head;
-        distance = tempDist;
+        distance = tempDist;*/
     }
     
     /*
