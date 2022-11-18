@@ -2,27 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
 
 public class Billboard : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI WaveNum;
     public NetworkSpawner spawner;
-    //currencyCount.text = "$" + player.currCurrency.ToString("N2");
-    // Start is called before the first frame update
+
     void Start()
     {
-        
         spawner = FindObjectOfType<NetworkSpawner>();
     }
-
-    // Update is called once per frame
     void Update()
     {
-        WaveNum.text = spawner.waveNumber.ToString();
+        if (spawner == null)
+        {
+            spawner = FindObjectOfType<NetworkSpawner>();
+        }
+        gameObject.GetComponent<PhotonView>().RPC("LinkWave", RpcTarget.AllBuffered);
     }
 
+    [PunRPC]
     public void LinkWave()
     {
-
+        WaveNum.text = spawner.waveNumber.ToString();
     }
 }
