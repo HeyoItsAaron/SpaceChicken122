@@ -12,7 +12,7 @@ public class ImportantToggle : MonoBehaviour
 {
     WristUI ui;
     Menu menu;
-    GameObject grabRay;
+    GrabRay grabRay;
     public InputActionReference toggleUI;
     public InputActionReference toggleMenu;
     public InputActionReference toggleGrabRay;
@@ -20,7 +20,7 @@ public class ImportantToggle : MonoBehaviour
     void Start()
     {
         toggleGrabRay.action.performed += RightPrimaryButtonPressed;
-        grabRay = GameObject.Find("XR Origin/Camera Offset/RightHand Controller/Grab Ray");
+        grabRay = FindObjectOfType<GrabRay>();
 
         toggleUI.action.performed += LeftPrimaryButtonPressed;
         ui = FindObjectOfType<WristUI>();
@@ -28,28 +28,33 @@ public class ImportantToggle : MonoBehaviour
         toggleMenu.action.performed += LeftMenuButtonPressed;
         menu = FindObjectOfType<Menu>();
 
-
-        ui.ToggleVisibility();
-        menu.ToggleVisibility();
-        grabRay.SetActive(false);
+        if(ui != null)
+            ui.ToggleVisibility();
+        if (menu != null)
+            menu.ToggleVisibility();
+        if (grabRay != null)
+            grabRay.ToggleVisibility();
     }
 
     void Update()
     {
-        if(grabRay == null)
+        if(grabRay is null)
         {
-            grabRay = GameObject.Find("Main Camera/Camera Offset/RightHand Controller/Grab Ray");
-            grabRay.SetActive(false);
+            grabRay = FindObjectOfType<GrabRay>();
+            if(grabRay = FindObjectOfType<GrabRay>())
+                grabRay.ToggleVisibility();
         }
-        if (ui == null)
+        if (ui is null)
         {
             ui = FindObjectOfType<WristUI>();
-            ui.ToggleVisibility();
+            if(ui = FindObjectOfType<WristUI>())
+                ui.ToggleVisibility();
         }
-        if (menu == null)
+        if (menu is null)
         {
             menu = FindObjectOfType<Menu>();
-            menu.ToggleVisibility();
+            if(menu = FindObjectOfType<Menu>())
+                menu.ToggleVisibility();
         }
     }
     void LeftPrimaryButtonPressed(InputAction.CallbackContext context)
