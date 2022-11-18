@@ -12,6 +12,14 @@ public class Billboard : MonoBehaviour
     {
         spawner = FindObjectOfType<NetworkSpawner>();
     }
+    void Update()
+    {
+        if (spawner == null)
+        {
+            spawner = FindObjectOfType<NetworkSpawner>();
+        }
+        LinkWave();
+    }
 
     public void LinkWave()
     {
