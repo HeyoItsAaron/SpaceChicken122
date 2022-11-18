@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 using UnityEngine.InputSystem;
 
 public class ImportantToggle : MonoBehaviour
@@ -19,21 +20,40 @@ public class ImportantToggle : MonoBehaviour
     void Start()
     {
         toggleGrabRay.action.performed += RightPrimaryButtonPressed;
-        grabRay = GameObject.FindObjectOfType<GrabRay>();
+        grabRay = FindObjectOfType<GrabRay>();
 
         toggleUI.action.performed += LeftPrimaryButtonPressed;
-        ui = GameObject.FindObjectOfType<WristUI>();
+        ui = FindObjectOfType<WristUI>();
 
         toggleMenu.action.performed += LeftMenuButtonPressed;
-        menu = GameObject.FindObjectOfType<Menu>();
+        menu = FindObjectOfType<Menu>();
 
-
-        ui.ToggleVisibility();
-        menu.ToggleVisibility();
-        grabRay.ToggleVisibility();
+        if(ui != null)
+            ui.ToggleVisibility();
+        if (menu != null)
+            menu.ToggleVisibility();
+        GameObject.Find("Grab Ray").SetActive(false);
     }
 
-
+    void Update()
+    {
+        if(grabRay is null)
+        {
+            grabRay = FindObjectOfType<GrabRay>();
+        }
+        if (ui is null)
+        {
+            ui = FindObjectOfType<WristUI>();
+            if(ui = FindObjectOfType<WristUI>())
+                ui.ToggleVisibility();
+        }
+        if (menu is null)
+        {
+            menu = FindObjectOfType<Menu>();
+            if(menu = FindObjectOfType<Menu>())
+                menu.ToggleVisibility();
+        }
+    }
     void LeftPrimaryButtonPressed(InputAction.CallbackContext context)
     {
         ui.ToggleVisibility();

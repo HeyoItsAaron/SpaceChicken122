@@ -17,29 +17,35 @@ public class NetworkSpawner : MonoBehaviour
     public int enemyAmount = 0;
     public int enemiesKilled = 0;
     //public WristUI ui;
+    // hi
   
 
     // Start is called before the first frame update
-    private void Start()
+    void Start()
     {
+        // initialized array with set number of spawners
         spawners = new GameObject[5];
         //ui = GameObject.FindObjectOfType<WristUI>();
 
+        // fills array with children spawners
         for (int i = 0; i < spawners.Length; i++)
         {
             spawners[i] = transform.GetChild(i).gameObject;
         }
 
-        StartWave();
+        //StartWave();
+        NextWave();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // if T is pressed spawn chickens
         if (Input.GetKeyDown(KeyCode.T))
         {
             SpawnEnemy();
         }
+        // if enemys killed greater than enemies spawned move to next wave
         if (enemiesKilled >= enemyAmount)
         {
             NextWave();
@@ -49,8 +55,10 @@ public class NetworkSpawner : MonoBehaviour
     // spawn method
     private void SpawnEnemy()
     {
+        // set random enemy and random spawn position
         int randomEnemy = Random.Range(0, Enemies.Length);
         int spawnerId = Random.Range(0, spawners.Length);
+        // sees if round is divisible by 5 if so spawn special enemy
         if(waveNumber % 5 != 0)
         {
             PhotonNetwork.Instantiate(Enemies[randomEnemy], spawners[spawnerId].transform.position, spawners[spawnerId].transform.rotation);
@@ -63,6 +71,7 @@ public class NetworkSpawner : MonoBehaviour
         }
     }
 
+    /*
     private void StartWave()
     {
         waveNumber = 1;
@@ -74,6 +83,7 @@ public class NetworkSpawner : MonoBehaviour
             SpawnEnemy();
         }
     }
+    */
 
     public void NextWave()
     {
