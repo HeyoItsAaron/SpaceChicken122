@@ -23,12 +23,9 @@ public class Chicken : ChickenStats
     Animator anim;
     float lastAttackTime = 0;
     float attackCooldown = 2;
-    private int damage = 10;
     NetworkSpawner spawn;
     public float turnRate;
     private NetworkPlayer[] networkPlayers;
-    private int playerPosition;
-    public GameObject chickenPosition;
     public NetworkPlayer closerPlayer;
 
     // Start is called before the first frame update
@@ -40,12 +37,11 @@ public class Chicken : ChickenStats
         anim = GetComponent<Animator>();
         maxHealth = 100;
         currHealth = maxHealth;
-        //myTarget = GameObject.FindWithTag("Player").transform;
+
         spawn = FindObjectOfType<NetworkSpawner>();
         networkPlayers = FindObjectsOfType<NetworkPlayer>();
         myTarget = networkPlayers[0].head;
         currentTarget = myTarget;
-        playerPosition = 0;
         distance = Vector3.Distance(networkPlayers[0].head.position, transform.position);
         closerPlayer = networkPlayers[0];
     }
@@ -93,35 +89,7 @@ public class Chicken : ChickenStats
         }
         currentTarget = closerPlayer.head;
         distance = Vector3.Distance(currentTarget.position, transform.position);
-        /*for (int i = 0; i < networkPlayers.Count()-1; i++)
-        {
-            float DistanceFromPlayer1 = Vector3.Distance(networkPlayers[0].head.position, transform.position);
-            float DistanceFromPlayer = Vector3.Distance(networkPlayers[i].head.position, transform.position);
-
-            tempDist = DistanceFromPlayer1;
-
-            if (tempDist <= DistanceFromPlayer)
-            {
-                tempDist = DistanceFromPlayer;
-                playerPosition = i+1;
-            }
-        }
-        currentTarget = networkPlayers[playerPosition].head;
-        distance = tempDist;*/
     }
-    
-    /*
-    public void DistCheck()
-    {
-         float dist = Vector3.Distance(this.transform.position, myTarget.transform.position);
-
-        if (dist < range)
-        {
-            currentTarget = myTarget;
-            distance = dist;
-        }
-    }
-    */
 
     // Stop enemy
     private void StopEnemy()
@@ -153,8 +121,7 @@ public class Chicken : ChickenStats
         myAgent.SetDestination(currentTarget.transform.position); 
     }
 
-    // Die method
-
+    // Overwritten Die method
     public override void Die()
     {
         AudioSource.PlayClipAtPoint(deathClip, transform.position); 
@@ -164,18 +131,7 @@ public class Chicken : ChickenStats
         spawn.enemiesKilled++;
     }
 
-    //public void TakeDamage(int damage)
-    //{
-    //    PV.RPC(nameof(RPC_TakeDamage), PV.Owner, damage);
-    //}
-
-    //[PunRPC]
-    //void RPC_TakeDamage(int damage)
-    //{
-    //    AudioSource.PlayClipAtPoint(hurt, transform.position);
-    //    currHealth -= damage;
-    //}
-
+    // RPC Damage function for chiken damage
     [PunRPC]
     public void DoDamage(float damageAmount)
     {
@@ -209,56 +165,12 @@ public class Chicken : ChickenStats
             gameObject.GetComponent<PhotonView>().RPC("DoDamage", RpcTarget.AllBuffered, 50f);
         }
     }
+
+    // Allows for a wait time for Chicken animation to play before despawn
     IEnumerator despawnAfterSeconds()
     {
         yield return new WaitForSeconds(5);
         PhotonNetwork.Destroy(gameObject);
     }
-
-    /*
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Light Bullet")
-        {
-            lightCount++;
-            if(lightCount > 7)
-            {
-                Die();
-            }
-        }
-        if (collision.gameObject.tag == "Medium Bullet")
-        {
-            mediumCount++;
-            if (mediumCount > 5)
-            {
-                Die();
-            }
-        }
-        if (collision.gameObject.tag == "Heavy Bullet")
-        {
-            heavyCount++;
-            if (heavyCount > 3)
-            {
-                Die();
-            }
-        }
-        if (collision.gameObject.tag == "HAMMER")
-        {
-            hammerCount++;
-            if (lightCount > 2)
-            {
-                Die();
-            }
-        }
-        if (collision.gameObject.tag == "FALLING HAMMER")
-        {
-            fallingCount++;
-            if (fallingCount > 1)
-            {
-                Die();
-            }
-        }
-    }
-    */
 
 }
