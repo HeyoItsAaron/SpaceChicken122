@@ -1520,7 +1520,7 @@
             "actions": [
                 {
                     "name": "Toggle",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "c7b7385f-8ee7-4543-8600-9dc83178bb96",
                     "expectedControlType": "Button",
                     "processors": "",

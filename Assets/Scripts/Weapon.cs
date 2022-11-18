@@ -44,9 +44,12 @@ public class Weapon : MonoBehaviour
 
     void Start()
     {
-        // Once weapon is grabbed, waits for trigger to be pressed
-     //    XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
-      //   grabbable.activated.AddListener(FireBullet);
+        //Once weapon is grabbed, waits for it to be grabbed and the trigger to be activated/deactivated
+        XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
+        grabbable.selectEntered.AddListener(Grabbed);
+        grabbable.selectExited.AddListener(notGrabbed);
+        grabbable.activated.AddListener(BeginFire);
+        grabbable.deactivated.AddListener(StopFire);
         // Muzzle flash is enabled on start
         muzzleFlash.Stop();
         isGrabbed = false;
@@ -54,34 +57,19 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        float triggerValue = toggleReference.action.ReadValue<float>();
-        if(triggerValue < 0.5 && isGrabbed == true)
-        {
-            Debug.Log("Stop fire");
-            StopFire();
-        }
-        if(triggerValue > 0.5 && isGrabbed == true)
-        {
-            Debug.Log("Start fire");
-            BeginFire();
-        }    
+        
     }
 
-    void Grabed(SelectEnterEventArgs arg)
+    void Grabbed(BaseInteractionEventArgs arg)
     {
-        //BeginFire();
         isGrabbed = true;
     }
-    void notGrabbed(SelectExitEventArgs arg)
+    void notGrabbed(BaseInteractionEventArgs arg)
     {
-        //BeginFire();
+        StopAllCoroutines();
         isGrabbed = false;
     }
-    // void StopFireBullet(DeactivateEventArgs arg)
-    // {
-    //     StopFire();
-    //  }
-    void BeginFire()
+    void BeginFire(BaseInteractionEventArgs arg)
     {
         if (_current != null)
         {
@@ -89,13 +77,12 @@ public class Weapon : MonoBehaviour
         }
         _current = StartCoroutine(Shoot());
     }
-    void StopFire()
+    void StopFire(BaseInteractionEventArgs arg)
     {
         if (_current != null)
         {
             StopCoroutine(_current);
         }
-
     }
     private IEnumerator Shoot()
     {
@@ -111,14 +98,12 @@ public class Weapon : MonoBehaviour
 
             if (!isShotgun)
             {
-                Debug.Log("Normal shoot");
                 GameObject spawnedBullet = Instantiate(bullet, spawnPoint.transform.position, spawnPoint.transform.rotation);
                 spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireSpeed;
                 Destroy(spawnedBullet, 5);
             }
             else
             {
-                Debug.Log("Shot gun shoot");
                 for (int i = 0; i < bulletsFired; i++)
                 {
                     //Random spread
@@ -129,7 +114,7 @@ public class Weapon : MonoBehaviour
 
                     // Bullet Spawning
                     GameObject spawnedBullet = Instantiate(bullet, direction, spawnPoint.transform.rotation);
-                    spawnedBullet.GetComponent<Rigidbody>().velocity = direction * fireSpeed;
+                    spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.transform.forward * fireSpeed;
                     Destroy(spawnedBullet, 5);
                 }
             }
