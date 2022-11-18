@@ -27,44 +27,31 @@ public class Chicken : ChickenStats
     Spawner spawn;
     public float turnRate;
     private NetworkPlayer[] networkPlayers;
-
-    // test variables
-    //int lightCount = 0;
-    //int mediumCount = 0;
-    //int heavyCount = 0;
-    //int hammerCount = 0;
-    //int fallingCount = 0;
-    //PhotonView PV;
-
+    private int playerPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-
         GetComponent<Animator>().SetFloat("offset", Random.Range(0.0f, 1.0f));
-        InvokeRepeating("DistCheck", 0, 0.5f);
+        //InvokeRepeating("DistCheck", 0, 0.5f);
         myAgent = GetComponent<NavMeshAgent>();
         rbs = GetComponentsInChildren<Rigidbody>();
-        DisactivateRagdoll();
         anim = GetComponent<Animator>();
         maxHealth = 100;
         currHealth = maxHealth;
-        myTarget = GameObject.FindWithTag("Player").transform;
+        //myTarget = GameObject.FindWithTag("Player").transform;
+        myTarget = networkPlayers[0].head;
         spawn = FindObjectOfType<Spawner>();
-
         networkPlayers = FindObjectsOfType<NetworkPlayer>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        //transform.LookAt(new Vector3(currentTarget.transform.position.x, transform.position.y, currentTarget.transform.position.z));
-
+        // Check the helth of the chicken every frame
         CheckHealth(currHealth, maxHealth);
 
-        // If else statements to check distance from enemy and call certain method
-
+        // If the distance from target is less than stopping distance attack
         if ( distance < stoppingDistance)
         {
             Attack();
@@ -72,19 +59,14 @@ public class Chicken : ChickenStats
 
         else
         {
+            // if distance greater than range stop enemy
             if (distance > range)
             {
                 StopEnemy();
             }
-
-            if (distance < range)
+            // otherwise search for target
+            if (distance < range || currentTarget.IsDestroyed())
             {
-                //FindTarget();
-                Search();
-            }
-            if(currentTarget.IsDestroyed())
-            {
-                //FindTarget();
                 Search();
             }
         }
@@ -93,38 +75,27 @@ public class Chicken : ChickenStats
 
     // methods 
 
-    public void ActivateRagdoll()
-    {
-        foreach (var item in rbs)
-        {
-            item.isKinematic = false;
-        }
-    }
-
-    public void DisactivateRagdoll()
-    {
-        foreach (var item in rbs)
-        {
-            item.isKinematic = true;
-        }
-    }
-
     // check distance from enenmy
-    
     void Search()
     {
-        for (int i = 0; i < networkPlayers.Count(); i++)
+        for (int i = 0; i < networkPlayers.Count()-1; i++)
         {
-            float DistanceFromPlayer = Vector3.Distance(networkPlayers[i].head.position, transform.position);
+            float DistanceFromPlayer1 = Vector3.Distance(networkPlayers[0].head.position, transform.position);
+            float DistanceFromPlayer = Vector3.Distance(networkPlayers[i+1].head.position, transform.position);
 
-            if (DistanceFromPlayer <= range)
+            tempDist = DistanceFromPlayer1;
+
+            if (tempDist <= DistanceFromPlayer)
             {
-                FindTarget(i);
+                tempDist = DistanceFromPlayer;
+                playerPosition = i+1;
             }
         }
+        currentTarget = networkPlayers[playerPosition].head;
+        FindTarget(playerPosition);
     }
     
-    
+    /*
     public void DistCheck()
     {
          float dist = Vector3.Distance(this.transform.position, myTarget.transform.position);
@@ -135,21 +106,17 @@ public class Chicken : ChickenStats
             distance = dist;
         }
     }
-
+    */
 
     // Stop enemy
-
     private void StopEnemy()
     {
         anim.SetBool("isWalking", false);
         anim.SetBool("isAttacking", false);
         myAgent.enabled = false;
-        
-
     }
 
     // Attack player
-
     private void Attack()
     {
         anim.SetBool("isAttacking", true);
@@ -160,30 +127,26 @@ public class Chicken : ChickenStats
             currentTarget.GetComponent<TestPlayer>().TakeDamage(damage);
             currentTarget.GetComponent<TestPlayer>().CheckHealth();
         }
-        
     }
     
     // Find current target
-
     private void FindTarget(int num)
     {
         myAgent.enabled = true;
         anim.SetBool("isWalking", true);
         anim.SetBool("isAttacking", false);
-        myAgent.SetDestination(myTarget.transform.position);
-        
+        myAgent.SetDestination(currentTarget.transform.position); 
     }
 
     // Die method
 
     public override void Die()
     {
-        //AudioSource.PlayClipAtPoint(deathClip, transform.position); 
+        AudioSource.PlayClipAtPoint(deathClip, transform.position); 
         myAgent.enabled = false;
         anim.SetBool("isDead", true);
         StartCoroutine(despawnAfterSeconds());
         spawn.enemiesKilled++;
-        Debug.Log("CHICKEN TRIED TO DIE");
     }
 
     //public void TakeDamage(int damage)
@@ -210,27 +173,25 @@ public class Chicken : ChickenStats
             }
         }
     }
+
+    // On bullet collision have chicken take damage
     private void OnCollisionEnter(Collision collision)
     {   
         if (collision.gameObject.tag == "Light Bullet")
         {
             gameObject.GetComponent<PhotonView>().RPC("DoDamage", RpcTarget.AllBuffered, 15f);
-            //TakeDamage(15);
         }
         if (collision.gameObject.tag == "Medium Bullet")
         {
             gameObject.GetComponent<PhotonView>().RPC("DoDamage", RpcTarget.AllBuffered, 25f);
-            //TakeDamage(25);
         }
         if (collision.gameObject.tag == "Heavy Bullet")
         {
             gameObject.GetComponent<PhotonView>().RPC("DoDamage", RpcTarget.AllBuffered, 35f);
-            //TakeDamage(35);
         }
         if (collision.gameObject.tag ==  "HAMMER")
         {
             gameObject.GetComponent<PhotonView>().RPC("DoDamage", RpcTarget.AllBuffered, 50f);
-            //TakeDamage(50);
         }
     }
     IEnumerator despawnAfterSeconds()
@@ -239,7 +200,6 @@ public class Chicken : ChickenStats
         PhotonNetwork.Destroy(gameObject);
     }
 
-    // test this
     /*
     private void OnCollisionEnter(Collision collision)
     {

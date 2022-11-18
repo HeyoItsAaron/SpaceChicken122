@@ -11,6 +11,7 @@ public class ChickenStats : Stats
 
     public Transform myTarget;
     public Transform currentTarget;
+    public float tempDist;
     public NavMeshAgent myAgent;
     public int range;
     public float distance;
