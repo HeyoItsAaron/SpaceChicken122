@@ -393,7 +393,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5359011819267817046}
         m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
-        m_MethodName: NextSlide
+        m_MethodName: PreviousSlide
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

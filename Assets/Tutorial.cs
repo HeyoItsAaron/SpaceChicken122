@@ -35,7 +35,7 @@ public class Tutorial : MonoBehaviour
     public void PreviousSlide()
     {
         if (slideIndex == 0)
-            slideIndex = slides.Count()-1;
+            slideIndex = slides.Count() - 1;
         else
             slideIndex--;
         ActivateSlideAtIndex();
