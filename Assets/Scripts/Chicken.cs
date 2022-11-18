@@ -33,7 +33,7 @@ public class Chicken : ChickenStats
     void Start()
     {
         GetComponent<Animator>().SetFloat("offset", Random.Range(0.0f, 1.0f));
-        //InvokeRepeating("DistCheck", 0, 0.5f);
+        InvokeRepeating("Search", 0, 0.5f);
         myAgent = GetComponent<NavMeshAgent>();
         rbs = GetComponentsInChildren<Rigidbody>();
         anim = GetComponent<Animator>();
@@ -68,7 +68,7 @@ public class Chicken : ChickenStats
             // otherwise search for target
             if (distance < range || currentTarget.IsDestroyed())
             {
-                Search();
+                FindTarget();
             }
         }
     }
@@ -93,7 +93,7 @@ public class Chicken : ChickenStats
             }
         }
         currentTarget = networkPlayers[playerPosition].head;
-        FindTarget(playerPosition);
+        distance = tempDist;
     }
     
     /*
@@ -131,7 +131,7 @@ public class Chicken : ChickenStats
     }
     
     // Find current target
-    private void FindTarget(int num)
+    private void FindTarget()
     {
         myAgent.enabled = true;
         anim.SetBool("isWalking", true);
