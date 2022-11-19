@@ -55,6 +55,10 @@ public class NetworkPlayer : MonoBehaviour
             photonView.RPC("LoadAvatar", RpcTarget.AllBuffered, PlayerPrefs.GetInt("AvatarID"));
     }
 
+    public void TakePeck()
+    {
+        gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.AllBuffered, 25f);
+    }
     //Function that is responsible to load an avatar among the avatar list
     [PunRPC]
     public void LoadAvatar(int index)
