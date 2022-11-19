@@ -19,7 +19,7 @@ public class Billboard : MonoBehaviourPun
         {
             game = FindObjectOfType<GameplayManager>();
         }
-        gameObject.GetComponent<PhotonView>().RPC("LinkWave", RpcTarget.AllBuffered);
+        //gameObject.GetComponent<PhotonView>().RPC("LinkWave", RpcTarget.AllBuffered);
     }
 
     [PunRPC]
