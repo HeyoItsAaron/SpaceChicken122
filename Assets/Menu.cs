@@ -9,7 +9,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class Menu : MonoBehaviour //change to MonoBehaviourPunCallbacks??
+public class Menu : MonoBehaviourPun //change to MonoBehaviourPunCallbacks??
 {
     // variables
     GameObject ray;
@@ -19,7 +19,11 @@ public class Menu : MonoBehaviour //change to MonoBehaviourPunCallbacks??
     {
         ray = GameObject.Find("XR Origin/Camera Offset/RightHand Controller/Ray Interactor");
     }
-
+    public void ToggleVisibilityOverNet()
+    {
+        gameObject.GetComponent<PhotonView>().RPC("ToggleVisibility", RpcTarget.AllBuffered);
+    }
+    [PunRPC]
     public void ToggleVisibility()
     {
         gameObject.SetActive(!gameObject.activeInHierarchy);

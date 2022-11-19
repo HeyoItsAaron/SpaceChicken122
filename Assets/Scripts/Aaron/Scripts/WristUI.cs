@@ -7,14 +7,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
-public class WristUI : MonoBehaviour
+public class WristUI : MonoBehaviourPun
 {
     //only show to player (not over network)
     //only show when wrist is raised or when menu button held
 
     //variables
-    //public Player player;
+    public PlayerStats player;
     public NetworkSpawner spawner;
 
     public Image healthBar; //count-ish
@@ -51,39 +52,56 @@ public class WristUI : MonoBehaviour
     //link all stats
     public void linkAllStats()
     {
-        LinkHealthUI();
-        LinkPowerUpUI();
-        LinkEnergyUI();
-        LinkCurrencyUI();
-        LinkWaveUI();
+        gameObject.GetComponent<PhotonView>().RPC("LinkHealthUI", RpcTarget.AllBuffered);
+        gameObject.GetComponent<PhotonView>().RPC("LinkPowerUpUI", RpcTarget.AllBuffered);
+        gameObject.GetComponent<PhotonView>().RPC("LinkEnergyUI", RpcTarget.AllBuffered);
+        gameObject.GetComponent<PhotonView>().RPC("LinkCurrencyUI", RpcTarget.AllBuffered);
+        gameObject.GetComponent<PhotonView>().RPC("LinkWaveUI", RpcTarget.AllBuffered);
     }
+
     //Link individual stats
+    [PunRPC]
     public void LinkHealthUI()
     {
-        //healthFill = player.currHealth;
+        healthFill = player.currHealth;
         healthBar.fillAmount = (healthFill / 100.0f);
+
     }
+    [PunRPC]
     public void LinkPowerUpUI()
     {
-        //powerUpFill = player.currentPowerUpDuration;
+        powerUpFill = player.currentPowerUpDuration;
         powerUpBar.fillAmount = (powerUpFill / 100.0f);
+
     }
+    [PunRPC]
     public void LinkEnergyUI()
     {
-        //ammoCountFill = player.currEnergy;
+        ammoCountFill = player.currEnergy;
         ammoCountBar.fillAmount = (ammoCountFill / 100.0f);
+
     }
+    [PunRPC]
     public void LinkCurrencyUI()
     {
-        //currencyCount.text = "$" + player.currCurrency.ToString("N2");
+        currencyCount.text = "$" + player.currCurrency.ToString("N2");
+
     }
+    [PunRPC]
     public void LinkWaveUI()
     {
         waveText.text = spawner.waveNumber.ToString();
+
     }
-    public void ToggleVisibility()
-    { 
-        gameObject.SetActive(!gameObject.activeInHierarchy);
+    public void ToggleVisibilityOverNet()
+    {
+        gameObject.GetComponent<PhotonView>().RPC("ToggleVisibility", RpcTarget.AllBuffered);
     }
 
+    [PunRPC]
+    public void ToggleVisibility()
+    {
+        gameObject.SetActive(!gameObject.activeInHierarchy);
+        linkAllStats();
+    }
 }

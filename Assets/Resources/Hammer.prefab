@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hammerSpeed: 20
   playerHand: {fileID: 0}
+  hasTouchedHammer: 0
 --- !u!114 &1390894436669672256
 MonoBehaviour:
   m_ObjectHideFlags: 0

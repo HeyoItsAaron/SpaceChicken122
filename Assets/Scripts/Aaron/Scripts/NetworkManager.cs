@@ -16,6 +16,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 {
     public List<DefaultRoom> defaultRooms;
     public GameObject roomUI;
+    public bool inRoom = false;
 
     //1. Connect to photon server
     public void ConnectToServer()
@@ -68,6 +69,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
             //PhotonNetwork.LoadLevel("Game");      // ?????????????? SHOULD WE ???????????
         base.OnJoinedRoom();
+        inRoom = true;
     }
 
     /*public override void OnPlayerEnteredRoom(Player newPlayer)

@@ -949,9 +949,8 @@ MonoBehaviour:
   deathClip: {fileID: 8300000, guid: fc8e0f7bc9a2ac341aa88eb61130e779, type: 3}
   hurt: {fileID: 8300000, guid: 2e709317933a73547a3d620ae7b78820, type: 3}
   walk: {fileID: 8300000, guid: 3a9bd0a8d5605f44aad3e55612f985de, type: 3}
-  stoppingDistance: 1.25
+  stoppingDistance: 2.3
   turnRate: 1
-  chickenPosition: {fileID: 5271153525950975970}
   closerPlayer: {fileID: 0}
 --- !u!136 &3834422658676958553
 CapsuleCollider:

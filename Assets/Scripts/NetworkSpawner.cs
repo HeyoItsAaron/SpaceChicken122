@@ -7,9 +7,10 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class NetworkSpawner : MonoBehaviour
+public class NetworkSpawner : MonoBehaviourPun
 {
     // variables
+    public NetworkManager netManager;
     public GameObject[] spawners;
     public string[] Enemies;
     public string enemy3;
@@ -18,10 +19,14 @@ public class NetworkSpawner : MonoBehaviour
     public int enemiesKilled = 0;
     //public WristUI ui;
     // hi
-  
+    
+    void Start()
+    {
+        netManager = GameObject.FindObjectOfType<NetworkManager>();
+    }
 
     // Start is called before the first frame update
-    void Start()
+    void OnJoinedRoom()
     {
         // initialized array with set number of spawners
         spawners = new GameObject[5];
@@ -40,6 +45,10 @@ public class NetworkSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(netManager.inRoom == true)
+        {
+            NextWave();
+        }
         // if T is pressed spawn chickens
         if (Input.GetKeyDown(KeyCode.T))
         {

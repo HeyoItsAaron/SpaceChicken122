@@ -7,6 +7,7 @@ using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.InputSystem;
+using Photon.Pun;
 
 public class ImportantToggle : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class ImportantToggle : MonoBehaviour
         if (menu != null)
             menu.ToggleVisibility();
         GameObject.Find("Grab Ray").SetActive(false);
+        //gameObject.GetComponent<PhotonView>().RPC("DisableGrabRay", RpcTarget.AllBuffered);
     }
 
     void Update()
@@ -65,5 +67,11 @@ public class ImportantToggle : MonoBehaviour
     void RightPrimaryButtonPressed(InputAction.CallbackContext context)
     {
         grabRay.ToggleVisibility();
+    }
+
+    [PunRPC]
+    void DisableGrabRay()
+    {
+        GameObject.Find("Grab Ray").SetActive(false);
     }
 }
