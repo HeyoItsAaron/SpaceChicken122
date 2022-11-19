@@ -44,13 +44,14 @@ public class PlayerStats: Stats
     public override void Die()
     {
         isDead = true;
-
-        if (currHealth != 0)
-            currHealth = 0;
-        if (photonView.IsMine)
-            photonView.RPC("LoadAvatar", RpcTarget.AllBuffered, 5);
-        currEnergy = 0;
-        currCurrency = 0;
+        PhotonNetwork.Disconnect();
+        PhotonNetwork.LoadLevel(0);
+        //if (currHealth != 0)
+        //    currHealth = 0;
+        //if (photonView.IsMine)
+        //    photonView.RPC("LoadAvatar", RpcTarget.AllBuffered, 5);
+        //currEnergy = 0;
+        //currCurrency = 0;
         //origin.GetComponent<ActionBasedContinuousMoveProvider>().enabled = false;
         //origin.GetComponent<ActionBasedContinuousTurnProvider>().enabled = false;
         //origin.GetComponent<HandHammerConnection>().enabled = false;

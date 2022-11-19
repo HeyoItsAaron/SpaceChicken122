@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.043578748, g: 0.044726565, b: 0.059461884, a: 1}
+  m_IndirectSpecularColor: {r: 0.04365709, g: 0.044818856, b: 0.05955075, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3282,7 +3282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 87d7e5ff4c287e24daed81bb2ed18fae, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 21.77
+      value: 28.3
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 87d7e5ff4c287e24daed81bb2ed18fae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5457,7 +5457,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329848363}
   m_LocalRotation: {x: -0, y: 0.7071064, z: -0, w: -0.7071072}
-  m_LocalPosition: {x: 89.588, y: 8.2, z: 88.43}
+  m_LocalPosition: {x: 89.588, y: 7.56, z: 88.43}
   m_LocalScale: {x: 0.026693, y: 0.026693, z: 0.026693}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -14595,7 +14595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 87d7e5ff4c287e24daed81bb2ed18fae, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 21.77
+      value: 28.3
       objectReference: {fileID: 0}
     - target: {fileID: 1862214570937142527, guid: 87d7e5ff4c287e24daed81bb2ed18fae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -31237,6 +31237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   netManager: {fileID: 0}
+  playerStatsArr: []
   spawners:
   - {fileID: 321185418302646446}
   - {fileID: 321185419189116826}
@@ -32982,7 +32983,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 101.47, y: 6.7932787}
+  m_AnchoredPosition: {x: 101.47, y: 6.2}
   m_SizeDelta: {x: 744, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!33 &1772050648871161096
