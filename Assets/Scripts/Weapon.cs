@@ -48,7 +48,8 @@ public class Weapon : MonoBehaviourPun
     {
         //Once weapon is grabbed, waits for it to be grabbed and the trigger to be activated/deactivated
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
-        grabbable.selectExited.AddListener(notGrabbed);
+        grabbable.selectEntered.AddListener(Grabbed);
+        grabbable.selectExited.AddListener(NotGrabbed);
         grabbable.activated.AddListener(BeginFire);
         grabbable.deactivated.AddListener(StopFire);
         // Muzzle flash is enabled on start so we disable it
@@ -76,10 +77,15 @@ public class Weapon : MonoBehaviourPun
         gunshot.maxDistance = 100;
         gunshot.Play();
     }
-    void notGrabbed(BaseInteractionEventArgs arg)
+    void Grabbed(BaseInteractionEventArgs arg)
     {
+        player.hasItemInHand= true;
+        StartCoroutine("DisableGrabRayDelay");
+    }
+    void NotGrabbed(BaseInteractionEventArgs arg)
+    {
+        player.hasItemInHand = false;
         StopAllCoroutines();
-        //isGrabbed = false;
     }
     void BeginFire(BaseInteractionEventArgs arg)
     {
@@ -95,6 +101,12 @@ public class Weapon : MonoBehaviourPun
         {
             StopCoroutine(_current);
         }
+    }
+    //WOKEGE
+    IEnumerator DisableGrabRayDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        GameObject.Find("Grab Ray").SetActive(false);
     }
     IEnumerator DespawnBullet(GameObject aSpawnedBullet)
     {
