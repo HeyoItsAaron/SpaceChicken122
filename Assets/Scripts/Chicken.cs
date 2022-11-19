@@ -84,7 +84,7 @@ public class Chicken : ChickenStats
     {
         for (int i = 0; i < networkPlayers.Count(); i++)
         {
-            if (Vector3.Distance(networkPlayers[i].head.position, transform.position) > Vector3.Distance(closerPlayer.head.position, transform.position))
+            if (Vector3.Distance(networkPlayers[i].head.position, transform.position) < Vector3.Distance(closerPlayer.head.position, transform.position))
                 closerPlayer = networkPlayers[i];
         }
         currentTarget = closerPlayer.head;
@@ -107,7 +107,7 @@ public class Chicken : ChickenStats
         if(Time.time - lastAttackTime >= attackCooldown)
         {
             lastAttackTime = Time.time;
-            currentTarget.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.AllBuffered, 20);
+            currentTarget.GetComponent<NetworkPlayer>().TakePeck();
             //currentTarget.GetComponent<TestPlayer>().CheckHealth();
         }
     }
