@@ -2,6 +2,13 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using CSCore;
+using Photon.Pun;
+using Photon.Pun.Demo.Cockpit;
+using Photon.Pun.Demo.PunBasics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
@@ -12,104 +19,90 @@ public class Chicken : ChickenStats
 {
     // variables
     private Rigidbody[] rbs;
-    public Transform myTarget;
-    public Transform currentTarget;
-    public NavMeshAgent myAgent;
-    public int range;
-    public float distance;
     [SerializeField] float stoppingDistance;
     Animator anim;
     float lastAttackTime = 0;
     float attackCooldown = 2;
-    private int damage = 10;
-    Spawner spawn;
+    NetworkSpawner spawn;
+    public float turnRate;
+    private NetworkPlayer[] networkPlayers;
+    public NetworkPlayer closerPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("DistCheck", 0, 0.5f);
+        GetComponent<Animator>().SetFloat("offset", Random.Range(0.0f, 1.0f));
         myAgent = GetComponent<NavMeshAgent>();
         rbs = GetComponentsInChildren<Rigidbody>();
-        DisactivateRagdoll();
         anim = GetComponent<Animator>();
         maxHealth = 100;
         currHealth = maxHealth;
-        myTarget = GameObject.FindWithTag("Player").transform;
-        spawn = FindObjectOfType<Spawner>();
+
+        spawn = FindObjectOfType<NetworkSpawner>();
+        networkPlayers = FindObjectsOfType<NetworkPlayer>();
+        myTarget = networkPlayers[0].head;
+        currentTarget = myTarget;
+        distance = Vector3.Distance(networkPlayers[0].head.position, transform.position);
+        closerPlayer = networkPlayers[0];
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckHealth();
-        //atransform.LookAt(myTarget);
-
-        // If else statements to check distance from enemy and call certain method
-
-        if ( distance < stoppingDistance)
+        if (!isDead)
         {
-            Attack();
-        }
+            // run the search every frame
+            Search();
 
-        else
-        {
-            if (distance > range)
+            // Check the helth of the chicken every frame
+            CheckHealth(currHealth, maxHealth);
+            // If the distance from target is less than stopping distance attack
+            if (distance < stoppingDistance)
             {
-                StopEnemy();
+                Attack();
             }
 
-            if (distance < range)
+            else
             {
-                FindTarget();
+                // if distance greater than range stop enemy
+                if (distance > range)
+                {
+                    StopEnemy();
+                }
+                // otherwise search for target
+                if (distance < range)
+                {
+                    FindTarget();
+                }
             }
         }
+
     }
 
 
     // methods 
 
-    public void ActivateRagdoll()
-    {
-        foreach (var item in rbs)
-        {
-            item.isKinematic = false;
-        }
-    }
-
-    public void DisactivateRagdoll()
-    {
-        foreach (var item in rbs)
-        {
-            item.isKinematic = true;
-        }
-    }
-    
     // check distance from enenmy
-
-    public void DistCheck()
+    void Search()
     {
-         float dist = Vector3.Distance(this.transform.position, myTarget.transform.position);
-
-        if (dist < range)
+        for (int i = 0; i < networkPlayers.Count(); i++)
         {
-            currentTarget = myTarget;
-            distance = dist;
+            if (Vector3.Distance(networkPlayers[i].head.position, transform.position) < Vector3.Distance(closerPlayer.head.position, transform.position))
+                closerPlayer = networkPlayers[i];
         }
+        currentTarget = closerPlayer.head;
+        distance = Vector3.Distance(currentTarget.position, transform.position);
     }
-    
-    // Stop enemy
 
+    // Stop enemy
     private void StopEnemy()
     {
         anim.SetBool("isWalking", false);
         anim.SetBool("isAttacking", false);
         myAgent.enabled = false;
-        
-
     }
 
     // Attack player
-
     private void Attack()
     {
         anim.SetBool("isAttacking", true);
@@ -117,56 +110,79 @@ public class Chicken : ChickenStats
         if(Time.time - lastAttackTime >= attackCooldown)
         {
             lastAttackTime = Time.time;
-            currentTarget.GetComponent<TestPlayer>().TakeDamage(damage);
-            currentTarget.GetComponent<TestPlayer>().CheckHealth();
+            closerPlayer.GetComponent<NetworkPlayer>().TakePeck();
+            //currentTarget.GetComponent<TestPlayer>().CheckHealth();
         }
-        
     }
     
     // Find current target
-
     private void FindTarget()
     {
         myAgent.enabled = true;
         anim.SetBool("isWalking", true);
         anim.SetBool("isAttacking", false);
-        myAgent.SetDestination(myTarget.transform.position);
-        
+        myAgent.SetDestination(currentTarget.transform.position); 
     }
 
-    // Die method
-
+    // Overwritten Die method
     public override void Die()
     {
         myAgent.enabled = false;
+        AudioSource.PlayClipAtPoint(deathClip, transform.position); 
         anim.SetBool("isDead", true);
-        Destroy(gameObject, 5);
-        spawn.enemiesKilled++;
+        ChickenDeathPayOut();
+        StartCoroutine(despawnAfterSeconds());
+        //spawn.enemiesKilled++;
+        //spawn.enemyAmount--;
     }
 
-    public void TakeDamage(int damage)
+    // RPC Damage function for chiken damage
+    [PunRPC]
+    public void DoDamage(float damageAmount)
     {
-        currHealth -= damage;
+        if (!isDead)
+        {
+            currHealth -= damageAmount;
+            if (currHealth <= 0)
+            {
+                Die();
+            }
+        }
     }
 
+    // On bullet collision have chicken take damage
     private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.gameObject.CompareTag("Light Bullet"))
+    {   
+        if (collision.gameObject.tag == "Light Bullet")
         {
-            TakeDamage(15);
+            gameObject.GetComponent<PhotonView>().RPC("DoDamage", RpcTarget.AllBuffered, 15f);
         }
-        if (collision.collider.gameObject.CompareTag("Medium Bullet"))
+        if (collision.gameObject.tag == "Medium Bullet")
         {
-            TakeDamage(25);
+            gameObject.GetComponent<PhotonView>().RPC("DoDamage", RpcTarget.AllBuffered, 25f);
         }
-        if (collision.collider.gameObject.CompareTag("Heavy Bullet"))
+        if (collision.gameObject.tag == "Heavy Bullet")
         {
-            TakeDamage(35);
+            gameObject.GetComponent<PhotonView>().RPC("DoDamage", RpcTarget.AllBuffered, 35f);
         }
-        if (collision.collider.gameObject.CompareTag("HAMMER"))
+        if (collision.gameObject.tag ==  "HAMMER")
         {
-            TakeDamage(50);
+            gameObject.GetComponent<PhotonView>().RPC("DoDamage", RpcTarget.AllBuffered, 50f);
         }
     }
 
+    // Allows for a wait time for Chicken animation to play before despawn
+    IEnumerator despawnAfterSeconds()
+    {
+        yield return new WaitForSeconds(5);
+        PhotonNetwork.Destroy(gameObject);
+    }
+
+    public void ChickenDeathPayOut()
+    {
+        foreach (var i in networkPlayers)
+        {
+            i.GetComponent<PlayerStats>().currCurrency += 10f;
+        }
+    }
 }

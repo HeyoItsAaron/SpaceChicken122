@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -960,7 +960,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581600547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0.6, z: 0}
+  m_LocalPosition: {x: 3.87, y: 0.43, z: 0}
   m_LocalScale: {x: 0.6042568, y: 0.6042568, z: 0.6042568}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2594,8 +2594,10 @@ MonoBehaviour:
   - {fileID: 7538295080796005786, guid: a298d34174e348c40bccd5822016e29d, type: 3}
   - {fileID: 1925218690683266100, guid: 7726ffcc4228e034786005ac61e84328, type: 3}
   enemy3: {fileID: 0}
+  waveNumber: 0
   enemyAmount: 0
   enemiesKilled: 0
+  ui: {fileID: 0}
 --- !u!4 &1796287522
 Transform:
   m_ObjectHideFlags: 0
@@ -3054,6 +3056,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2783678809391667917, guid: c1a20e557319cf44fba2243b793d7e4a, type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6162383047697363911, guid: c1a20e557319cf44fba2243b793d7e4a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3262,6 +3268,10 @@ PrefabInstance:
     - target: {fileID: 1925218690683266100, guid: 7726ffcc4228e034786005ac61e84328, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810110439271472144, guid: 7726ffcc4228e034786005ac61e84328, type: 3}
+      propertyPath: sceneViewId
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7726ffcc4228e034786005ac61e84328, type: 3}
@@ -4536,14 +4546,22 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3834422658676958535, guid: a298d34174e348c40bccd5822016e29d, type: 3}
       propertyPath: m_Speed
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3834422658676958552, guid: a298d34174e348c40bccd5822016e29d, type: 3}
       propertyPath: myAgent
       value: 
       objectReference: {fileID: 837268735}
+    - target: {fileID: 3834422658676958552, guid: a298d34174e348c40bccd5822016e29d, type: 3}
+      propertyPath: myTarget
+      value: 
+      objectReference: {fileID: 581600553}
     - target: {fileID: 3834422658676958554, guid: a298d34174e348c40bccd5822016e29d, type: 3}
       propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152945168335684085, guid: a298d34174e348c40bccd5822016e29d, type: 3}
+      propertyPath: sceneViewId
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7194139503661678368, guid: a298d34174e348c40bccd5822016e29d, type: 3}
@@ -4659,10 +4677,16 @@ MonoBehaviour:
   isDead: 0
   myTarget: {fileID: 831350896}
   currentTarget: {fileID: 0}
+  tempDist: 0
   myAgent: {fileID: 1855719251}
   range: 0
   distance: 0
+  deathClip: {fileID: 0}
+  hurt: {fileID: 0}
+  walk: {fileID: 0}
   stoppingDistance: 1
+  turnRate: 0
+  closerPlayer: {fileID: 0}
 --- !u!114 &6145908937652647205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4680,11 +4704,17 @@ MonoBehaviour:
   isDead: 0
   myTarget: {fileID: 581600553}
   currentTarget: {fileID: 0}
+  tempDist: 0
   myAgent: {fileID: 1855719251}
   range: 0
   distance: 0
+  deathClip: {fileID: 0}
+  hurt: {fileID: 0}
+  walk: {fileID: 0}
   stoppingDistance: 3
   damage: 0
+  closerPlayer: {fileID: 0}
+  turnRate: 0
   spawnPoint: {fileID: 6297590268033914806}
   egg: {fileID: 0}
 --- !u!4 &6180655844004724187
@@ -5047,10 +5077,16 @@ MonoBehaviour:
   isDead: 0
   myTarget: {fileID: 831350896}
   currentTarget: {fileID: 0}
+  tempDist: 0
   myAgent: {fileID: 1855719251}
   range: 0
   distance: 0
+  deathClip: {fileID: 0}
+  hurt: {fileID: 0}
+  walk: {fileID: 0}
   stoppingDistance: 1
+  turnRate: 0
+  closerPlayer: {fileID: 0}
 --- !u!114 &7256401408767213315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5063,6 +5099,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f19cbb8af774184dadbf0ba6e63d4ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currHealth: 0
+  maxHealth: 0
+  isDead: 0
+  myTarget: {fileID: 0}
+  currentTarget: {fileID: 0}
+  tempDist: 0
+  myAgent: {fileID: 0}
+  range: 0
+  distance: 0
+  deathClip: {fileID: 0}
+  hurt: {fileID: 0}
+  walk: {fileID: 0}
   wanderRadius: 20
   wanderTimer: 1
 --- !u!4 &7315209132025532841

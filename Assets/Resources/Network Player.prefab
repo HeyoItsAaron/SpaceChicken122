@@ -305,6 +305,7 @@ GameObject:
   - component: {fileID: -4704135063627996492}
   - component: {fileID: 9039477097873312434}
   - component: {fileID: 6278667660107087614}
+  - component: {fileID: 5886880558273990014}
   m_Layer: 0
   m_Name: Network Player
   m_TagString: Untagged
@@ -373,6 +374,8 @@ MonoBehaviour:
   - {fileID: 7453301371685333525, guid: 7cf8da3369b09df4292365c6c0fafc90, type: 3}
   - {fileID: 7453301371685333525, guid: 7cf8da3369b09df4292365c6c0fafc90, type: 3}
   - {fileID: 7453301371685333525, guid: 7cf8da3369b09df4292365c6c0fafc90, type: 3}
+  - {fileID: 7453301371685333525, guid: 7cf8da3369b09df4292365c6c0fafc90, type: 3}
+  - {fileID: 7453301371685333525, guid: 032539423b795e54388fd1da274ff29d, type: 3}
   head: {fileID: 5961063572021939484}
   leftHand: {fileID: 7332308562648895091}
   rightHand: {fileID: 6688542128382940630}
@@ -397,3 +400,23 @@ MonoBehaviour:
   AutoCreateRecorderIfNotFound: 0
   UsePrimaryRecorder: 1
   SetupDebugSpeaker: 0
+--- !u!114 &5886880558273990014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8517690579278211676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f2ce33042e7e8438801130d7e4846c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currHealth: 100
+  maxHealth: 100
+  isDead: 0
+  hasItemInHand: 0
+  currentPowerUpDuration: 0
+  currEnergy: 50
+  maxEnergy: 0
+  currCurrency: 50

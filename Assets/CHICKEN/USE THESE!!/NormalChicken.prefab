@@ -28,6 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5640765876501441558}
   - {fileID: 2081624080624511309}
   m_Father: {fileID: 4481216910896022745}
   m_RootOrder: 0
@@ -415,6 +416,37 @@ Transform:
   m_Father: {fileID: 7010104463730591908}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5271153525950975970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5640765876501441558}
+  m_Layer: 0
+  m_Name: chickenPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5640765876501441558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5271153525950975970}
+  m_LocalRotation: {x: 0.70710695, y: -4.1404e-11, z: -6.390773e-11, w: 0.70710665}
+  m_LocalPosition: {x: -0.031, y: 0.009, z: 0.012}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3871447736010075555}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5504815015513320719
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,7 +476,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3871447736010075555}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5513465264793506615
 GameObject:
@@ -864,7 +896,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: c92a8a38b6c6c9e45931610ed2b1d95b, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -910,10 +942,16 @@ MonoBehaviour:
   isDead: 0
   myTarget: {fileID: 0}
   currentTarget: {fileID: 0}
+  tempDist: 0
   myAgent: {fileID: 3834422658676958535}
   range: 200
   distance: 0
-  stoppingDistance: 1.2
+  deathClip: {fileID: 8300000, guid: fc8e0f7bc9a2ac341aa88eb61130e779, type: 3}
+  hurt: {fileID: 8300000, guid: 2e709317933a73547a3d620ae7b78820, type: 3}
+  walk: {fileID: 8300000, guid: 3a9bd0a8d5605f44aad3e55612f985de, type: 3}
+  stoppingDistance: 1.25
+  turnRate: 1
+  chickenPosition: {fileID: 5271153525950975970}
 --- !u!136 &3834422658676958553
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -975,6 +1013,9 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 1
     Name: isAttacking
+  - Type: 1
+    SynchronizeType: 0
+    Name: offset
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0

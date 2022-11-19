@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7650110858307784996}
   - component: {fileID: 2125399883532034801}
   - component: {fileID: 5124036766246009859}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lazer
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7149109000741256798}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

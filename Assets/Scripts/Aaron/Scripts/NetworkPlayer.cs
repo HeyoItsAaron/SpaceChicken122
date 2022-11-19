@@ -49,12 +49,16 @@ public class NetworkPlayer : MonoBehaviour
         leftHandRig = rig.transform.Find("Camera Offset/LeftHand Controller");
         rightHandRig = rig.transform.Find("Camera Offset/RightHand Controller");
 
-        //Retruns true if the Photon View is "owned" by the local player
+        //Returns true if the Photon View is "owned" by the local player
         if(photonView.IsMine)
             //this sets the local avatar so everyone in the game sees it.
             photonView.RPC("LoadAvatar", RpcTarget.AllBuffered, PlayerPrefs.GetInt("AvatarID"));
     }
 
+    public void TakePeck()
+    {
+        gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.AllBuffered, 25f);
+    }
     //Function that is responsible to load an avatar among the avatar list
     [PunRPC]
     public void LoadAvatar(int index)
@@ -72,6 +76,7 @@ public class NetworkPlayer : MonoBehaviour
         leftHandAnimator = avatarInfo.leftHandAnimator;
         rightHandAnimator = avatarInfo.rightHandAnimator;
     }
+    /*
     private void OnEnable()
     {
         if (RenderPipelineManager.currentPipeline != null)
@@ -98,9 +103,9 @@ public class NetworkPlayer : MonoBehaviour
 
     private void BeforeRenderUpdate()
     {
-        // Update is called once per frame
-        //void Update()
-    //{
+       */ // Update is called once per frame
+    void Update()
+    {
 
         if(photonView.IsMine)
         {          
