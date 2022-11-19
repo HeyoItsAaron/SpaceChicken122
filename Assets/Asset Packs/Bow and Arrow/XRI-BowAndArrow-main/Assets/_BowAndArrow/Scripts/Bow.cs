@@ -11,7 +11,7 @@ public class Bow : XRGrabNetworkInteractable
     {
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
         grabbable.selectEntered.AddListener(Grabbed);
-        grabbable.selectExited.AddListener(notGrabbed);
+        grabbable.selectExited.AddListener(NotGrabbed);
         player = GameObject.FindObjectOfType<PlayerStats>();
     }
     void Update()
