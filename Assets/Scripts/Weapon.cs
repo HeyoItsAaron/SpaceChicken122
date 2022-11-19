@@ -112,8 +112,20 @@ public class Weapon : MonoBehaviourPun
         }
         else
         {
-            while (player.currEnergy < energyCost)
+            while(true)
             {
+                // Can afford
+                if(player.currEnergy < energyCost)
+                {
+                    break;
+                }
+                // Needs to reload
+                if (bulletCounter >= maxBulletsPerMag)
+                {
+                    Debug.Log("Starting reload");
+                    StartCoroutine("Reload");
+                    break;
+                }
                 bulletCounter++;
                 Debug.Log("" + bulletCounter);
                 //player loses energy on fire
