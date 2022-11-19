@@ -107,7 +107,7 @@ public class Chicken : ChickenStats
         if(Time.time - lastAttackTime >= attackCooldown)
         {
             lastAttackTime = Time.time;
-            //currentTarget.GetComponent<TestPlayer>().TakeDamage(damage);
+            currentTarget.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.AllBuffered, 20);
             //currentTarget.GetComponent<TestPlayer>().CheckHealth();
         }
     }
