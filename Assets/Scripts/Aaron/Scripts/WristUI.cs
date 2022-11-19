@@ -8,6 +8,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using Unity.VisualScripting;
 
 public class WristUI : MonoBehaviourPun
 {
@@ -15,6 +16,7 @@ public class WristUI : MonoBehaviourPun
     //only show when wrist is raised or when menu button held
 
     //variables
+    NetworkPlayer[] netPlayers;
     public PlayerStats player;
     public NetworkSpawner spawner;
 
@@ -37,14 +39,31 @@ public class WristUI : MonoBehaviourPun
     public float ammoCountMax = 100.0f;
 
     //methods
-    void OnEnable()
+    void Start()
     {
+        netPlayers = FindObjectsOfType<NetworkPlayer>();
+        foreach(var i in netPlayers)
+        {
+            if (i.GetComponent<PhotonView>().IsMine)
+                player = i.GetComponent<PlayerStats>();
+        }
         //player = GameObject.FindObjectOfType<Player>();
         spawner = GameObject.FindObjectOfType<NetworkSpawner>();
         //linkAllStats();
     }
     void Update()
     {
+        if (player == null)
+        {
+            netPlayers = FindObjectsOfType<NetworkPlayer>();
+            foreach (var i in netPlayers)
+            {
+                if (i.GetComponent<PhotonView>().IsMine)
+                    player = i.GetComponent<PlayerStats>();
+            }
+        }
+
+        LinkAllStats();
         //linkPlayerStats();
         //fillBars();
     }

@@ -23,7 +23,7 @@ public class PlayerStats: Stats
     // methods
     void Start()
     {
-        origin = FindObjectOfType<XROrigin>();
+        //origin = FindObjectOfType<XROrigin>();
         isDead = false;
         maxHealth = 100;
         currHealth = 100;
@@ -42,18 +42,16 @@ public class PlayerStats: Stats
     public override void Die()
     {
         isDead = true;
+
+        if (currHealth != 0)
+            currHealth = 0;
         if (photonView.IsMine)
-        {
-            if (currHealth != 0)
-                currHealth = 0;
-            if (photonView.IsMine)
-                photonView.RPC("LoadAvatar", RpcTarget.AllBuffered, 5);
-            currEnergy = 0;
-            currCurrency = 0;
-            origin.GetComponent<ActionBasedContinuousMoveProvider>().enabled = false;
-            origin.GetComponent<ActionBasedContinuousTurnProvider>().enabled = false;
-            origin.GetComponent<HandHammerConnection>().enabled = false;
-        }
+            photonView.RPC("LoadAvatar", RpcTarget.AllBuffered, 5);
+        currEnergy = 0;
+        currCurrency = 0;
+        //origin.GetComponent<ActionBasedContinuousMoveProvider>().enabled = false;
+        //origin.GetComponent<ActionBasedContinuousTurnProvider>().enabled = false;
+        //origin.GetComponent<HandHammerConnection>().enabled = false;
     }
     public override void CheckHealth(float currHealth, float maxHealth)
     {
