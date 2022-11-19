@@ -11,7 +11,7 @@ using Photon.Pun;
 
 public class Weapon : MonoBehaviourPun
 {
-    //Base variables
+    // Base variables
     public GameObject bullet;
     public Transform spawnPoint;
     public float fireSpeed;
@@ -20,16 +20,17 @@ public class Weapon : MonoBehaviourPun
     private int bulletCounter;
     public int reloadTime;
     public int bulletsFiredPerShot;
+    private bool canShoot;
 
-    //Shotgun
+    // Shotgun
     public bool isShotgun;
     public float spread;
 
-    //AutoFire
+    // AutoFire
     //public bool isAuto;
     public float fireRate;
 
-    //Audio
+    // Audio
     public AudioSource gunshot;
     public AudioClip clipAudio;
     public float volume = 0.5f;
@@ -39,7 +40,6 @@ public class Weapon : MonoBehaviourPun
 
     // Cooroutine for shoot function
     private Coroutine _current;
-   // public bool isGrabbed;
 
    // Player stats
     public PlayerStats player;
@@ -48,12 +48,12 @@ public class Weapon : MonoBehaviourPun
     {
         //Once weapon is grabbed, waits for it to be grabbed and the trigger to be activated/deactivated
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
-        //grabbable.selectEntered.AddListener(Grabbed);
         grabbable.selectExited.AddListener(notGrabbed);
         grabbable.activated.AddListener(BeginFire);
         grabbable.deactivated.AddListener(StopFire);
-        // Muzzle flash is enabled on start
+        // Muzzle flash is enabled on start so we disable it
         muzzleFlash.Stop();
+        canShoot = true;
 
         //Player stats object
         player = GameObject.FindObjectOfType<PlayerStats>();
@@ -66,16 +66,15 @@ public class Weapon : MonoBehaviourPun
             player = GameObject.FindObjectOfType<PlayerStats>();
         }
     }
-
-    //void Grabbed(BaseInteractionEventArgs arg)
-    //{
-    //    isGrabbed = true;
-    //}
-
     [PunRPC]
     void PlayGunshot()
     {
+        Debug.Log("Play Gunshot");
         gunshot.clip = clipAudio;
+        gunshot.volume = volume;
+        gunshot.spatialBlend = 1;
+        gunshot.minDistance = 25;
+        gunshot.maxDistance = 100;
         gunshot.Play();
     }
     void notGrabbed(BaseInteractionEventArgs arg)
@@ -106,7 +105,9 @@ public class Weapon : MonoBehaviourPun
     IEnumerator Reload()
     {
         bulletCounter = 0;
+        canShoot = false;
         yield return new WaitForSeconds(reloadTime);
+        canShoot = true;
     }
     [PunRPC]
     public IEnumerator Shoot()
@@ -128,6 +129,10 @@ public class Weapon : MonoBehaviourPun
                 if (bulletCounter >= maxBulletsPerMag)
                 {
                     StartCoroutine("Reload");
+                    break;
+                }
+                if(canShoot == false)
+                {
                     break;
                 }
                 bulletCounter++;
