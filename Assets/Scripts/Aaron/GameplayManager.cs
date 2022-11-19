@@ -25,7 +25,7 @@ public class GameplayManager : MonoBehaviour
     {
         waveNumber = 1;
         //spawner = GameObject.FindObjectOfType<NetworkSpawner>();
-        StartCoroutine(WaveSpawner());
+        //StartCoroutine(WaveSpawner());
     }
     void Update()
     {
