@@ -50,13 +50,18 @@ public class WristUI : MonoBehaviourPun
     }
     //link UI to playerStats
     //link all stats
-    public void linkAllStats()
+    public void LinkAllStats()
     {
-        gameObject.GetComponent<PhotonView>().RPC("LinkHealthUI", RpcTarget.AllBuffered);
-        gameObject.GetComponent<PhotonView>().RPC("LinkPowerUpUI", RpcTarget.AllBuffered);
-        gameObject.GetComponent<PhotonView>().RPC("LinkEnergyUI", RpcTarget.AllBuffered);
-        gameObject.GetComponent<PhotonView>().RPC("LinkCurrencyUI", RpcTarget.AllBuffered);
-        gameObject.GetComponent<PhotonView>().RPC("LinkWaveUI", RpcTarget.AllBuffered);
+        //gameObject.GetComponent<PhotonView>().RPC("LinkHealthUI", RpcTarget.AllBuffered);
+        //gameObject.GetComponent<PhotonView>().RPC("LinkPowerUpUI", RpcTarget.AllBuffered);
+        //gameObject.GetComponent<PhotonView>().RPC("LinkEnergyUI", RpcTarget.AllBuffered);
+        //gameObject.GetComponent<PhotonView>().RPC("LinkCurrencyUI", RpcTarget.AllBuffered);
+        //gameObject.GetComponent<PhotonView>().RPC("LinkWaveUI", RpcTarget.AllBuffered);
+        LinkHealthUI();
+        LinkPowerUpUI();
+        LinkEnergyUI();
+        LinkCurrencyUI();
+        LinkWaveUI();
     }
 
     //Link individual stats
@@ -102,6 +107,7 @@ public class WristUI : MonoBehaviourPun
     public void ToggleVisibility()
     {
         gameObject.SetActive(!gameObject.activeInHierarchy);
+        LinkAllStats();
         //linkAllStats();
     }
 }
