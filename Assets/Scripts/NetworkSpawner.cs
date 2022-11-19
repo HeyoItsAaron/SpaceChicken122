@@ -12,6 +12,7 @@ public class NetworkSpawner : MonoBehaviourPun
     // variables
     GameplayManager game;
     public NetworkManager netManager;
+    public NetworkPlayer[] playerStatsArr;
     public GameObject[] spawners;
     public string[] Enemies;
     public string enemy3;
@@ -27,6 +28,7 @@ public class NetworkSpawner : MonoBehaviourPun
     {
         game = GameObject.FindObjectOfType<GameplayManager>();
         netManager = GameObject.FindObjectOfType<NetworkManager>();
+        playerStatsArr = GameObject.FindObjectsOfType<NetworkPlayer>();
     }
 
     // Start is called before the first frame update
@@ -129,6 +131,7 @@ public class NetworkSpawner : MonoBehaviourPun
     }
     public void NextWave()
     {
+        WavePayOut();
         waveNumber++;
         LinkBillBoards();
         enemyAmount = enemyAmount + 2;
@@ -138,6 +141,13 @@ public class NetworkSpawner : MonoBehaviourPun
         for (int i = 0; i < enemyAmount; i++)
         {
             SpawnEnemy();
+        }
+    }
+    public void WavePayOut()
+    {
+        foreach(var i in playerStatsArr)
+        {
+            i.GetComponent<PlayerStats>().currHealth = i.GetComponent<PlayerStats>().maxHealth;
         }
     }
 }

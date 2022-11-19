@@ -49,31 +49,34 @@ public class Chicken : ChickenStats
     // Update is called once per frame
     void Update()
     {
-        // run the search every frame
-        Search();
-
-        // Check the helth of the chicken every frame
-        CheckHealth(currHealth, maxHealth);
-
-        // If the distance from target is less than stopping distance attack
-        if ( distance < stoppingDistance)
+        if (!isDead)
         {
-            Attack();
+            // run the search every frame
+            Search();
+
+            // Check the helth of the chicken every frame
+            CheckHealth(currHealth, maxHealth);
+            // If the distance from target is less than stopping distance attack
+            if (distance < stoppingDistance)
+            {
+                Attack();
+            }
+
+            else
+            {
+                // if distance greater than range stop enemy
+                if (distance > range)
+                {
+                    StopEnemy();
+                }
+                // otherwise search for target
+                if (distance < range)
+                {
+                    FindTarget();
+                }
+            }
         }
 
-        else
-        {
-            // if distance greater than range stop enemy
-            if (distance > range)
-            {
-                StopEnemy();
-            }
-            // otherwise search for target
-            if (distance < range || currentTarget.IsDestroyed())
-            {
-                FindTarget();
-            }
-        }
     }
 
 
@@ -124,9 +127,10 @@ public class Chicken : ChickenStats
     // Overwritten Die method
     public override void Die()
     {
-        AudioSource.PlayClipAtPoint(deathClip, transform.position); 
         myAgent.enabled = false;
+        AudioSource.PlayClipAtPoint(deathClip, transform.position); 
         anim.SetBool("isDead", true);
+        ChickenDeathPayOut();
         StartCoroutine(despawnAfterSeconds());
         //spawn.enemiesKilled++;
         //spawn.enemyAmount--;
@@ -174,4 +178,11 @@ public class Chicken : ChickenStats
         PhotonNetwork.Destroy(gameObject);
     }
 
+    public void ChickenDeathPayOut()
+    {
+        foreach (var i in networkPlayers)
+        {
+            i.GetComponent<PlayerStats>().currCurrency += 10f;
+        }
+    }
 }

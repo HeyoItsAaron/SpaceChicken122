@@ -30,7 +30,7 @@ public class PlayerStats: Stats
         maxHealth = 100;
         currHealth = 100;
         currEnergy = 50;
-        currCurrency = 1000;
+        currCurrency = 50;
     }
 
     void Update()

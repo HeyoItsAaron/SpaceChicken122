@@ -39,7 +39,6 @@ public class WallBuy : MonoBehaviour
         {
             player.currCurrency -= price;
             PhotonNetwork.Instantiate(weaponPrefab.name, weaponSpawnPoint.transform.position, weaponSpawnPoint.transform.rotation);
-            player.AddEnergy(20f);
         }
     }
 
