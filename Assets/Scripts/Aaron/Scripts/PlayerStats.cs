@@ -38,17 +38,22 @@ public class PlayerStats: Stats
     //gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.AllBuffered, 25f);
 
     //THIS WORKS
+    [PunRPC]
     public override void Die()
     {
-        if (currHealth != 0)
-            currHealth = 0;
+        isDead = true;
         if (photonView.IsMine)
-            photonView.RPC("LoadAvatar", RpcTarget.AllBuffered, 5);
-        currEnergy = 0;
-        currCurrency = 0;
-        origin.GetComponent<ActionBasedContinuousMoveProvider>().enabled = false;
-        origin.GetComponent<ActionBasedContinuousTurnProvider>().enabled = false;
-        origin.GetComponent<HandHammerConnection>().enabled = false;
+        {
+            if (currHealth != 0)
+                currHealth = 0;
+            if (photonView.IsMine)
+                photonView.RPC("LoadAvatar", RpcTarget.AllBuffered, 5);
+            currEnergy = 0;
+            currCurrency = 0;
+            origin.GetComponent<ActionBasedContinuousMoveProvider>().enabled = false;
+            origin.GetComponent<ActionBasedContinuousTurnProvider>().enabled = false;
+            origin.GetComponent<HandHammerConnection>().enabled = false;
+        }
     }
     public override void CheckHealth(float currHealth, float maxHealth)
     {
@@ -59,22 +64,26 @@ public class PlayerStats: Stats
         if (currHealth <= 0f && isDead == false)
         {
             currHealth = 0f;
-            isDead = true;
-            Die();
+            //isDead = true;
+            photonView.RPC("Die", RpcTarget.AllBuffered);
+            //Die();
         }
     }
+    [PunRPC]
     public void Respawn()
     {
         if (photonView.IsMine)
             photonView.RPC("LoadAvatar", RpcTarget.AllBuffered, PlayerPrefs.GetInt("AvatarID"));
-        maxHealth = 100;
-        currHealth = 100;
-        currEnergy = 50;
-        currCurrency = 0;
-        isDead = false;
-        origin.GetComponent<ActionBasedContinuousMoveProvider>().enabled = true;
-        origin.GetComponent<ActionBasedContinuousTurnProvider>().enabled = true;
-        origin.GetComponent<HandHammerConnection>().enabled = true;
+        {
+            maxHealth = 100;
+            currHealth = 100;
+            currEnergy = 50;
+            currCurrency = 0;
+            isDead = false;
+            origin.GetComponent<ActionBasedContinuousMoveProvider>().enabled = true;
+            origin.GetComponent<ActionBasedContinuousTurnProvider>().enabled = true;
+            origin.GetComponent<HandHammerConnection>().enabled = true;
+        }
     }
 
     [PunRPC]

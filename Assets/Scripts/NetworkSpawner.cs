@@ -17,9 +17,11 @@ public class NetworkSpawner : MonoBehaviourPun
     public int waveNumber = 0;
     public int enemyAmount = 0;
     public int enemiesKilled = 0;
+    public float timer;
+    private NetworkPlayer[] networkPlayers;
     //public WristUI ui;
     // hi
-    
+
     void Start()
     {
         netManager = GameObject.FindObjectOfType<NetworkManager>();
@@ -39,26 +41,30 @@ public class NetworkSpawner : MonoBehaviourPun
         }
 
         //StartWave();
-        NextWave();
+        //NextWave();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (netManager.inRoom == true && waveNumber == 0)
-        {
-            NextWave();
-        }
+        //timer+=Time.deltaTime;
+        //if(timer > 5)
+        //{
+        //    if (netManager.inRoom == true && waveNumber == 0)
+        //    {
+        //        NextWave();
+        //    }
+        //}
         // if T is pressed spawn chickens
         if (Input.GetKeyDown(KeyCode.T))
         {
             SpawnEnemy();
         }
         // if enemys killed greater than enemies spawned move to next wave
-        if (enemiesKilled >= enemyAmount)
-        {
-            NextWave();
-        }
+        //if (enemiesKilled >= enemyAmount)
+        //{
+        //    NextWave();
+        //}
     }
 
     // spawn method
@@ -98,7 +104,7 @@ public class NetworkSpawner : MonoBehaviourPun
     {
         waveNumber++;
         enemyAmount += 2;
-        enemiesKilled = 0;
+        //enemiesKilled = 0;
         //ui.LinkWaveUI();
 
         for (int i = 0; i < enemyAmount; i++)
