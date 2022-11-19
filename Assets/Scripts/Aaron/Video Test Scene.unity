@@ -8602,7 +8602,7 @@ MonoBehaviour:
   Enemies:
   - NormalChicken
   - NormalChicken
-  enemy3: 
+  enemy3: NormalChicken
   waveNumber: 0
   enemyAmount: 0
   enemiesKilled: 0

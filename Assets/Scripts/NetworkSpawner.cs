@@ -10,6 +10,7 @@ using Photon.Realtime;
 public class NetworkSpawner : MonoBehaviourPun
 {
     // variables
+    GameplayManager game;
     public NetworkManager netManager;
     public GameObject[] spawners;
     public string[] Enemies;
@@ -24,6 +25,7 @@ public class NetworkSpawner : MonoBehaviourPun
 
     void Start()
     {
+        game = GameObject.FindObjectOfType<GameplayManager>();
         netManager = GameObject.FindObjectOfType<NetworkManager>();
     }
 
@@ -85,6 +87,26 @@ public class NetworkSpawner : MonoBehaviourPun
             PhotonNetwork.InstantiateRoomObject(enemy3, spawners[spawnerId].transform.position, spawners[spawnerId].transform.rotation);
         }
     }
+    private void SpawnEnemy(int param)
+    {
+        for(int i = 0; i < param; i++)
+        {
+            // set random enemy and random spawn position
+            int randomEnemy = Random.Range(0, Enemies.Length);
+            int spawnerId = Random.Range(0, spawners.Length);
+            // sees if round is divisible by 5 if so spawn special enemy
+            if (game.waveNumber % 5 != 0)
+            {
+                PhotonNetwork.InstantiateRoomObject(Enemies[randomEnemy], spawners[spawnerId].transform.position, spawners[spawnerId].transform.rotation);
+            }
+            if (game.waveNumber % 5 == 0)
+            {
+                PhotonNetwork.InstantiateRoomObject(Enemies[randomEnemy], spawners[spawnerId].transform.position, spawners[spawnerId].transform.rotation);
+                spawnerId = Random.Range(0, spawners.Length);
+                PhotonNetwork.InstantiateRoomObject(enemy3, spawners[spawnerId].transform.position, spawners[spawnerId].transform.rotation);
+            }
+        }
+    }
 
     /*
     private void StartWave()
@@ -103,7 +125,7 @@ public class NetworkSpawner : MonoBehaviourPun
     public void NextWave()
     {
         waveNumber++;
-        enemyAmount += 2;
+        enemyAmount = enemyAmount + 2;
         //enemiesKilled = 0;
         //ui.LinkWaveUI();
 

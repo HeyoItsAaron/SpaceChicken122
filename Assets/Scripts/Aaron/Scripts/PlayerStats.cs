@@ -10,6 +10,7 @@ using Unity.XR.CoreUtils;
 public class PlayerStats: Stats
 {
     // variables
+    bool hasItemInHand;
     int avatarID;
     public float currentPowerUpDuration;
     public float currEnergy; //this is "ammmo"

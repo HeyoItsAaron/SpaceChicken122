@@ -129,7 +129,7 @@ public class Chicken : ChickenStats
         anim.SetBool("isDead", true);
         StartCoroutine(despawnAfterSeconds());
         //spawn.enemiesKilled++;
-        spawn.enemyAmount--;
+        //spawn.enemyAmount--;
     }
 
     // RPC Damage function for chiken damage
