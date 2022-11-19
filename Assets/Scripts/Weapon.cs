@@ -31,7 +31,7 @@ public class Weapon : MonoBehaviourPun
 
     //Audio
     public AudioSource gunshot;
-    public AudioClip clip;
+    public AudioClip clipAudio;
     public float volume = 0.5f;
 
     // Effects
@@ -71,6 +71,13 @@ public class Weapon : MonoBehaviourPun
     //{
     //    isGrabbed = true;
     //}
+
+    [PunRPC]
+    void PlayGunshot()
+    {
+        gunshot.clip = clipAudio;
+        gunshot.Play();
+    }
     void notGrabbed(BaseInteractionEventArgs arg)
     {
         StopAllCoroutines();
@@ -98,7 +105,6 @@ public class Weapon : MonoBehaviourPun
     }
     IEnumerator Reload()
     {
-        Debug.Log("Reloading");
         bulletCounter = 0;
         yield return new WaitForSeconds(reloadTime);
     }
@@ -107,7 +113,6 @@ public class Weapon : MonoBehaviourPun
     {
         if(bulletCounter >= maxBulletsPerMag)
         {
-            Debug.Log("Starting reload");
             StartCoroutine("Reload");
         }
         else
@@ -122,7 +127,6 @@ public class Weapon : MonoBehaviourPun
                 // Needs to reload
                 if (bulletCounter >= maxBulletsPerMag)
                 {
-                    Debug.Log("Starting reload");
                     StartCoroutine("Reload");
                     break;
                 }
@@ -132,9 +136,10 @@ public class Weapon : MonoBehaviourPun
 
                 player.currEnergy -= energyCost;
                 // Makes an object of the audio source to destory to prevent it spawning infinite times
-                AudioSource newAS = Instantiate(gunshot);
-                newAS.PlayOneShot(clip, volume);
-                Destroy(newAS.gameObject, 2.5f);
+                //AudioSource newAS = Instantiate(gunshot);
+                //newAS.PlayOneShot(clip, volume);
+                //Destroy(newAS.gameObject, 2.5f);
+                photonView.RPC("PlayGunshot", RpcTarget.AllBuffered);
 
                 // Muzzle Flash
                 muzzleFlash.Play();
