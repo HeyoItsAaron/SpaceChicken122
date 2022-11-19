@@ -58,6 +58,15 @@ MonoBehaviour:
   - LoseEnergy
   - BuyWeapon
   - Shoot
+  - ToggleVisibility
+  - LinkCurrencyUI
+  - LinkEnergyUI
+  - LinkHealthUI
+  - LinkPowerUpUI
+  - LinkWaveUI
+  - DisableGrabRay
+  - PlayGunshot
+  - Respawn
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
