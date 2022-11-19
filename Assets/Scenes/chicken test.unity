@@ -960,7 +960,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581600547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0.6, z: 0}
+  m_LocalPosition: {x: 3.87, y: 0.43, z: 0}
   m_LocalScale: {x: 0.6042568, y: 0.6042568, z: 0.6042568}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4546,12 +4546,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3834422658676958535, guid: a298d34174e348c40bccd5822016e29d, type: 3}
       propertyPath: m_Speed
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3834422658676958552, guid: a298d34174e348c40bccd5822016e29d, type: 3}
       propertyPath: myAgent
       value: 
       objectReference: {fileID: 837268735}
+    - target: {fileID: 3834422658676958552, guid: a298d34174e348c40bccd5822016e29d, type: 3}
+      propertyPath: myTarget
+      value: 
+      objectReference: {fileID: 581600553}
     - target: {fileID: 3834422658676958554, guid: a298d34174e348c40bccd5822016e29d, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 1
@@ -4673,6 +4677,7 @@ MonoBehaviour:
   isDead: 0
   myTarget: {fileID: 831350896}
   currentTarget: {fileID: 0}
+  tempDist: 0
   myAgent: {fileID: 1855719251}
   range: 0
   distance: 0
@@ -4681,6 +4686,7 @@ MonoBehaviour:
   walk: {fileID: 0}
   stoppingDistance: 1
   turnRate: 0
+  closerPlayer: {fileID: 0}
 --- !u!114 &6145908937652647205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4698,6 +4704,7 @@ MonoBehaviour:
   isDead: 0
   myTarget: {fileID: 581600553}
   currentTarget: {fileID: 0}
+  tempDist: 0
   myAgent: {fileID: 1855719251}
   range: 0
   distance: 0
@@ -4706,6 +4713,7 @@ MonoBehaviour:
   walk: {fileID: 0}
   stoppingDistance: 3
   damage: 0
+  closerPlayer: {fileID: 0}
   turnRate: 0
   spawnPoint: {fileID: 6297590268033914806}
   egg: {fileID: 0}
@@ -5069,6 +5077,7 @@ MonoBehaviour:
   isDead: 0
   myTarget: {fileID: 831350896}
   currentTarget: {fileID: 0}
+  tempDist: 0
   myAgent: {fileID: 1855719251}
   range: 0
   distance: 0
@@ -5077,6 +5086,7 @@ MonoBehaviour:
   walk: {fileID: 0}
   stoppingDistance: 1
   turnRate: 0
+  closerPlayer: {fileID: 0}
 --- !u!114 &7256401408767213315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5094,6 +5104,7 @@ MonoBehaviour:
   isDead: 0
   myTarget: {fileID: 0}
   currentTarget: {fileID: 0}
+  tempDist: 0
   myAgent: {fileID: 0}
   range: 0
   distance: 0
