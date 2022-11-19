@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scripts/Aaron/Lobby.unity
     guid: b6ce212a31b383946b55b90cb498b4b3
   - enabled: 1
-    path: Assets/Scripts/Aaron/Video Test Scene.unity
+    path: Assets/Scenes/Video Test Scene.unity
     guid: f445ab48116abea46aab30b7be7c9678
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 10d9e91082d637147986812cfcfb898b, type: 2}

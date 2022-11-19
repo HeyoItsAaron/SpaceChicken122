@@ -415,6 +415,7 @@ MonoBehaviour:
   currHealth: 100
   maxHealth: 100
   isDead: 0
+  hasItemInHand: 0
   currentPowerUpDuration: 69
   currEnergy: 69
   maxEnergy: 0
