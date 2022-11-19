@@ -121,10 +121,16 @@ public class NetworkSpawner : MonoBehaviourPun
         }
     }
     */
-
+    public void LinkBillBoards()
+    {
+        Billboard[] billboards = GameObject.FindObjectsOfType<Billboard>();
+        foreach (var i in billboards)
+            i.LinkWave();
+    }
     public void NextWave()
     {
         waveNumber++;
+        LinkBillBoards();
         enemyAmount = enemyAmount + 2;
         //enemiesKilled = 0;
         //ui.LinkWaveUI();

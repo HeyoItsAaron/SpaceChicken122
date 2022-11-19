@@ -19,7 +19,6 @@ public class Billboard : MonoBehaviourPun
         {
             spawner = FindObjectOfType<NetworkSpawner>();
         }
-        //gameObject.GetComponent<PhotonView>().RPC("LinkWave", RpcTarget.AllBuffered);
     }
 
     [PunRPC]

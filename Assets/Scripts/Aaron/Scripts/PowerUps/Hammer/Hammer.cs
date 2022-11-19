@@ -83,17 +83,17 @@ public class Hammer : MonoBehaviour
     public void ThrowHammer()
     {
         state = State.Throw;
-        Debug.Log("Mjolnir was Thrown with a velocity of" + hammerRigidBody.velocity);
     }
     public void ReturnHammer()
     {
-        state = State.Return;
-        Debug.Log("Mjolnir was Returned to it's user");
+        if(player.hasItemInHand == false)
+        {
+            state = State.Return;
+        }
     }
     public void IdleHammer()
     {
         state = State.Idle;
-        Debug.Log("Mjolnir is idle");
     }
 
 }
