@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d78a2768b1115142a9bc43223ff9de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 2497221328400944100, guid: 93e3e61b2fa695b4e8219a3004619160, type: 3}
+  weaponPrefab: {fileID: 2497221328400944100, guid: c338d93ea310d9c41af381788c537851, type: 3}
   weaponSpawnPoint: {fileID: 2663343528291109334}
   price: 200
 --- !u!114 &-5194778820637914947

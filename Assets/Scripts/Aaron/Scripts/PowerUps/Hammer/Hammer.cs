@@ -14,13 +14,14 @@ public class Hammer : MonoBehaviour
     public float hammerSpeed;
     Rigidbody hammerRigidBody;
     State state;
-
+    PlayerStats player;
     public Transform playerHand;
     public bool hasTouchedHammer;
 
     //built-in methods
     void Start()
     {
+        player = FindObjectOfType<PlayerStats>();
         state = State.Idle;
         hammerRigidBody = GetComponent<Rigidbody>();
         XROrigin rig = FindObjectOfType<XROrigin>();
@@ -63,6 +64,21 @@ public class Hammer : MonoBehaviour
         }
     }
     //my methods
+    public void SetItemInHand()
+    {
+        player.hasItemInHand = true;
+        StartCoroutine(WaitSeconds());
+    }
+    public void SetHandEmpty()
+    {
+        player.hasItemInHand = false;
+    }
+
+    IEnumerator WaitSeconds()
+    {
+        yield return new WaitForSeconds(0.1f);
+        GameObject.Find("Grab Ray").SetActive(false);
+    }
 
     public void ThrowHammer()
     {

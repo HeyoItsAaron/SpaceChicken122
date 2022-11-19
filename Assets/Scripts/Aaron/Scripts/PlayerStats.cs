@@ -10,7 +10,7 @@ using Unity.XR.CoreUtils;
 public class PlayerStats: Stats
 {
     // variables
-    bool hasItemInHand;
+    public bool hasItemInHand;
     int avatarID;
     public float currentPowerUpDuration;
     public float currEnergy; //this is "ammmo"
@@ -24,6 +24,7 @@ public class PlayerStats: Stats
     // methods
     void Start()
     {
+        hasItemInHand = false;
         //origin = FindObjectOfType<XROrigin>();
         isDead = false;
         maxHealth = 100;
