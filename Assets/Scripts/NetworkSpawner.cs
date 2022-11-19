@@ -61,13 +61,13 @@ public class NetworkSpawner : MonoBehaviour
         // sees if round is divisible by 5 if so spawn special enemy
         if(waveNumber % 5 != 0)
         {
-            PhotonNetwork.Instantiate(Enemies[randomEnemy], spawners[spawnerId].transform.position, spawners[spawnerId].transform.rotation);
+            PhotonNetwork.InstantiateRoomObject(Enemies[randomEnemy], spawners[spawnerId].transform.position, spawners[spawnerId].transform.rotation);
         }
         if(waveNumber % 5 ==0)
         {
-            PhotonNetwork.Instantiate(Enemies[randomEnemy], spawners[spawnerId].transform.position, spawners[spawnerId].transform.rotation);
+            PhotonNetwork.InstantiateRoomObject(Enemies[randomEnemy], spawners[spawnerId].transform.position, spawners[spawnerId].transform.rotation);
             spawnerId = Random.Range(0, spawners.Length);
-            PhotonNetwork.Instantiate(enemy3, spawners[spawnerId].transform.position, spawners[spawnerId].transform.rotation);
+            PhotonNetwork.InstantiateRoomObject(enemy3, spawners[spawnerId].transform.position, spawners[spawnerId].transform.rotation);
         }
     }
 
