@@ -25,7 +25,7 @@ public class GameplayManager : MonoBehaviour
     {
         waveNumber = 1;
         //spawner = GameObject.FindObjectOfType<NetworkSpawner>();
-        //StartCoroutine(WaveSpawner());
+        StartCoroutine(WaveSpawner());
     }
     void Update()
     {
@@ -46,7 +46,7 @@ public class GameplayManager : MonoBehaviour
 
             for (int i = 0; i<enemyAmount; i++)
             {
-                PhotonNetwork.Instantiate("NormalChicken", spawnpoint, Quaternion.Euler(0,0,0));
+                PhotonNetwork.InstantiateRoomObject("NormalChicken", spawnpoint, Quaternion.Euler(0,0,0));
                 yield return new WaitForSeconds(spawnRate);
             }
 
