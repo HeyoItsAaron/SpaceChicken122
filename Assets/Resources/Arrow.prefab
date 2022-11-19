@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 961699093}
   - component: {fileID: 6811113649739513852}
   - component: {fileID: 3517032854002471787}
-  - component: {fileID: -5158161565920044586}
+  - component: {fileID: -766216257486707490}
   m_Layer: 2
   m_Name: Arrow
   m_TagString: Heavy Bullet
@@ -447,11 +447,11 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 6811113649739513852}
-  - {fileID: -5158161565920044586}
+  - {fileID: -766216257486707490}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &-5158161565920044586
+--- !u!114 &-766216257486707490
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -460,13 +460,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8542102953145869890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3
 --- !u!1 &8589002692731022628
 GameObject:
   m_ObjectHideFlags: 0

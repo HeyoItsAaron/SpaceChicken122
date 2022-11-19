@@ -7,24 +7,23 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR;
 using static Unity.VisualScripting.Member;
 using UnityEngine.InputSystem;
+using Photon.Pun;
 
-public class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviourPun
 {
     //Base variables
-
-    public InputActionReference toggleReference = null;
-
     public GameObject bullet;
     public Transform spawnPoint;
     public float fireSpeed;
-    public float ammoCost;
+    public float energyCost;
+    public int maxBulletsPerMag;
+    private int bulletCounter;
+    public int reloadTime;
+    public int bulletsFiredPerShot;
 
     //Shotgun
     public bool isShotgun;
     public float spread;
-    public int bulletsFired;
-    //private List<Quaternion> bullets;
-
 
     //AutoFire
     //public bool isAuto;
@@ -38,36 +37,44 @@ public class Weapon : MonoBehaviour
     // Effects
     public ParticleSystem muzzleFlash;
 
+    // Cooroutine for shoot function
     private Coroutine _current;
+   // public bool isGrabbed;
 
-    public bool isGrabbed;
+   // Player stats
+    public PlayerStats player;
 
     void Start()
     {
         //Once weapon is grabbed, waits for it to be grabbed and the trigger to be activated/deactivated
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
-        grabbable.selectEntered.AddListener(Grabbed);
+        //grabbable.selectEntered.AddListener(Grabbed);
         grabbable.selectExited.AddListener(notGrabbed);
         grabbable.activated.AddListener(BeginFire);
         grabbable.deactivated.AddListener(StopFire);
         // Muzzle flash is enabled on start
         muzzleFlash.Stop();
-        isGrabbed = false;
+
+        //Player stats object
+        player = GameObject.FindObjectOfType<PlayerStats>();
     }
 
     void Update()
     {
-        
+        if (player == null)
+        {
+            player = GameObject.FindObjectOfType<PlayerStats>();
+        }
     }
 
-    void Grabbed(BaseInteractionEventArgs arg)
-    {
-        isGrabbed = true;
-    }
+    //void Grabbed(BaseInteractionEventArgs arg)
+    //{
+    //    isGrabbed = true;
+    //}
     void notGrabbed(BaseInteractionEventArgs arg)
     {
         StopAllCoroutines();
-        isGrabbed = false;
+        //isGrabbed = false;
     }
     void BeginFire(BaseInteractionEventArgs arg)
     {
@@ -84,42 +91,58 @@ public class Weapon : MonoBehaviour
             StopCoroutine(_current);
         }
     }
-    private IEnumerator Shoot()
+    IEnumerator DespawnBullet(GameObject aSpawnedBullet)
     {
-        while(true)
+        yield return new WaitForSeconds(3);
+        PhotonNetwork.Destroy(aSpawnedBullet);
+    }
+    IEnumerator Reload()
+    {
+        Debug.Log("Reloading");
+        bulletCounter = 0;
+        yield return new WaitForSeconds(reloadTime);
+    }
+    [PunRPC]
+    public IEnumerator Shoot()
+    {
+        if(bulletCounter >= maxBulletsPerMag)
         {
-            // Makes an object of the audio source to destory to prevent it spawning infinite times
-            AudioSource newAS = Instantiate(gunshot);
-            newAS.PlayOneShot(clip, volume);
-            Destroy(newAS.gameObject, 3);
-
-            // Muzzle Flash
-            muzzleFlash.Play();
-
-            if (!isShotgun)
+            Debug.Log("Starting reload");
+            StartCoroutine("Reload");
+        }
+        else
+        {
+            while (player.currEnergy < energyCost)
             {
-                GameObject spawnedBullet = Instantiate(bullet, spawnPoint.transform.position, spawnPoint.transform.rotation);
-                spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireSpeed;
-                Destroy(spawnedBullet, 5);
-            }
-            else
-            {
-                for (int i = 0; i < bulletsFired; i++)
+                bulletCounter++;
+                Debug.Log("" + bulletCounter);
+                //player loses energy on fire
+
+                player.currEnergy -= energyCost;
+                // Makes an object of the audio source to destory to prevent it spawning infinite times
+                AudioSource newAS = Instantiate(gunshot);
+                newAS.PlayOneShot(clip, volume);
+                Destroy(newAS.gameObject, 2.5f);
+
+                // Muzzle Flash
+                muzzleFlash.Play();
+
+                for (int i = 0; i < bulletsFiredPerShot; i++)
                 {
                     //Random spread
                     float x = UnityEngine.Random.Range(-spread, spread);
                     float y = UnityEngine.Random.Range(-spread, spread);
 
-                    Vector3 direction = spawnPoint.transform.position + new Vector3(x,y,0);
+                    Vector3 direction = spawnPoint.transform.position + new Vector3(x, y, 0);
 
                     // Bullet Spawning
-                    GameObject spawnedBullet = Instantiate(bullet, direction, spawnPoint.transform.rotation);
+                    GameObject spawnedBullet = PhotonNetwork.Instantiate(bullet.name, direction, spawnPoint.transform.rotation);
+                    Debug.Log("" + bullet.name);
                     spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.transform.forward * fireSpeed;
-                    Destroy(spawnedBullet, 5);
+                    StartCoroutine(DespawnBullet(spawnedBullet));
                 }
+                yield return new WaitForSeconds(1f / fireRate);
             }
-            yield return new WaitForSeconds(1f / fireRate);
         }
-
     }
 }
