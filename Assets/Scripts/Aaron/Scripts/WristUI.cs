@@ -41,7 +41,7 @@ public class WristUI : MonoBehaviourPun
     {
         //player = GameObject.FindObjectOfType<Player>();
         spawner = GameObject.FindObjectOfType<NetworkSpawner>();
-        linkAllStats();
+        //linkAllStats();
     }
     void Update()
     {
@@ -102,6 +102,6 @@ public class WristUI : MonoBehaviourPun
     public void ToggleVisibility()
     {
         gameObject.SetActive(!gameObject.activeInHierarchy);
-        linkAllStats();
+        //linkAllStats();
     }
 }

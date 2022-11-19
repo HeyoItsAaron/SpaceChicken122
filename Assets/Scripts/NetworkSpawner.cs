@@ -45,7 +45,7 @@ public class NetworkSpawner : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        if(netManager.inRoom == true)
+        if (netManager.inRoom == true && waveNumber == 0)
         {
             NextWave();
         }
