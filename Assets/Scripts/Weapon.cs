@@ -69,7 +69,6 @@ public class Weapon : MonoBehaviourPun
     [PunRPC]
     void PlayGunshot()
     {
-        Debug.Log("Play Gunshot");
         gunshot.clip = clipAudio;
         gunshot.volume = volume;
         gunshot.spatialBlend = 1;
@@ -136,7 +135,6 @@ public class Weapon : MonoBehaviourPun
                     break;
                 }
                 bulletCounter++;
-                Debug.Log("" + bulletCounter);
                 //player loses energy on fire
 
                 player.currEnergy -= energyCost;
