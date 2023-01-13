@@ -7,7 +7,7 @@ public class TeleportToSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // player = GameObject.FindObjectOfType<PlayerStats>();
+        player = GameObject.FindObjectOfType<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -19,6 +19,6 @@ public class TeleportToSpawn : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        col.transform.position = new Vector3 (-25.33f, 1.56f, 101.11f);
+        col.Transform.position = new Vector3(-25.33, 1.56, 101.11);
     }
 }
